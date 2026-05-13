@@ -1,0 +1,989 @@
+{
+  "@@locale":"en",
+
+  "letsGo":"Let's Go",
+  "@letsGo":{
+    "description":""
+  },
+  "authenticateMsg":"Please authenticate to access the app",
+  "@authenticateMsg":{
+    "authenticateMsg":""
+  },
+  "cantBeEmpty":"This field can't be empty",
+  "@cantBeEmpty":{
+    "cantBeEmpty":""
+  },
+  "welcomeBack":"Welcome Back",
+  "@welcomeBack":{
+    "welcomeBack":""
+  },
+  "email":"Email",
+  "@email":{
+    "email":""
+  },
+  "password":"Password",
+  "@password":{
+    "password":""
+  },
+  "signIn":"Sign In",
+  "@signIn":{
+    "signIn":""
+  },
+  "dontHaveAcc":"Don't have an account? ",
+  "@dontHaveAcc":{
+    "dontHaveAcc":""
+  },
+  "signUp":"Sign up",
+  "@signUp":{
+    "signUp":""
+  },
+  "letsGetStarted":"Let's get started by filling out the form below",
+  "@letsGetStarted":{
+    "letsGetStarted":""
+  },
+  "signUpHere":"Sign up here",
+  "@signUpHere":{
+    "signUpHere":""
+  },
+  "lessons":"Lessons",
+  "@lessons":{
+    "lessons":""
+  },
+  "progress":"Progress",
+  "@progress":{
+    "progress":""
+  },
+  "profile":"Profile",
+  "@profile":{
+    "profile":""
+  },
+  "language":"Language",
+  "@language":{
+    "language":""
+  },
+  "level":"Level",
+  "@level":{
+    "level":""
+  },
+  "goal":"Goal",
+  "@goal":{
+    "goal":""
+  },
+  "skill":"Skill",
+  "@skill":{
+    "skill":""
+  },
+  "englishFor":"English for",
+  "@englishFor":{
+    "englishFor":""
+  },
+  "practice":"Practice",
+  "@practice":{
+    "practice":""
+  },
+  "keywordsDictionary":"Keywords Dictionary",
+  "@keywordsDictionary":{
+    "keywordsDictionary":""
+  },
+  "more":"More...",
+  "@more":{
+    "more":""
+  },
+  "dataVault":"Data Vault",
+  "@dataVault":{
+    "dataVault":""
+  },
+  "daysOnStreak":"Days on streak:",
+  "@daysOnStreak":{
+    "daysOnStreak":""
+  },
+  "bestStreak":"Best streak:",
+  "@bestStreak":{
+    "bestStreak":""
+  },
+  "sessionInfo":"Session info:",
+  "@sessionInfo":{
+    "sessionInfo":""
+  },
+  "logout":"Logout",
+  "@logout":{
+    "logout":""
+  },
+  "name":"Name",
+  "@name":{
+    "name":""
+  },
+  "englishLevel":"English Level",
+  "@englishLevel":{
+    "englishLevel":""
+  },
+  "nativeLanguage":"Native Language",
+  "@nativeLanguage":{
+    "nativeLanguage":""
+  },
+  "avatar":"Avatar",
+  "@avatar":{
+    "avatar":""
+  },
+  "inviteFriend":"Invite a friend",
+  "@inviteFriend":{
+    "inviteFriend":""
+  },
+  "joinDiscord":"Join Discord Community",
+  "@joinDiscord":{
+    "joinDiscord":""
+  },
+  "manageSubscription":"Manage Subscription",
+  "@manageSubscription":{
+    "manageSubscription":""
+  },
+  "enterEmail":"Enter your email ",
+  "@enterEmail":{
+    "enterEmail":""
+  },
+  "enterPassword":"Enter your password ",
+  "@enterPassword":{
+    "enterPassword":""
+  },
+  "currentChat":"Current chat",
+  "@currentChat":{
+    "currentChat":""
+  },
+  "continueLabel":"Continue",
+  "@continueLabel":{
+    "continueLabel":""
+  },
+  "newChat":"New chat",
+  "@newChat":{
+    "newChat":""
+  },
+  "savedWords":"Saved words",
+  "@savedWords":{
+    "savedWords":""
+  },
+  "shareApp":"Share app",
+  "@shareApp":{
+    "shareApp":""
+  },
+  "view":"View",
+  "@view":{
+    "view":""
+  },
+  "lessons":"Lessons",
+  "@lessons":{
+    "lessons":""
+  },
+  "whatToSend":"Type your message",
+  "@whatToSend":{
+    "whatToSend":""
+  },
+  "conversationPaused":"You have paused the conversation",
+  "@conversationPaused":{
+    "conversationPaused":""
+  },
+  "editProfile":"Edit profile",
+  "@editProfile":{
+    "editProfile":""
+  },
+  "changePassword":"Change password",
+  "@changePassword":{
+    "changePassword":""
+  },
+  "editPreferences":"Edit preferences",
+  "@editPreferences":{
+    "editPreferences":""
+  },
+  "helpAndSupp":"Help & support",
+  "@helpAndSupp":{
+    "helpAndSupp":""
+  },
+  "firstname":"First Name",
+  "@firstname":{
+    "firstname":""
+  },
+  "nativeLang":"Native language",
+  "@nativeLang":{
+    "nativeLang":""
+  },
+  "phone":"Phone",
+  "@phone":{
+    "phone":""
+  },
+  "editHobbies":"Edit interests",
+  "@editHobbies":{
+    "editHobbies":""
+  },
+  "editLearningGoals":"Edit learning main goal",
+  "@editLearningGoals":{
+    "editLearningGoals":""
+  },
+  "editPreferredAccent":"Edit preferred accent",
+  "@editPreferredAccent":{
+    "editPreferredAccent":""
+  },
+  "whatYourHobbies":"What are your hobbies and interests ?",
+  "@whatYourHobbies":{
+    "whatYourHobbies":""
+  },
+  "weHaveLibraries":"We have a rich library of lessons, topics and Al Avatars, so we need to pick the best suitable for you",
+  "@weHaveLibraries":{
+    "weHaveLibraries":""
+  },
+  "interview":"Interview",
+  "@interview":{
+    "interview":""
+  },
+  "cooking":"Cooking",
+  "@cooking":{
+    "cooking":""
+  },
+  "shopping":"Shopping",
+  "@shopping":{
+    "shopping":""
+  },
+  "traveling":"Traveling",
+  "@traveling":{
+    "traveling":""
+  },
+  "art":"Art",
+  "@art":{
+    "art":""
+  },
+  "sports":"Sports",
+  "@sports":{
+    "sports":""
+  },
+  "gaming":"Gaming",
+  "@gaming":{
+    "gaming":""
+  },
+  "tech":"Tech",
+  "@tech":{
+    "tech":""
+  },
+  "finance":"Finance",
+  "@finance":{
+    "finance":""
+  },
+  "editMainGoal":"Edit main goal",
+  "@editMainGoal":{
+    "editMainGoal":""
+  },
+  "whatYourGoal":"What are your main learning goal ?",
+  "@whatYourGoal":{
+    "whatYourGoal":""
+  },
+  "careerGrowth":"Career growth",
+  "@careerGrowth":{
+    "careerGrowth":""
+  },
+  "travelEasily":"Travel easily",
+  "@travelEasily":{
+    "travelEasily":""
+  },
+  "studyAbroad":"Study abroad",
+  "@studyAbroad":{
+    "studyAbroad":""
+  },
+  "livingAbroad":"Living abroad",
+  "@livingAbroad":{
+    "livingAbroad":""
+  },
+  "personalDevelopment":"Personal development",
+  "@personalDevelopment":{
+    "personalDevelopment":""
+  },
+  "whatAccentYouPrefer":"Which accent are you prefer ?",
+  "@whatAccentYouPrefer":{
+    "whatAccentYouPrefer":""
+  },
+  "aiTutorsWithAccents":"In the app, you'll meet Al tutors with different accents, giving you the chance to practice conversations in the accent your prefer",
+  "@aiTutorsWithAccents":{
+    "aiTutorsWithAccents":""
+  },
+  "american":"American",
+  "@american":{
+    "american":""
+  },
+  "british":"British",
+  "@british":{
+    "british":""
+  },
+  "indian":"Indian",
+  "@indian":{
+    "indian":""
+  },
+  "asian":"Asian",
+  "@asian":{
+    "asian":""
+  },
+  "australian":"Australian",
+  "@australian":{
+    "australian":""
+  },
+  "languageChange":"Change language",
+  "@languageChange":{
+    "languageChange":""
+  },
+  "newPassword":"New password",
+  "@newPassword":{
+    "newPassword":""
+  },
+  "confirmNewPassword":"Confirm new password",
+  "@confirmNewPassword":{
+    "confirmNewPassword":""
+  },
+  "newPasswordVerification":"New password verification",
+  "@newPasswordVerification":{
+    "newPasswordVerification":""
+  },
+  "arabic":"Arabic",
+  "@arabic":{
+    "arabic":""
+  },
+  "english":"English",
+  "@english":{
+    "english":""
+   },
+  "login":"Login",
+  "@login":{
+    "login":""
+  },
+  "signForNewAcc":"Sign up for new account",
+  "@signForNewAcc":{
+    "signForNewAcc":""
+  },
+  "rememberMe":"Remember me",
+  "@rememberMe":{
+    "rememberMe":""
+  },
+  "forgotPassword":"Forgot password ?",
+  "@forgotPassword":{
+    "rememberMe":""
+  },
+  "firstName":"First name",
+  "@firstName":{
+    "firstName":""
+  },
+  "lastName":"Last name",
+  "@lastName":{
+    "lastName":""
+  },
+  "enterFirstName":"Enter your first name",
+  "@enterFirstName":{
+    "enterFirstName":""
+  },
+  "enterLastName":"Enter your last name",
+  "@enterLastName":{
+    "enterLastName":""
+  },
+  "enterPhone":"Enter your phone number",
+  "@enterPhone":{
+    "enterPhone":""
+  },
+  "phoneNumber":"Phone Number",
+  "@phoneNumber":{
+    "phoneNumber":""
+  },
+  "confirmPassword":"Confirm password",
+  "@confirmPassword":{
+    "confirmPassword":""
+  },
+  "enterConfirmPassword":"Enter your confirm password",
+  "@enterConfirmPassword":{
+    "enterConfirmPassword":""
+  },
+  "createPassword":"Create password",
+  "@createPassword":{
+    "createPassword":""
+  },
+  "confirm":"Confirm",
+  "@confirm":{
+    "confirm":""
+  },
+  "accountVerification":"Account verification",
+  "@accountVerification":{
+    "accountVerification":""
+  },
+  "choosingGender":"Choosing gender",
+  "@choosingGender":{
+    "choosingGender":""
+  },
+  "chooseYourGender":"Choose your gender",
+  "@chooseYourGender":{
+    "chooseYourGender":""
+  },
+  "specifyYourGender":"Specify your gender to better\npersonalize your interactions",
+  "@specifyYourGender":{
+    "specifyYourGender":""
+  },
+  "male":"Male",
+  "@male":{
+    "male":""
+  },
+  "female":"Female",
+  "@female":{
+    "female":""
+  },
+  "determineAge":"Determine age",
+  "@determineAge":{
+    "determineAge":""
+  },
+  "howOldQues":"How old are you ?",
+  "@howOldQues":{
+    "howOldQues":""
+  },
+  "specifyYourAge":"Specify your age to better\npersonalize your interactions",
+  "@specifyYourAge":{
+    "specifyYourAge":""
+  },
+  "age":"Age",
+  "@age":{
+    "age":""
+  },
+  "determineNativeLang":"Determine native language",
+  "@determineNativeLang":{
+    "determineNativeLang":""
+  },
+  "whatNativeLang":"What is your native\nlanguage ?",
+  "@whatNativeLang":{
+    "whatNativeLang":""
+  },
+  "nativeLangDesc":"You'll get Al hints, feedback and translations in your native language during conversations with Avatars",
+  "@nativeLangDesc":{
+    "nativeLangDesc":""
+  },
+  "searchYourLang":"Search about your language",
+  "@searchYourLang":{
+    "searchYourLang":""
+  },
+  "choosingHobbies":"Choosing interests",
+  "@choosingHobbies":{
+    "choosingHobbies":""
+  },
+  "whatHobbies":"What are your hobbies\nand interests ?",
+  "@whatHobbies":{
+    "whatHobbies":""
+  },
+  "hobbiesDesc":"We have a rich library of lessons, topics and Al Avatars, so we need to pick the best suitable for you",
+  "@hobbiesDesc":{
+    "hobbiesDesc":""
+  },
+  "determineGoal":"Determine main goal",
+  "@determineGoal":{
+    "determineGoal":""
+  },
+  "whatYourGoalDesc":"What are your main\nlearning goal ?",
+  "@whatYourGoalDesc":{
+    "whatYourGoalDesc":""
+  },
+  "chooseAccent":"Choosing accent",
+  "@chooseAccent":{
+    "chooseAccent":""
+  },
+  "whichAccent":"Which accent are you\ntargeting ?",
+  "@whichAccent":{
+    "whichAccent":""
+  },
+  "accentDesc":"In the app, you'll meet Al tutors with different accents, giving you the chance to practice conversations in the accent your prefer",
+  "@accentDesc":{
+    "accentDesc":""
+  },
+  "enterYourAge":"Enter your age",
+  "@enterYourAge":{
+    "enterYourAge":""
+  },
+  "pleaseSelectLang":"Please select language",
+  "@pleaseSelectLang":{
+    "pleaseSelectLang":""
+  },
+  "thereIsNoLang":"There is no language with this name",
+  "@thereIsNoLang":{
+    "thereIsNoLang":""
+  },
+  "filter":"Filter",
+  "@filter":{
+    "filter":""
+  },
+  "chooseContent":"Choose level",
+  "@chooseContent":{
+    "chooseContent":""
+  },
+  "noInternetConnection":"No internet connection",
+  "@noInternetConnection":{
+    "noInternetConnection":""
+  },
+  "retry":"Retry",
+  "@retry":{
+    "retry":""
+  },
+  "youHaveLostConnection":"It seems you are offline. Please check your connection.",
+  "@youHaveLostConnection":{
+    "youHaveLostConnection":""
+  },
+  "userName":"User name",
+  "@userName":{
+    "userName":""
+  },
+  "enterUserName":"Enter your user name",
+  "@enterUserName":{
+    "enterUserName":""
+  },
+  "ok":"Ok",
+  "@ok":{
+    "ok":""
+  },
+  "errorMsg":"Something went wrong, please try later",
+  "@errorMsg":{
+    "errorMsg":""
+  },
+  "resendCodeIn":"Resend code in",
+  "@resendCodeIn":{
+    "resendCodeIn":""
+  },
+  "resendCode":"Resend code",
+  "@resendCode":{
+    "resendCode":""
+  },
+  "dateOfBirth":"Date of birth",
+  "@dateOfBirth":{
+    "dateOfBirth":""
+  },
+  "enterDateOfBirth":"Enter your date of birth",
+  "@enterDateOfBirth":{
+    "enterDateOfBirth":""
+  },
+  "tryAgainMsg":"Something went wrong, please try again",
+  "@tryAgainMsg":{
+    "tryAgainMsg":""
+  },
+  "failedToLoad":"Failed loading",
+  "@failedToLoad":{
+    "failedToLoad":""
+  },
+  "noThingToDisplay":"There is nothing to display",
+  "@noThingToDisplay":{
+    "noThingToDisplay":""
+  },
+  "save":"Save",
+  "@save":{
+    "save":""
+  },
+  "userDataUpdatedSuccessfuly":"Your data has been updated successfully",
+  "@userDataUpdatedSuccessfuly":{
+    "userDataUpdatedSuccessfuly":""
+  },
+  "unexpectedErrorOccured":"An unexpected error occurred, please try again later.",
+  "@unexpectedErrorOccured":{
+    "unexpectedErrorOccured":""
+  },
+  "yourInterestsUpdated":"Your interests have been updated successfully",
+  "@yourInterestsUpdated":{
+    "yourInterestsUpdated":""
+  },
+  "yourMainGoalUpdated":"Your main goal has been updated successfully",
+  "@yourMainGoalUpdated":{
+    "yourMainGoalUpdated":""
+  },
+  "yourPreferedAccentUpdated":"Your prefered accent has been updated successfully",
+  "@yourPreferedAccentUpdated":{
+    "yourPreferedAccentUpdated":""
+  },
+  "letsPractice":"Let’s practice your English",
+  "@letsPractice":{
+    "letsPractice":""
+  },
+  "currentPassword":"Current password",
+  "@currentPassword":{
+    "currentPassword":""
+  },
+  "enterCurrentPassword":"Enter current password",
+  "@enterCurrentPassword":{
+    "enterCurrentPassword":""
+  },
+  "enterNewPassword":"Enter new password",
+  "@enterNewPassword":{
+    "enterNewPassword":""
+  },
+  "enterNewConfirmPassword":"Enter confirm new password",
+  "@enterNewConfirmPassword":{
+    "enterNewConfirmPassword":""
+  },
+  "yourPasswordUpdated":"Password has been updated successfully",
+  "@yourPasswordUpdated":{
+    "yourPasswordUpdated":""
+  },
+  "nameValidation":"Name must be at least 2 characters",
+  "@nameValidation":{
+    "nameValidation":""
+  },
+  "mobileValidation":"Mobile number must contain only numbers",
+  "@mobileValidation":{
+    "mobileValidation":""
+  },
+  "enterValidEmail":"Please enter valid email",
+  "@enterValidEmail":{
+    "enterValidEmail":""
+  },
+  "passwordLengthShort":"Password must be at least 6 characters",
+  "@passwordLengthShort":{
+    "passwordLengthShort":""
+  },
+  "passwordMustHaveNonAlphanumeric":"Password must have at least one special character like (-, _ ,@)",
+  "@passwordMustHaveNonAlphanumeric":{
+    "passwordMustHaveNonAlphanumeric":""
+  },
+  "passwordMustHaveDigit":"Password must have at least one digit ('0'-'9')",
+  "@passwordMustHaveDigit":{
+    "passwordMustHaveDigit":""
+  },
+  "passwordMustHaveUppercase":"Password must have at least one uppercase ('A'-'Z')",
+  "@passwordMustHaveUppercase":{
+    "passwordMustHaveUppercase":""
+  },
+  "passwordMustHaveLowercase":"Password must have at least one lowercase ('a'-'z')",
+  "@passwordMustHaveLowercase":{
+    "passwordMustHaveLowercase":""
+  },
+  "logOutConfirm":"Are you sure to logout?",
+  "@logOutConfirm":{
+    "logOutConfirm":""
+  },
+  "yes":"Yes",
+  "@yes":{
+    "yes":""
+  },
+  "no":"No",
+  "@no":{
+    "no":""
+  },
+  "wordsHaveBeenSaved":"Selected words have been saved successfully",
+  "@wordsHaveBeenSaved":{
+    "wordsHaveBeenSaved":""
+  },
+  "failedToSaveWords":"Failed to save selected words",
+  "@failedToSaveWords":{
+    "failedToSaveWords":""
+  },
+  "selectWordsToSave":"Select words to save",
+  "@selectWordsToSave":{
+    "selectWordsToSave":""
+  },
+  "confirmDeleteSavedWord":"Are you sure you want to delete",
+  "@confirmDeleteSavedWord":{
+    "confirmDeleteSavedWord":""
+  },
+  "fromSavedWords":"from saved words?",
+  "@fromSavedWords":{
+    "fromSavedWords":""
+  },
+  "failedToDeleteSavedWord":"Failed to delete saved word",
+  "@failedToDeleteSavedWord":{
+    "failedToDeleteSavedWord":""
+  },
+  "permissionRequired":"Permission Required",
+  "@permissionRequired":{
+    "permissionRequired":""
+  },
+  "cameraPermissionSettings":"Camera access is required. Please enable camera permission in the app settings.",
+  "@cameraPermissionSettings":{
+    "cameraPermissionSettings":""
+  },
+  "galleryPermissionSettings":"Gallery access is required. Please enable camera permission in the app settings.",
+  "@galleryPermissionSettings":{
+    "galleryPermissionSettings":""
+  },
+  "qrPermissionError":"Camera permission is denied",
+  "@qrPermissionError":{
+    "qrPermissionError":""
+  },
+  "galleryPermissionError":"Gallery permission is denied",
+  "@galleryPermissionError":{
+    "galleryPermissionError":""
+  },
+  "cancel":"Cancel",
+  "@cancel":{
+    "cancel":""
+  },
+  "settings":"Settings",
+  "@settings":{
+    "settings":""
+  },
+  "waitToturRespond":"Wait for the tutor to finish responding",
+  "@waitToturRespond":{
+    "waitToturRespond":""
+  },
+  "onlyLettersAllowed":"This field can contain only letters.",
+  "@onlyLettersAllowed":{
+    "onlyLettersAllowed":""
+  },
+  "finishRecoridng":"Please finish recording first.",
+  "@finishRecoridng":{
+    "finishRecoridng":""
+  },
+  "editAccent":"Edit accent",
+  "@editAccent":{
+    "editAccent":""
+  },
+  "avatarMuted":"The avatar voice is muted",
+  "@avatarMuted":{
+    "avatarMuted":""
+  },
+  "joinGlosa":"Join me to try Be Fluent today!",
+  "@joinGlosa":{
+    "joinGlosa":""
+  },
+  "mobileValidateMsg":"Please enter a valid mobile number",
+  "@mobileValidateMsg":{
+    "mobileValidateMsg":""
+  },
+  "searchCountry":"Search for the country",
+  "@searchCountry":{
+    "searchCountry":""
+  },
+  "passwordRulesInfo":"Password rules",
+  "@passwordRulesInfo":{
+    "passwordRulesInfo":""
+  },
+  "passwordNoArabic":"Password must not contain arabic letters.",
+  "@passwordNoArabic":{
+    "passwordNoArabic":""
+  },
+  "loginWithGmail":"Login with gmail",
+  "@loginWithGmail":{
+    "loginWithGmail":""
+  },
+  "or":"Or",
+  "@or":{
+    "or":""
+  },
+  "resetPassword":"Reset password",
+  "@resetPassword":{
+    "resetPassword":""
+  },
+  "enterEmailToResetPassword":"Enter your Email to reset password",
+  "@enterEmailToResetPassword":{
+    "enterEmailToResetPassword":""
+  },
+  "emailSent":"An email containing password reset data has been sent",
+  "@emailSent":{
+    "emailSent":""
+  },
+  "search":"Search",
+  "@search":{
+    "search":""
+  },
+  "enterLesson":"Please enter the lesson name",
+  "@enterLesson":{
+    "enterLesson":""
+  },
+  "micPermissionSettings":"Microphone access is required. Please enable microphone permission in the app settings.",
+  "@micPermissionSettings":{
+    "micPermissionSettings":""
+  },
+  "enterPhoneToResetPassword":"Enter your phone number to reset password",
+  "@enterPhoneToResetPassword":{
+    "enterPhoneToResetPassword":""
+  },
+  "b1IntermediateLevel":"B1 (Intermediate)",
+  "@b1IntermediateLevel":{
+    "b1IntermediateLevel":""
+  },
+  "b2UpperIntermediateLevel":"B2 (Upper-Intermediate)",
+  "@b2UpperIntermediateLevel":{
+    "b2UpperIntermediateLevel":""
+  },
+  "a1ElementaryLevel":"A1 (Elementary)",
+  "@a1ElementaryLevel":{
+    "a1ElementaryLevel":""
+  },
+  "a2PreIntermediateLevel":"A2 (Pre-Intermediate)",
+  "@a2PreIntermediateLevel":{
+    "a2PreIntermediateLevel":""
+  },
+  "startTrialDays":"Start your ",
+  "@startTrialDays":{
+    "startTrialDays":""
+  },
+  "startTrialDaysContinueText":" days free trial to continue",
+  "@startTrialDaysContinueText":{
+    "startTrialDaysContinueText":""
+  },
+  "limitlessChat":"Limitless chats with AI",
+  "@limitlessChat":{
+    "limitlessChat":""
+  },
+  "talkAndLearn":"Talk & learn without limits",
+  "@talkAndLearn":{
+    "talkAndLearn":""
+  },
+  "limitlessAccess":"Limitless acces",
+  "@limitlessAccess":{
+    "limitlessAccess":""
+  },
+  "accessAllLevels":"Access all English levels ",
+  "@accessAllLevels":{
+    "accessAllLevels":""
+  },
+  "bestValue":"Best Value",
+  "@bestValue":{
+    "bestValue":""
+  },
+  "subscripe":"Subscribe",
+  "@subscripe":{
+    "subscripe":""
+  },
+  "startFreeTrial":"Start free trial",
+  "@startFreeTrial":{
+    "startFreeTrial":""
+  },
+  "free":"Free",
+  "@free":{
+    "free":""
+  },
+  "plus":"Plus",
+  "@plus":{
+    "plus":""
+  },
+  "deleteAccount":"Delete Account",
+  "@deleteAccount":{
+    "deleteAccount":""
+  },
+  "accountDeletedSuccessfully":"Account deleted successfully",
+  "@accountDeletedSuccessfully":{
+    "accountDeletedSuccessfully":""
+  },
+  "confirmDeleteAccount":"Confirm delete account",
+  "@confirmDeleteAccount":{
+    "confirmDeleteAccount":""
+  },
+  "error":"Error",
+  "@error":{
+    "error":""
+  },
+  "errorOccured":"An error has occurred,please try again",
+  "@errorOccured":{
+    "errorOccured":""
+  },
+  "reload":"Reload",
+  "@reload":{
+    "reload":""
+  },
+  "quarterly":"Quarterly",
+  "@quarterly":{
+    "quarterly":""
+  },
+  "annual":"Annual",
+  "@annual":{
+    "annual":""
+  },
+  "subscription":"Subscription",
+  "@subscription":{
+    "subscription":""
+  },
+  "yourPlanIs":"Your plan is",
+  "@yourPlanIs":{
+    "yourPlanIs":""
+  },
+  "youtRenewDateIs":"Your renew date is:",
+  "@youtRenewDateIs":{
+    "youtRenewDateIs":""
+  },
+  "daysLeftInFree":"in free trial, Subscribe to continue",
+  "@daysLeftInFree":{
+    "daysLeftInFree":""
+  },
+  "dayLeftInSubscription":"in your subscription, Subscribe to continue",
+  "@dayLeftInSubscription":{
+    "dayLeftInSubscription":""
+  },
+  "continueFree":"Continue free trial",
+  "@continueFree":{
+    "continueFree":""
+  },
+  "continueSubscription":"Continue subscription",
+  "@continueSubscription":{
+    "continueSubscription":""
+  },
+  "freeTrialEnded":"Your free trial has ended. Subscribe to continue.",
+  "@freeTrialEnded":{
+    "freeTrialEnded":""
+  },
+  "subscriptionEnded":"Your subscription has ended. Subscribe to continue.",
+  "@subscriptionEnded":{
+    "subscriptionEnded":""
+  },
+  "yourPlanIsFree":"Your on free trial plan",
+  "@yourPlanIsFree":{
+    "yourPlanIsFree":""
+  },
+  "yourPlanIsQuarterly":"Your plan is Quarterly.",
+  "@yourPlanIsQuarterly":{
+    "yourPlanIsQuarterly":""
+  },
+  "yourPlanIsAnnual":"Your plan is annual.",
+  "@yourPlanIsAnnual":{
+    "yourPlanIsAnnual":""
+  },
+  "annualPlanEnded":"Your annual plan ended, Subscribe to continue.",
+  "@annualPlanEnded":{
+    "annualPlanEnded":""
+  },
+  "quarterlyPlanEnded":"Your quarterly plan ended, Subscribe to continue.",
+  "@quarterlyPlanEnded":{
+    "quarterlyPlanEnded":""
+  },
+  "alreadyPurchased":"This is your active product , you can’t buy it right now",
+  "@alreadyPurchased":{
+    "alreadyPurchased":""
+  },
+  "alreadyPurchasedSubscription":"Already purchased subscription ?",
+  "@alreadyPurchasedSubscription":{
+    "alreadyPurchasedSubscription":""
+  },
+  "restorePurchase":"Restore purchase",
+  "@restorePurchase":{
+    "restorePurchase":""
+  },
+  "notSubscribed":"Not subscribed",
+  "@notSubscribed":{
+    "notSubscribed":""
+  },
+  "newSupscriptionActivateOnRenew":"The new package that you would like to purchase will be activated after the current package is expired",
+  "@newSupscriptionActivateOnRenew":{
+    "newSupscriptionActivateOnRenew":""
+  },
+  "termsOfUser":"Terms of user",
+  "@termsOfUser":{
+    "termsOfUser":""
+  },
+  "privacyPolicy":"Privacy policy",
+  "@privacyPolicy":{
+    "privacyPolicy":""
+  },
+  "appUpdateTitle":"App Update",
+  "@appUpdateTitle":{
+    "appUpdateTitle":""
+  },
+  "updateMessage":"To enjoy latest features and experience, please update the application",
+  "@updateMessage":{
+    "updateMessage":""
+  },
+  "updateNow":"Update now",
+  "@updateNow":{
+    "updateNow":""
+  },
+  "noSubscriptionsFound":"No active subscriptions found",
+  "@noSubscriptionsFound":{
+    "noSubscriptionsFound":""
+  },
+  "loginVerification":"Login verification",
+  "@loginVerification":{
+    "loginVerification":""
+  },
+  "nameDetails":"Name Details",
+  "@nameDetails":{
+    "nameDetails":""
+  }
+
+}
