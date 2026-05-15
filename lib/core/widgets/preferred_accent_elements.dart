@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
 
 class PreferredAccentElement extends StatefulWidget {
   const PreferredAccentElement({

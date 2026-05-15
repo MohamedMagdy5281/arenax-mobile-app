@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
 
 class CustomLoadingIndicator extends StatelessWidget {
   const CustomLoadingIndicator(
@@ -14,7 +14,7 @@ class CustomLoadingIndicator extends StatelessWidget {
       width: width,
       height: height,
       child: CircularProgressIndicator(
-        strokeWidth: strokeWidth ?? 3 ,
+        strokeWidth: strokeWidth ?? 3,
         color: color ?? kPrimaryColor, // Change color
       ),
     );

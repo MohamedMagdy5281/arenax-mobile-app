@@ -1,21 +1,25 @@
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:praktika_clone_app/core/utils/globals.dart' as globals;
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
 class CustomMobileTextFieldWithCountry extends StatelessWidget {
   const CustomMobileTextFieldWithCountry(
       {super.key,
-        required this.controller,
-        required this.countryCode,
-        this.onCountryChanged,
-        this.currentCountryCode, required this.title,
-        required this.placeholder, this.onChanged, this.validator, this.readOnly});
+      required this.controller,
+      required this.countryCode,
+      this.onCountryChanged,
+      this.currentCountryCode,
+      required this.title,
+      required this.placeholder,
+      this.onChanged,
+      this.validator,
+      this.readOnly});
 
   final TextEditingController controller;
   final String countryCode;
@@ -51,13 +55,14 @@ class CustomMobileTextFieldWithCountry extends StatelessWidget {
               textDirection: TextDirection.ltr,
               child: IntlPhoneField(
                 pickerDialogStyle: PickerDialogStyle(
-                  searchFieldInputDecoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.searchCountry,
-                  )
-                ) ,
+                    searchFieldInputDecoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.searchCountry,
+                )),
                 readOnly: readOnly ?? false,
-                dropdownIcon: Icon(Icons.keyboard_arrow_down_rounded,size: 24,color: kinfoColor),
-                textAlign: globals.appLang == 'ar' ? TextAlign.right : TextAlign.left,
+                dropdownIcon: Icon(Icons.keyboard_arrow_down_rounded,
+                    size: 24, color: kinfoColor),
+                textAlign:
+                    globals.appLang == 'ar' ? TextAlign.right : TextAlign.left,
                 languageCode: globals.appLang,
                 disableLengthCheck: false,
                 countries: const [
@@ -75,7 +80,8 @@ class CustomMobileTextFieldWithCountry extends StatelessWidget {
                   ),
                 ],
                 controller: controller,
-                invalidNumberMessage: AppLocalizations.of(context)!.mobileValidateMsg,
+                invalidNumberMessage:
+                    AppLocalizations.of(context)!.mobileValidateMsg,
                 decoration: InputDecoration(
                   label: Container(
                     margin: EdgeInsets.all(0),
@@ -115,7 +121,7 @@ class CustomMobileTextFieldWithCountry extends StatelessWidget {
                   disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                     borderSide:
-                    const BorderSide(color: Colors.transparent, width: 1),
+                        const BorderSide(color: Colors.transparent, width: 1),
                   ),
                   focusedErrorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
@@ -126,7 +132,7 @@ class CustomMobileTextFieldWithCountry extends StatelessWidget {
                     borderSide: const BorderSide(color: kErrorColor, width: 1),
                   ),
                   contentPadding:
-                  const EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 16.0),
+                      const EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 16.0),
                   errorText: state.errorText,
                 ),
                 initialCountryCode: countryCode,
@@ -136,30 +142,30 @@ class CustomMobileTextFieldWithCountry extends StatelessWidget {
               ),
             );
           },
-          validator: validator ?? (value) {
-            if (controller.text == "") {
-              return AppLocalizations.of(context)!.cantBeEmpty;
-            }
-             if (currentCountryCode == "SA") {
-              if (controller.text.length == 10) {
-                if (!(controller.text.startsWith("051") ||
-                    controller.text.startsWith("052") ||
-                    controller.text.startsWith("05"))) {
-                  return AppLocalizations.of(context)!.mobileValidateMsg;
+          validator: validator ??
+              (value) {
+                if (controller.text == "") {
+                  return AppLocalizations.of(context)!.cantBeEmpty;
                 }
-              }
-              else if (controller.text.length == 9){
-                if (!(controller.text.startsWith("51") ||
-                    controller.text.startsWith("52") ||
-                    controller.text.startsWith("5"))) {
-                  return AppLocalizations.of(context)!.mobileValidateMsg;
+                if (currentCountryCode == "SA") {
+                  if (controller.text.length == 10) {
+                    if (!(controller.text.startsWith("051") ||
+                        controller.text.startsWith("052") ||
+                        controller.text.startsWith("05"))) {
+                      return AppLocalizations.of(context)!.mobileValidateMsg;
+                    }
+                  } else if (controller.text.length == 9) {
+                    if (!(controller.text.startsWith("51") ||
+                        controller.text.startsWith("52") ||
+                        controller.text.startsWith("5"))) {
+                      return AppLocalizations.of(context)!.mobileValidateMsg;
+                    }
+                  } else {
+                    return AppLocalizations.of(context)!.mobileValidateMsg;
+                  }
                 }
-              }else {
-                return AppLocalizations.of(context)!.mobileValidateMsg;
-              }
-            }
-            return null;
-          },
+                return null;
+              },
         ),
       ],
     );

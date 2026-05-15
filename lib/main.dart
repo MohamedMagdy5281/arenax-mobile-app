@@ -1,62 +1,24 @@
 import 'dart:io';
+import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:arenax_mobile_app/core/utils/notification_service.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:in_app_purchase_storekit/in_app_purchase_storekit.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:praktika_clone_app/core/utils/cashe_helper.dart';
-import 'package:praktika_clone_app/core/utils/globals.dart' as globals;
+import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 import 'package:local_auth/local_auth.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/notification_service.dart';
-import 'package:praktika_clone_app/features/AppLoader/presentation/views/app_loader_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/app_loader_after_login_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/choose_accent_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/choose_gender_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/choose_hobbies_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/create_password_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/determine_age_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/forget_password_create_password_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/forget_password_otp_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/forget_password_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/login_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/otp_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/register_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/select_language_view.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/select_main_goal_view.dart';
-import 'package:praktika_clone_app/features/Courses/presentation/views/courses_view.dart';
-import 'package:praktika_clone_app/features/Courses/presentation/views/filter_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/home_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/lessons_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/saved_words_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/select_saved_words_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/lesson_tutor_chat_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/supscriptioin_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/supscription_from_home_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/tutor_chat_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/change_password_otp_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/change_password_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/delete_account_otp_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/delete_account_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/edit_hobbies_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/edit_main_goals_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/edit_preference_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/edit_preferred_accent_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/edit_profile_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/language_settings_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/profile_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/subscription_plan_view.dart';
-import 'package:praktika_clone_app/firebase_options.dart';
-import 'package:praktika_clone_app/simple_bloc_observer.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
@@ -73,55 +35,52 @@ void main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   // ✅ CRITICAL: Initialize SharedPreferences FIRST before using CasheHelper
   await CasheHelper.init();
 
-  Gemini.init(apiKey: globals.apiKey);
   // await loadLastChatMessages();
-  if (Platform.isIOS) {
-    InAppPurchaseStoreKitPlatform.registerPlatform();
-  }
+
   await loadTokenAndRefreshToken();
   await loadUserId();
   await getIOSDeviceType();
   await getOsAndVersion();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
-  NotificationSettings settings = await messaging.requestPermission();
-  if (settings.authorizationStatus == AuthorizationStatus.authorized ||
-      settings.authorizationStatus == AuthorizationStatus.provisional) {
-    await AwesomeNotifications()
-        .initialize('resource://mipmap/notification_logo', [
-      NotificationChannel(
-        channelKey: 'befluent',
-        channelName: 'befluent',
-        channelDescription: 'befluent notification',
-        playSound: true,
-        enableVibration: true,
-        importance: NotificationImportance.Max,
-        defaultRingtoneType: DefaultRingtoneType.Notification,
-        icon: 'resource://mipmap/notification_logo',
-      ),
-    ]);
-    FirebaseMessaging.onBackgroundMessage(handlePushNotification);
-    AwesomeNotifications().setListeners(
-      onActionReceivedMethod: (receivedAction) async {
-        handleNotificationTap();
-      },
-    );
-    await requestPermissions();
-  } else {
-    if (kDebugMode) {
-      print(
-          'Notification permission not granted. Skipping notification setup.');
-    }
-  }
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
+  // FirebaseMessaging messaging = FirebaseMessaging.instance;
+  // NotificationSettings settings = await messaging.requestPermission();
+  // if (settings.authorizationStatus == AuthorizationStatus.authorized ||
+  //     settings.authorizationStatus == AuthorizationStatus.provisional) {
+  //   await AwesomeNotifications()
+  //       .initialize('resource://mipmap/notification_logo', [
+  //     NotificationChannel(
+  //       channelKey: 'ArenaX',
+  //       channelName: 'ArenaX',
+  //       channelDescription: 'arenaX notification',
+  //       playSound: true,
+  //       enableVibration: true,
+  //       importance: NotificationImportance.Max,
+  //       defaultRingtoneType: DefaultRingtoneType.Notification,
+  //       icon: 'resource://mipmap/notification_logo',
+  //     ),
+  //   ]);
+  //   FirebaseMessaging.onBackgroundMessage(handlePushNotification);
+  //   AwesomeNotifications().setListeners(
+  //     onActionReceivedMethod: (receivedAction) async {
+  //       handleNotificationTap();
+  //     },
+  //   );
+  //   await requestPermissions();
+  // } else {
+  //   if (kDebugMode) {
+  //     print(
+  //         'Notification permission not granted. Skipping notification setup.');
+  //   }
+  // }
   // Future<void> checkLocationServices() async {
   //   bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
   //   while (!serviceEnabled) {
@@ -132,11 +91,11 @@ void main() async {
 
   // Ensure location services are enabled before running the app
   // await checkLocationServices();
-  Bloc.observer = SimpleBlocObserver();
-  setupFirebaseMessaging();
+  // Bloc.observer = SimpleBlocObserver();
+  // setupFirebaseMessaging();
   runApp(
     const RestartWidget(
-      child: MyApp(),
+      child: ProviderScope(child: MyApp()),
     ),
   );
 }
@@ -304,7 +263,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          title: 'Be Fluent',
+          title: 'ArenaX',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             AppLocalizations.delegate,
@@ -324,51 +283,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             primaryColor: kPrimaryColor,
           ),
           navigatorKey: globals.navigatorKey,
-          initialRoute: AppLoaderView.id,
+          initialRoute: LoginView.id,
           routes: {
-            AppLoaderView.id: (context) => const AppLoaderView(),
             LoginView.id: (context) => const LoginView(),
-            ForgetPasswordView.id: (context) => const ForgetPasswordView(),
-            RegisterView.id: (context) => const RegisterView(),
-            CreatePasswordView.id: (context) => const CreatePasswordView(),
-            OtpView.id: (context) => const OtpView(),
-            ChooseGenderView.id: (context) => const ChooseGenderView(),
-            DetermineAgeView.id: (context) => const DetermineAgeView(),
-            SelectLanguageView.id: (context) => const SelectLanguageView(),
-            ChooseHobbiesView.id: (context) => const ChooseHobbiesView(),
-            SelectMainGoalView.id: (context) => const SelectMainGoalView(),
-            ChooseAccentView.id: (context) => const ChooseAccentView(),
-            ProfileView.id: (context) => const ProfileView(),
-            TutorChatView.id: (context) => const TutorChatView(),
-            HomeView.id: (context) => const HomeView(),
-            EditProfileView.id: (context) => const EditProfileView(),
-            EditPreferenceView.id: (context) => const EditPreferenceView(),
-            EditHobbiesView.id: (context) => const EditHobbiesView(),
-            EditMainGoalsView.id: (context) => const EditMainGoalsView(),
-            EditPreferredAccentView.id: (context) =>
-                const EditPreferredAccentView(),
-            ChangePasswordView.id: (context) => const ChangePasswordView(),
-            ChangePasswordOtpView.id: (context) =>
-                const ChangePasswordOtpView(),
-            LanguageSettingsView.id: (context) => const LanguageSettingsView(),
-            CoursesView.id: (context) => const CoursesView(),
-            FilterView.id: (context) => const FilterView(),
-            LessonTutorChatView.id: (context) => const LessonTutorChatView(),
-            SelectSavedWordsView.id: (context) => const SelectSavedWordsView(),
-            SavedWordsView.id: (context) => const SavedWordsView(),
-            ForgetPasswordCreatePasswordView.id: (context) =>
-                const ForgetPasswordCreatePasswordView(),
-            ForgetPasswordOtpView.id: (context) =>
-                const ForgetPasswordOtpView(),
-            SupscriptioinView.id: (context) => const SupscriptioinView(),
-            LessonsView.id: (context) => const LessonsView(),
-            SupscriptionFromHomeView.id: (context) =>
-                const SupscriptionFromHomeView(),
-            DeleteAccountView.id: (context) => const DeleteAccountView(),
-            DeleteAccountOtpView.id: (context) => const DeleteAccountOtpView(),
-            SubscriptionPlanView.id: (context) => const SubscriptionPlanView(),
-            AppLoaderAfterLoginView.id: (context) =>
-                const AppLoaderAfterLoginView(),
           },
         );
       },

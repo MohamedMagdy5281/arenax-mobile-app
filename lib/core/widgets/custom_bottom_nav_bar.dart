@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/globals.dart' as globals;
-import 'package:praktika_clone_app/core/widgets/custom_bottom_nav_bar_button.dart';
-import 'package:praktika_clone_app/features/Courses/presentation/views/courses_view.dart';
-import 'package:praktika_clone_app/features/Home/presentaion/views/home_view.dart';
-import 'package:praktika_clone_app/features/Profile/presentation/views/profile_view.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
+import 'package:arenax_mobile_app/core/widgets/custom_bottom_nav_bar_button.dart';
+// import 'package:arenax_mobile_app/features/Courses/presentation/views/courses_view.dart';
+// import 'package:arenax_mobile_app/features/Home/presentaion/views/home_view.dart';
+// import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({super.key, required this.currentIndex});
@@ -28,21 +28,21 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   void _homeClicked() {
     if (chosenIndex != 0) {
       _updateIndex(0);
-      globals.navigatorKey.currentState!.pushNamed(HomeView.id);
+      // globals.navigatorKey.currentState!.pushNamed(HomeView.id);
     }
   }
 
   void _coursesClicked() {
     if (chosenIndex != 1) {
       _updateIndex(1);
-      globals.navigatorKey.currentState!.pushNamed(CoursesView.id);
+      // globals.navigatorKey.currentState!.pushNamed(CoursesView.id);
     }
   }
 
   void _profileClicked() {
     if (chosenIndex != 2) {
       _updateIndex(2);
-      globals.navigatorKey.currentState!.pushNamed(ProfileView.id);
+      // globals.navigatorKey.currentState!.pushNamed(ProfileView.id);
     }
   }
 

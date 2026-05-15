@@ -1,13 +1,13 @@
 library;
 
-import 'package:praktika_clone_app/client/api.dart';
-import 'package:praktika_clone_app/core/utils/cashe_helper.dart';
-import 'package:praktika_clone_app/core/utils/functions/custom_dialog.dart';
-import 'package:praktika_clone_app/main.dart';
+// import 'package:arenax_mobile_app/client/api.dart';
+import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
+import 'package:arenax_mobile_app/core/utils/functions/custom_dialog.dart';
+import 'package:arenax_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-String appLang = "ar";
+String appLang = "en";
 String? token;
 String? refreshToken;
 int? localeVersion;
@@ -30,7 +30,7 @@ String? version;
 String? os;
 String? freeChatPrompt;
 
-List<ValidatedSubscriptionItem> validatedSubscriptionItems = [];
+// List<ValidatedSubscriptionItem> validatedSubscriptionItems = [];
 List<String> activeProductIds = [];
 bool isFreeTrialActive = false;
 bool isSubscriptionActive = false;

@@ -1,0 +1,2 @@
+D:/Programming/Work/Flutter/PraktikaCloneMobileApplication-main/android/app/.cxx/RelWithDebInfo/y37664l4/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Programming/Work/Flutter/PraktikaCloneMobileApplication-main/android/app/.cxx/RelWithDebInfo/y37664l4/armeabi-v7a/CMakeFiles/rebuild_cache.dir

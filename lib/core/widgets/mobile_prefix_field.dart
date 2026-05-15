@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:praktika_clone_app/core/utils/assets.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/assets.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
 
 class MobilePrefixField extends StatelessWidget {
   const MobilePrefixField({
@@ -15,7 +15,11 @@ class MobilePrefixField extends StatelessWidget {
       children: [
         Icon(Iconsax.call),
         const SizedBox(width: 8),
-        Image.asset(AssetsData.arabicFlage,height: 20,width: 20,),
+        Image.asset(
+          AssetsData.arabicFlage,
+          height: 20,
+          width: 20,
+        ),
         const SizedBox(width: 8),
         Text(
           '+966',
