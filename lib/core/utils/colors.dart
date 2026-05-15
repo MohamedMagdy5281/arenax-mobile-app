@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF2176FF);
+const kPrimaryColor = Color(0xFFF76B10);
+const kSecondaryYellowColor = Color(0xFFFBBE47);
+const kSecondaryBlueColor = Color(0xFF3E82F7);
+const kSecondaryGreenColor = Color(0xFF29D697);
+const kSecondaryDarkOrangeColor = Color(0xFF8C3700);
+const kGreyColor = Color(0xFFF0F0EE);
+const kGrey2Color = Color(0xFFE1E1E1);
+const kSoftDarkishColor = Color(0xFF4A4D55);
+
+const kBlackColor = Color(0xFF000000);
+const kWhiteColor = Color(0xFFFFFFFF);
+
 const kLightBlueColor = Color(0xFF33A1FD);
 const kBorderColor = Color(0xFF03254E);
 const kBGColor = Color(0xFFFFFFFF);
@@ -11,12 +22,9 @@ const kSubTitleColor = Color(0xff8F8F8F);
 const kRedColor = Colors.red;
 const kYellowColor = Colors.yellow;
 const kWarningColor = Color(0xFFfeb700);
-const kGreyColor = Color(0xFF4F4F4F);
 const kSuccessColor = Color(0xFF00c870);
 const kValidationErrorColor = Color(0xFFB00020);
 const kErrorColor = Colors.red;
-const kBlackColor = Colors.black;
-const kWhiteColor = Colors.white;
 const kTextFieldHintColor = Color(0xff96A0B6);
 const kSuffixColor = Color(0xffF1F3F9);
 const kHintColor = Color(0xFF9DA3A3);

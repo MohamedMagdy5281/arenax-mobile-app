@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:praktika_clone_app/core/utils/assets.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
-import 'package:praktika_clone_app/core/widgets/custom_loading_indicator.dart';
+import 'package:arenax_mobile_app/core/utils/assets.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;

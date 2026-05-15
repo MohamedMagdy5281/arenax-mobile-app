@@ -1,15 +1,15 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
 
 Future<void> customConnectionCheckDialog(
-    BuildContext context, {
-      required String content,
-      required bool isInternetConnected,
-      required Future<void> Function() retryOnPressed,
-    }) async {
+  BuildContext context, {
+  required String content,
+  required bool isInternetConnected,
+  required Future<void> Function() retryOnPressed,
+}) async {
   var connectivityResult = await Connectivity().checkConnectivity();
   if (connectivityResult[0] == ConnectivityResult.none) {
     return showLostConnectionDialog(
@@ -22,13 +22,12 @@ Future<void> customConnectionCheckDialog(
   return;
 }
 
-
 Future<void> showLostConnectionDialog(
-    BuildContext context, {
-      required String content,
-      required bool isInternetConnected,
-      required Future<void> Function() retryOnPressed,
-    }) async {
+  BuildContext context, {
+  required String content,
+  required bool isInternetConnected,
+  required Future<void> Function() retryOnPressed,
+}) async {
   await showDialog(
     context: context,
     barrierDismissible: false,
@@ -67,7 +66,7 @@ Future<void> showLostConnectionDialog(
                 onPressed: () async {
                   // Retry logic
                   var connectivityResult =
-                  await Connectivity().checkConnectivity();
+                      await Connectivity().checkConnectivity();
                   if (connectivityResult[0] == ConnectivityResult.none) {
                     return;
                   } else {

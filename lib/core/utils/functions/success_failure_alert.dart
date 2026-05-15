@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:praktika_clone_app/core/utils/assets.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
-import 'package:praktika_clone_app/core/widgets/custom_button.dart';
+import 'package:arenax_mobile_app/core/utils/assets.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Future<dynamic> successFailureAlert(BuildContext context,

@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:praktika_clone_app/client/api.dart';
+// import 'package:arenax_mobile_app/client/api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:praktika_clone_app/core/utils/globals.dart' as globals;
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 
 class CasheHelper {
   static SharedPreferences? sharedPreferences;
 
   static String? token;
   static String? refreshToken;
-  static UserModel? user;
-  static AuthResultModel? authenticationResult;
+  // static UserModel? user;
+  // static AuthResultModel? authenticationResult;
   static List<String>? userInterests = [];
   static DateTime? dateOfBirth;
   static String? firstName;
@@ -54,13 +54,13 @@ class CasheHelper {
     String? tokenFun = await getStringFromSP('token');
     String? refreshTokenFun = await getStringFromSP('refreshToken');
 
-    if (tokenFun != null) {
-      authenticationResult?.token = tokenFun;
-    }
+    // if (tokenFun != null) {
+    //   authenticationResult?.token = tokenFun;
+    // }
 
-    if (refreshTokenFun != null) {
-      authenticationResult?.refreshToken = refreshTokenFun;
-    }
+    // if (refreshTokenFun != null) {
+    //   authenticationResult?.refreshToken = refreshTokenFun;
+    // }
   }
 
   static Future<void> loadLocale() async {

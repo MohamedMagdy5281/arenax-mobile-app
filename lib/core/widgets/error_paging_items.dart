@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
-import 'package:praktika_clone_app/core/widgets/custom_button.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 
 class NoItemsWidget extends StatelessWidget {
   final String text;
   const NoItemsWidget({
-    super.key, required this.text,
+    super.key,
+    required this.text,
   });
 
   @override
@@ -15,8 +16,7 @@ class NoItemsWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height:
-            MediaQuery.sizeOf(context).height * .2,
+            height: MediaQuery.sizeOf(context).height * .2,
           ),
           Text(
             text,
@@ -27,11 +27,14 @@ class NoItemsWidget extends StatelessWidget {
     );
   }
 }
+
 class ErrorLoadingItem extends StatelessWidget {
   final void Function() onTap;
   final String failedText;
   const ErrorLoadingItem({
-    super.key, required this.onTap, required this.failedText,
+    super.key,
+    required this.onTap,
+    required this.failedText,
   });
 
   @override

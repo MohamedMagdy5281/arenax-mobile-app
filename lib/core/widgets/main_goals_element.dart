@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
-import 'package:praktika_clone_app/core/widgets/custom_loading_indicator.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 
 class MainGoalsElement extends StatefulWidget {
   const MainGoalsElement({
@@ -52,7 +52,7 @@ class _MainGoalsElementState extends State<MainGoalsElement> {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: CachedNetworkImage(
-                  imageUrl: widget.imageUrl,
+                imageUrl: widget.imageUrl,
                 width: 32,
                 height: 32,
                 placeholder: (context, url) => Align(
@@ -66,20 +66,18 @@ class _MainGoalsElementState extends State<MainGoalsElement> {
                 errorWidget: (context, url, error) => Container(
                   width: 32,
                   height: 32,
-                    decoration: ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          side: BorderSide(
-                            color: isSelected ? kWhiteColor : kDarkBlackColor,
-                          )
-                        ),
-                    ),
-                    child: Icon(
-                      Icons.error,
-                      color: isSelected ? kWhiteColor : kDarkBlackColor,
-                    ),
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: BorderSide(
+                          color: isSelected ? kWhiteColor : kDarkBlackColor,
+                        )),
+                  ),
+                  child: Icon(
+                    Icons.error,
+                    color: isSelected ? kWhiteColor : kDarkBlackColor,
+                  ),
                 ),
-
               ),
             ),
             const SizedBox(width: 8),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "590342097275",
+    "project_id": "befluent-3f0e0",
+    "storage_bucket": "befluent-3f0e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590342097275:android:6e398784056c738c1015de",
+        "android_client_info": {
+          "package_name": "com.hamad.befluent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmGmwWe2XLTYHM-_EKtOr53C0ID2VNLlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
-import 'package:praktika_clone_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:praktika_clone_app/core/utils/globals.dart' as globals;
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LanguageDropDown extends StatefulWidget {
@@ -26,7 +26,7 @@ class _LanguageDropDownState extends State<LanguageDropDown> {
   Widget build(BuildContext context) {
     return DropdownButton<DropDownTemplate>(
       value:
-      languages.where((element) => element.value == globals.appLang).first,
+          languages.where((element) => element.value == globals.appLang).first,
       icon: const Icon(
         Icons.keyboard_arrow_down_rounded,
         color: kContentTextColor,

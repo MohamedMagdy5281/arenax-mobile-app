@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:praktika_clone_app/core/utils/cashe_helper.dart';
+import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:praktika_clone_app/core/utils/colors.dart';
-import 'package:praktika_clone_app/core/utils/styles.dart';
-import 'package:praktika_clone_app/features/Authentication/presentation/views/login_view.dart';
-import 'package:praktika_clone_app/core/utils/globals.dart' as globals;
+import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 import 'package:url_launcher/url_launcher.dart';
 
 Future<dynamic> customLogOutDialog(BuildContext context) {
   Future<void> clearTokensAndData() async {
     CasheHelper.removeStringFromSP("token");
     CasheHelper.removeStringFromSP("refreshToken");
-    CasheHelper.user = null;
-    CasheHelper.authenticationResult = null;
+    // CasheHelper.user = null;
+    // CasheHelper.authenticationResult = null;
     CasheHelper.accentId = null;
     CasheHelper.mainGoalId = null;
     CasheHelper.firstName = null;
