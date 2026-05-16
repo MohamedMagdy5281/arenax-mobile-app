@@ -50,7 +50,7 @@ class _ForgetPasswordViewBodyState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomHeader(
-                      title: AppLocalizations.of(context)!.signIn,
+                      title: AppLocalizations.of(context)!.resetPassword,
                       optionalPrefixIcon: globals.appLang == "en"
                           ? Iconsax.arrow_left_2
                           : Iconsax.arrow_right_2,
@@ -61,7 +61,7 @@ class _ForgetPasswordViewBodyState
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28.0),
                       child: Text(
-                        AppLocalizations.of(context)!.giveCreadential,
+                        AppLocalizations.of(context)!.enterEmailToResetPassword,
                         style: Styles.textStyle14.copyWith(
                             fontWeight: FontWeight.w500, color: kGrey3Color),
                       ),

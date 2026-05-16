@@ -761,10 +761,6 @@
   "@resetPassword":{
     "resetPassword":""
   },
-  "enterEmailToResetPassword":"Enter your Email to reset password",
-  "@enterEmailToResetPassword":{
-    "enterEmailToResetPassword":""
-  },
   "emailSent":"An email containing password reset data has been sent",
   "@emailSent":{
     "emailSent":""
@@ -1004,5 +1000,9 @@
   "send":"Send",
   "@send":{
     "send":""
+  },
+  "enterEmailToResetPassword":"Please enter your email adress to request a Password reset",
+  "@enterEmailToResetPassword":{
+    "enterEmailToResetPassword":""
   }
 }

@@ -189,7 +189,6 @@
   "loginWithGmail":"تسجيل الدخول باستخدام Gmail",
   "or":"أو",
   "resetPassword":"إعادة تعيين كلمة المرور",
-  "enterEmailToResetPassword":"أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور",
   "emailSent":"تم إرسال بريد إلكتروني يحتوي على بيانات إعادة تعيين كلمة المرور",
   "search":"بحث",
   "enterLesson":"الرجاء إدخال اسم الدرس",
@@ -249,7 +248,8 @@
   "alreadyHaveAccount":"هل لديك حساب بالفعل?",
   "continueText":"استمرار",
   "weSentConfirmationCode":"لقد أرسلنا إليك رمز التحقق إلى",
-  "send":"إرسال"
+  "send":"إرسال",
+  "enterEmailToResetPassword":"يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور"
 
 
 
