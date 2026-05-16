@@ -358,7 +358,7 @@ class _TextFormFieldWithNoTitleState extends State<TextFormFieldWithNoTitle> {
             filled: true,
             hintText: widget.placeholder,
             hintStyle: Styles.textStyle14.copyWith(
-              color: kGrey2Color,
+              color: kGrey3Color,
               fontWeight: FontWeight.w400,
             ),
             focusedBorder: OutlineInputBorder(
@@ -367,11 +367,11 @@ class _TextFormFieldWithNoTitleState extends State<TextFormFieldWithNoTitle> {
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kGrey2Color, width: 1),
+              borderSide: const BorderSide(color: kGrey3Color, width: 1),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kGrey2Color, width: 1),
+              borderSide: const BorderSide(color: kGrey3Color, width: 1),
             ),
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),

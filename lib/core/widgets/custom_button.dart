@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/assets.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
@@ -53,11 +53,11 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      height: height ?? 56,
+      height: height ?? 66,
       child: Material(
         color: isDisabled != null && isDisabled == true
             ? disabledButtonColor ?? kDisableButtonColor
-            : backgroundColor ?? kPrimaryColor,
+            : backgroundColor ?? kBlackColor,
         borderRadius: BorderRadius.circular(16.0),
         child: InkWell(
           onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
