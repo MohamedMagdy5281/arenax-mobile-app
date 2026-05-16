@@ -1,9 +1,12 @@
 import 'dart:io';
 import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/notification_service.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -286,6 +289,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           initialRoute: LoginView.id,
           routes: {
             LoginView.id: (context) => const LoginView(),
+            RegisterView.id: (context) => const RegisterView(),
+            OtpVerificationView.id: (context) => const OtpVerificationView(),
+            ForgetPasswordView.id: (context) => const ForgetPasswordView(),
           },
         );
       },

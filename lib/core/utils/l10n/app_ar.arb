@@ -26,7 +26,7 @@
   "bestStreak":"أفضل سلسلة أيام:",
   "sessionInfo":"معلومات الجلسة:",
   "logout":"تسجيل الخروج",
-  "name":"الاسم",
+  "enterFullNamme":"أدخل اسمك الكامل",
   "englishLevel":"مستوي الإنجليزية",
   "nativeLanguage":"اللغة الأصلية",
   "avatar":"الأفاتار",
@@ -100,7 +100,7 @@
   "confirmPassword":"تأكيد كلمة المرور",
   "enterConfirmPassword":"ادخل تأكيد كلمة المرور",
   "createPassword":"إنشاء كلمة المرور",
-  "accountVerification":"التحقق من الحساب",
+  "verification":"رمز التحقق",
   "choosingGender":"اختيار الجنس",
   "chooseYourGender":"اختر جنسك",
   "specifyYourGender":"حدد جنسك لتخصيص\nتفاعلاتك بشكل أفضل",
@@ -189,7 +189,6 @@
   "loginWithGmail":"تسجيل الدخول باستخدام Gmail",
   "or":"أو",
   "resetPassword":"إعادة تعيين كلمة المرور",
-  "enterEmailToResetPassword":"أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور",
   "emailSent":"تم إرسال بريد إلكتروني يحتوي على بيانات إعادة تعيين كلمة المرور",
   "search":"بحث",
   "enterLesson":"الرجاء إدخال اسم الدرس",
@@ -244,7 +243,18 @@
   "updateNow":"تحديث الآن",
   "noSubscriptionsFound":"لم يتم العثور على اشتراكات نشطة",
   "loginVerification":"التحقق من تسجيل الدخول",
-  "nameDetails":"تفاصيل الاسم"
+  "nameDetails":"تفاصيل الاسم",
+  "giveCreadential":"أدخل بيانات الدخول لتسجيل الدخول إلى حسابك",
+  "alreadyHaveAccount":"هل لديك حساب بالفعل?",
+  "continueText":"استمرار",
+  "weSentConfirmationCode":"لقد أرسلنا إليك رمز التحقق إلى",
+  "send":"إرسال",
+  "enterEmailToResetPassword":"يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور"
+
+
+
+
+
 
 
 

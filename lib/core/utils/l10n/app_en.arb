@@ -109,9 +109,9 @@
   "@logout":{
     "logout":""
   },
-  "name":"Name",
-  "@name":{
-    "name":""
+  "enterFullNamme":"Enter your full name",
+  "@enterFullNamme":{
+    "enterFullNamme":""
   },
   "englishLevel":"English Level",
   "@englishLevel":{
@@ -401,9 +401,9 @@
   "@confirm":{
     "confirm":""
   },
-  "accountVerification":"Account verification",
-  "@accountVerification":{
-    "accountVerification":""
+  "verification":"Verification",
+  "@verification":{
+    "verification":""
   },
   "choosingGender":"Choosing gender",
   "@choosingGender":{
@@ -761,10 +761,6 @@
   "@resetPassword":{
     "resetPassword":""
   },
-  "enterEmailToResetPassword":"Enter your Email to reset password",
-  "@enterEmailToResetPassword":{
-    "enterEmailToResetPassword":""
-  },
   "emailSent":"An email containing password reset data has been sent",
   "@emailSent":{
     "emailSent":""
@@ -984,6 +980,29 @@
   "nameDetails":"Name Details",
   "@nameDetails":{
     "nameDetails":""
+  },
+  "giveCreadential":"Give credential to sign in your account",
+  "@giveCreadential":{
+    "giveCreadential":""
+  },
+  "alreadyHaveAccount":"Already have an account?",
+  "@alreadyHaveAccount":{
+    "alreadyHaveAccount":""
+  },
+  "continueText":"Continue",
+  "@continueText":{
+    "continueText":""
+  },
+  "weSentConfirmationCode":"We've sent you the verification code to",
+  "@weSentConfirmationCode":{
+    "weSentConfirmationCode":""
+  },
+  "send":"Send",
+  "@send":{
+    "send":""
+  },
+  "enterEmailToResetPassword":"Please enter your email adress to request a Password reset",
+  "@enterEmailToResetPassword":{
+    "enterEmailToResetPassword":""
   }
-
 }

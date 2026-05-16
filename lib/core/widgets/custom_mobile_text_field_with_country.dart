@@ -5,7 +5,7 @@ import 'package:intl_phone_field/countries.dart';
 import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
 class CustomMobileTextFieldWithCountry extends StatelessWidget {

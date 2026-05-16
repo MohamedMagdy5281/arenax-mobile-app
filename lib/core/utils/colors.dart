@@ -7,6 +7,7 @@ const kSecondaryGreenColor = Color(0xFF29D697);
 const kSecondaryDarkOrangeColor = Color(0xFF8C3700);
 const kGreyColor = Color(0xFFF0F0EE);
 const kGrey2Color = Color(0xFFE1E1E1);
+const kGrey3Color = Color(0xFFBBBBBB);
 const kSoftDarkishColor = Color(0xFF4A4D55);
 
 const kBlackColor = Color(0xFF000000);

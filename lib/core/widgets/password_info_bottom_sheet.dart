@@ -1,7 +1,7 @@
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 

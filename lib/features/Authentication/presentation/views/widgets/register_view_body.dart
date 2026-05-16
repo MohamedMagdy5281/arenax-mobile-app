@@ -1,10 +1,11 @@
-import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/loginRiverpod/login_notifier_provider.dart';
-import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
-import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/manager/registerRiverpod/register_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
+import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
@@ -14,31 +15,35 @@ import 'package:arenax_mobile_app/core/widgets/text_form_field_with_title.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 
-class LoginViewBody extends ConsumerStatefulWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends ConsumerStatefulWidget {
+  const RegisterViewBody({super.key});
 
   @override
-  ConsumerState<LoginViewBody> createState() => _LoginViewBodyState();
+  ConsumerState<RegisterViewBody> createState() => _RegisterViewBodyState();
 }
 
-class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
+class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
+  TextEditingController fullNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  // TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey();
   String? countryCodeChoose;
 
   @override
   void dispose() {
+    fullNameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    confirmPasswordController.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(loginNotifierProvider);
-    final notifier = ref.read(loginNotifierProvider.notifier);
+    final state = ref.watch(registerNotifierProvider);
+    final notifier = ref.read(registerNotifierProvider.notifier);
     return Stack(
       children: [
         // Image.asset(AssetsData.pageBg),
@@ -56,7 +61,6 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                       optionalPrefixIcon: globals.appLang == "en"
                           ? Iconsax.arrow_left_2
                           : Iconsax.arrow_right_2,
-                      onPrefixIconTap: () {},
                     ),
                     const SizedBox(
                       height: 8,
@@ -78,6 +82,29 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                         key: loginFormKey,
                         child: Column(
                           children: [
+                            TextFormFieldWithNoTitle(
+                              inputType: TextInputType.text,
+                              controller: fullNameController,
+                              placeholder:
+                                  AppLocalizations.of(context)!.enterFullNamme,
+                              // prefixWidget: MobilePrefixField(),
+                              prefix: Icon(
+                                Icons.person_outline,
+                                size: 24,
+                                color: kGrey3Color,
+                              ),
+                              validator: (data) {
+                                if (data!.isEmpty) {
+                                  return AppLocalizations.of(context)!
+                                      .cantBeEmpty;
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
                             TextFormFieldWithNoTitle(
                               inputType: TextInputType.emailAddress,
                               controller: emailController,
@@ -161,64 +188,59 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                 ),
                               ),
                             ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextFormFieldWithNoTitle(
+                              validator: (data) {
+                                if (data!.isEmpty) {
+                                  return AppLocalizations.of(context)!
+                                      .cantBeEmpty;
+                                } else {
+                                  return null;
+                                }
+                              },
+                              controller: confirmPasswordController,
+                              placeholder: AppLocalizations.of(context)!
+                                  .enterConfirmPassword,
+                              obscureText: state.isConfirmPasswordVisible,
+                              prefix: Icon(
+                                Iconsax.lock,
+                                size: 24,
+                                color: kGrey3Color,
+                              ),
+                              suffix: GestureDetector(
+                                onTap: () {
+                                  notifier.toggleConfirmPasswordVisibility();
+                                },
+                                child: Icon(
+                                  state.isConfirmPasswordVisible
+                                      ? Iconsax.eye_slash
+                                      : Iconsax.eye,
+                                  color: kGrey3Color,
+                                ),
+                              ),
+                            ),
                             const SizedBox(
                               height: 12,
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Transform.scale(
-                                        scale: 0.8,
-                                        child: Switch(
-                                          value: state.isRememberMeChecked,
-                                          onChanged: (value) {
-                                            notifier.toggleRememberMe();
-                                          },
-                                        ),
-                                      ),
-                                      Text(
-                                        AppLocalizations.of(context)!
-                                            .rememberMe,
-                                        style: Styles.textStyle12,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    globals.navigatorKey.currentState!
-                                        .pushNamed(ForgetPasswordView.id);
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4),
-                                    child: Text(
-                                        AppLocalizations.of(context)!
-                                            .forgotPassword,
-                                        style: Styles.textStyle14.copyWith(
-                                          color: kPrimaryColor,
-                                        )),
-                                  ),
-                                ),
-                              ],
                             ),
                             const SizedBox(
                               height: 52,
                             ),
-                            state.isLoginButtonLoading == true
+                            state.isRegisterButtonLoading == true
                                 ? Center(child: CustomLoadingIndicator())
                                 : Column(
                                     children: [
                                       CustomButton(
                                         text: AppLocalizations.of(context)!
-                                            .signIn,
+                                            .signUp,
                                         itemCallBack: () async {
                                           if (loginFormKey.currentState!
-                                              .validate()) {}
+                                              .validate()) {
+                                            globals.navigatorKey.currentState!
+                                                .pushNamed(
+                                                    OtpVerificationView.id);
+                                          }
                                         },
                                       ),
                                       const SizedBox(
@@ -230,7 +252,7 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                         children: [
                                           Text(
                                             AppLocalizations.of(context)!
-                                                .dontHaveAcc,
+                                                .alreadyHaveAccount,
                                             style: Styles.textStyle14,
                                           ),
                                           const SizedBox(
@@ -238,12 +260,14 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                           ),
                                           GestureDetector(
                                             onTap: () {
+                                              ref.invalidate(
+                                                  loginNotifierProvider);
                                               globals.navigatorKey.currentState!
-                                                  .pushNamed(RegisterView.id);
+                                                  .pushNamed(LoginView.id);
                                             },
                                             child: Text(
                                               AppLocalizations.of(context)!
-                                                  .signUp,
+                                                  .signIn,
                                               style: Styles.textStyle14
                                                   .copyWith(
                                                       color: kPrimaryColor),
