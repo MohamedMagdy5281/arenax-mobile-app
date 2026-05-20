@@ -1004,5 +1004,17 @@
   "enterEmailToResetPassword":"Please enter your email adress to request a Password reset",
   "@enterEmailToResetPassword":{
     "enterEmailToResetPassword":""
+  },
+  "selectInterests":"Select Your Three Interests",
+  "@selectInterests":{
+    "selectInterests":""
+  },
+  "others":"Others",
+  "@others":{
+    "others":""
+  },
+  "next":"Next",
+  "@next":{
+    "next":""
   }
 }

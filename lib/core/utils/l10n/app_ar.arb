@@ -249,12 +249,10 @@
   "continueText":"استمرار",
   "weSentConfirmationCode":"لقد أرسلنا إليك رمز التحقق إلى",
   "send":"إرسال",
-  "enterEmailToResetPassword":"يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور"
-
-
-
-
-
+  "enterEmailToResetPassword":"يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور",
+  "selectInterests":"اختر اهتماماتك الثلاثة",
+  "others":"أخرى",
+  "next":"التالي"
 
 
 

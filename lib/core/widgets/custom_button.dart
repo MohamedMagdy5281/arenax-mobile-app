@@ -71,7 +71,7 @@ class CustomButton extends StatelessWidget {
                   width: 1,
                   color: isDisabled != null && isDisabled == true
                       ? disabledBorderColor ?? Colors.transparent
-                      : borderColor ?? kPrimaryColor),
+                      : borderColor ?? Colors.transparent),
               borderRadius: BorderRadius.circular(16.0),
             ),
             child: isLoading == true

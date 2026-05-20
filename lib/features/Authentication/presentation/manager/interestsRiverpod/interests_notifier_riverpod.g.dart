@@ -1,27 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'forget_password_notifier_provider.dart';
+part of 'interests_notifier_riverpod.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$forgetPasswordNotifierHash() =>
-    r'6526ffcbbdd1840fa949b02232644546e39610ec';
+String _$interestsNotifierHash() => r'7ee2fa6ad7f93dbd119646aa263aff5c181df8c6';
 
-/// See also [ForgetPasswordNotifier].
-@ProviderFor(ForgetPasswordNotifier)
-final forgetPasswordNotifierProvider = AutoDisposeNotifierProvider<
-    ForgetPasswordNotifier, ForgetPasswordState>.internal(
-  ForgetPasswordNotifier.new,
-  name: r'forgetPasswordNotifierProvider',
+/// See also [InterestsNotifier].
+@ProviderFor(InterestsNotifier)
+final interestsNotifierProvider = AutoDisposeNotifierProvider<InterestsNotifier,
+    InterestsNotifierRiverpod>.internal(
+  InterestsNotifier.new,
+  name: r'interestsNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$forgetPasswordNotifierHash,
+      : _$interestsNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ForgetPasswordNotifier = AutoDisposeNotifier<ForgetPasswordState>;
+typedef _$InterestsNotifier = AutoDisposeNotifier<InterestsNotifierRiverpod>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

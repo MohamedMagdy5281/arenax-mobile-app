@@ -4,6 +4,7 @@ import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/notification_service.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/interests_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
@@ -292,6 +293,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             RegisterView.id: (context) => const RegisterView(),
             OtpVerificationView.id: (context) => const OtpVerificationView(),
             ForgetPasswordView.id: (context) => const ForgetPasswordView(),
+            InterestsView.id: (context) => const InterestsView(),
           },
         );
       },
