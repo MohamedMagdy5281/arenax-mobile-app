@@ -5,6 +5,7 @@ import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/functions/custom_dialog.dart';
 import 'package:arenax_mobile_app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 String appLang = "en";
@@ -34,6 +35,7 @@ String? freeChatPrompt;
 List<String> activeProductIds = [];
 bool isFreeTrialActive = false;
 bool isSubscriptionActive = false;
+LatLng? userPosition;
 
 const String apiKey = "AIzaSyDQeI_JZSPH1uoVO2ycJ7da1rUe5BFmxNg";
 

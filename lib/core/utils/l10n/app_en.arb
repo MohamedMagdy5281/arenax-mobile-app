@@ -1004,5 +1004,29 @@
   "enterEmailToResetPassword":"Please enter your email adress to request a Password reset",
   "@enterEmailToResetPassword":{
     "enterEmailToResetPassword":""
+  },
+  "selectInterests":"Select Your Three Interests",
+  "@selectInterests":{
+    "selectInterests":""
+  },
+  "others":"Others",
+  "@others":{
+    "others":""
+  },
+  "next":"Next",
+  "@next":{
+    "next":""
+  },
+  "locationPermissionSettings":"Location access is required. Please enable location permission in the app settings.",
+  "@locationPermissionSettings":{
+    "locationPermissionSettings":""
+  },
+  "searchNewAddress":"Search new address...",
+  "@searchNewAddress":{
+    "searchNewAddress":""
+  },
+  "add":"Add",
+  "@add":{
+    "add":""
   }
 }

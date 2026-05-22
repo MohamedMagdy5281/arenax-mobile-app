@@ -5,6 +5,7 @@ import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/otpVerificationRiverpod/otp_verification_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/interests_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
@@ -165,7 +166,10 @@ class _OtpVerificationViewBodyState
                                             .continueText,
                                         itemCallBack: () async {
                                           if (otpFormKey.currentState!
-                                              .validate()) {}
+                                              .validate()) {
+                                            globals.navigatorKey.currentState!
+                                                .pushNamed(InterestsView.id);
+                                          }
                                         },
                                       ),
                                       SizedBox(

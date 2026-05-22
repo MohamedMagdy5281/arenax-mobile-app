@@ -597,9 +597,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resetPassword => 'Reset password';
 
   @override
-  String get enterEmailToResetPassword => 'Enter your Email to reset password';
-
-  @override
   String get emailSent =>
       'An email containing password reset data has been sent';
 
@@ -790,4 +787,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get send => 'Send';
+
+  @override
+  String get enterEmailToResetPassword =>
+      'Please enter your email adress to request a Password reset';
+
+  @override
+  String get selectInterests => 'Select Your Three Interests';
+
+  @override
+  String get others => 'Others';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get locationPermissionSettings =>
+      'Location access is required. Please enable location permission in the app settings.';
+
+  @override
+  String get searchNewAddress => 'Search new address...';
+
+  @override
+  String get add => 'Add';
 }
