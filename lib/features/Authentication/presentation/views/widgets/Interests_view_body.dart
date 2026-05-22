@@ -5,9 +5,11 @@ import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/interestsRiverpod/interests_notifier_riverpod.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/location_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/widgets/interests_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 
 class InterestsViewBody extends ConsumerStatefulWidget {
   const InterestsViewBody({super.key});
@@ -141,7 +143,10 @@ class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
                               isDisabled: state.selectedInterests.length != 3,
                               text: AppLocalizations.of(context)!.next,
                               itemCallBack: () async {
-                                if (state.selectedInterests.length == 3) {}
+                                if (state.selectedInterests.length == 3) {
+                                  globals.navigatorKey.currentState!
+                                      .pushReplacementNamed(LocationView.id);
+                                }
                               },
                             ),
                           ),

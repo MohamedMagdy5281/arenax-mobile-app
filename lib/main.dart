@@ -3,8 +3,10 @@ import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/notification_service.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/app_loader_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/interests_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/location_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
@@ -287,13 +289,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             primaryColor: kPrimaryColor,
           ),
           navigatorKey: globals.navigatorKey,
-          initialRoute: LoginView.id,
+          initialRoute: AppLoaderView.id,
           routes: {
             LoginView.id: (context) => const LoginView(),
             RegisterView.id: (context) => const RegisterView(),
             OtpVerificationView.id: (context) => const OtpVerificationView(),
             ForgetPasswordView.id: (context) => const ForgetPasswordView(),
             InterestsView.id: (context) => const InterestsView(),
+            AppLoaderView.id: (context) => const AppLoaderView(),
+            LocationView.id: (context) => const LocationView(),
           },
         );
       },

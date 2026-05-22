@@ -1615,6 +1615,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Next'**
   String get next;
+
+  /// No description provided for @locationPermissionSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Location access is required. Please enable location permission in the app settings.'**
+  String get locationPermissionSettings;
+
+  /// No description provided for @searchNewAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Search new address...'**
+  String get searchNewAddress;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
 }
 
 class _AppLocalizationsDelegate

@@ -788,4 +788,14 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get next => 'التالي';
+
+  @override
+  String get locationPermissionSettings =>
+      'مطلوب الوصول إلى الموقع. يرجى تمكين إذن الموقع في إعدادات التطبيق.';
+
+  @override
+  String get searchNewAddress => 'ابحث عن عنوان جديد...';
+
+  @override
+  String get add => 'إضافة';
 }

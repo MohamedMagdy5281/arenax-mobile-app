@@ -800,4 +800,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get next => 'Next';
+
+  @override
+  String get locationPermissionSettings =>
+      'Location access is required. Please enable location permission in the app settings.';
+
+  @override
+  String get searchNewAddress => 'Search new address...';
+
+  @override
+  String get add => 'Add';
 }
