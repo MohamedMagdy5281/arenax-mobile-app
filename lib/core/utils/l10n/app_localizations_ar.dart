@@ -591,10 +591,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get resetPassword => 'إعادة تعيين كلمة المرور';
 
   @override
-  String get enterEmailToResetPassword =>
-      'أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور';
-
-  @override
   String get emailSent =>
       'تم إرسال بريد إلكتروني يحتوي على بيانات إعادة تعيين كلمة المرور';
 
@@ -779,4 +775,8 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get send => 'إرسال';
+
+  @override
+  String get enterEmailToResetPassword =>
+      'يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور';
 }

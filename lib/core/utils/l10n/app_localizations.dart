@@ -1232,12 +1232,6 @@ abstract class AppLocalizations {
   /// **'Reset password'**
   String get resetPassword;
 
-  /// No description provided for @enterEmailToResetPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your Email to reset password'**
-  String get enterEmailToResetPassword;
-
   /// No description provided for @emailSent.
   ///
   /// In en, this message translates to:
@@ -1597,6 +1591,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send'**
   String get send;
+
+  /// No description provided for @enterEmailToResetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email adress to request a Password reset'**
+  String get enterEmailToResetPassword;
 }
 
 class _AppLocalizationsDelegate
