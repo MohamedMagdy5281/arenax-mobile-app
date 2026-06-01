@@ -779,4 +779,23 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get enterEmailToResetPassword =>
       'يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور';
+
+  @override
+  String get selectInterests => 'اختر اهتماماتك الثلاثة';
+
+  @override
+  String get others => 'أخرى';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get locationPermissionSettings =>
+      'مطلوب الوصول إلى الموقع. يرجى تمكين إذن الموقع في إعدادات التطبيق.';
+
+  @override
+  String get searchNewAddress => 'ابحث عن عنوان جديد...';
+
+  @override
+  String get add => 'إضافة';
 }
