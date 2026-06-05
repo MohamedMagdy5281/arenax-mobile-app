@@ -14,7 +14,7 @@ class OtpVerificationView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: kBGColor,
-        body: OtpVerificationViewBody(),
+        body: const SafeArea(child: OtpVerificationViewBody()),
       ),
     );
   }

@@ -1,10 +1,10 @@
 import 'package:arenax_mobile_app/core/utils/colors.dart';
-import 'package:arenax_mobile_app/features/Authentication/presentation/views/widgets/forget_password_view_body.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/widgets/onboarding_view_body.dart';
 import 'package:flutter/material.dart';
 
-class ForgetPasswordView extends StatelessWidget {
-  const ForgetPasswordView({super.key});
-  static String id = "ForgetPasswordView";
+class OnboardingView extends StatelessWidget {
+  const OnboardingView({super.key});
+  static String id = "OnboardingView";
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -14,7 +14,7 @@ class ForgetPasswordView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: kBGColor,
-        body: const SafeArea(child: ForgetPasswordViewBody()),
+        body: const SafeArea(child: OnboardingViewBody()),
       ),
     );
   }

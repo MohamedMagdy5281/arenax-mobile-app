@@ -121,9 +121,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get currentChat => 'Current chat';
 
   @override
-  String get continueLabel => 'Continue';
-
-  @override
   String get newChat => 'New chat';
 
   @override
@@ -799,9 +796,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get others => 'Others';
 
   @override
-  String get next => 'Next';
-
-  @override
   String get locationPermissionSettings =>
       'Location access is required. Please enable location permission in the app settings.';
 
@@ -810,4 +804,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get add => 'Add';
+
+  @override
+  String get findBookPlayTogether => 'Find. Book. Play. Together.';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get continueLabel => 'Continue';
+
+  @override
+  String get findYourPlaceToPlay => 'Find your place to play';
+
+  @override
+  String get discoverThings =>
+      'Discover padel, football pitches, and co-working spaces near you.';
+
+  @override
+  String get findBookPlay => 'Find. Book. Play.';
+
+  @override
+  String get together => 'Together.';
+
+  @override
+  String get bookThenSplit =>
+      'Book padel, football, and co-working spaces — then split it with your crew.';
+
+  @override
+  String get continueWithPhone => 'Continue with phone';
+
+  @override
+  String get iAlreadyHaveAnAccount => 'I already have an account';
+
+  @override
+  String get byContinuingYouAgreeToOur => 'By continuing, you agree to our';
+
+  @override
+  String get terms => 'Terms';
+
+  @override
+  String get privacy => 'Privacy';
 }

@@ -14,7 +14,7 @@ class InterestsView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: kBGColor,
-        body: InterestsViewBody(),
+        body: const SafeArea(child: InterestsViewBody()),
       ),
     );
   }

@@ -14,7 +14,7 @@ class LocationView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: kBGColor,
-        body: LocationViewBody(),
+        body: const SafeArea(child: LocationViewBody()),
       ),
     );
   }

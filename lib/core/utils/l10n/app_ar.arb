@@ -36,7 +36,6 @@
   "enterEmail":"ادخل البريد الإلكتروني",
   "enterPassword":"ادخل كلمة المرور",
   "currentChat":"المحادثة الحالية",
-  "continueLabel":"استمرار",
   "newChat":"محادثة جديدة",
   "savedWords":"الكلمات المحفوظة",
   "shareApp":"مشاركة التطبيق",
@@ -252,10 +251,31 @@
   "enterEmailToResetPassword":"يرجى إدخال عنوان بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور",
   "selectInterests":"اختر اهتماماتك الثلاثة",
   "others":"أخرى",
-  "next":"التالي",
   "locationPermissionSettings":"مطلوب الوصول إلى الموقع. يرجى تمكين إذن الموقع في إعدادات التطبيق.",
   "searchNewAddress":"ابحث عن عنوان جديد...",
-  "add":"إضافة"
+  "add":"إضافة",
+
+
+
+
+
+
+    "findBookPlayTogether":"ابحث. احجز. العب. معاً.",
+    "skip":"تخطي",
+    "next":"التالي",
+    "continueLabel":"استمرار",
+    "findYourPlaceToPlay":"ابحث عن مكانك للاستمتاع باللعب",
+    "discoverThings":"اكتشف ملاعب البادل وكرة القدم ومساحات العمل المشتركة القريبة منك.",
+    "findBookPlay":"ابحث. احجز. العب.",
+    "together":"معاً.",
+    "bookThenSplit":"احجز ملاعب البادل وكرة القدم ومساحات العمل المشتركة — ثم قسمها مع فريقك.",
+    "continueWithPhone":"استمرار باستخدام الهاتف",
+    "iAlreadyHaveAnAccount":"لدي حساب بالفعل",
+    "byContinuingYouAgreeToOur":"بالمتابعة، فإنك توافق على",
+    "terms":"الشروط",
+    "privacy":"الخصوصية"
+
+
 
 
 

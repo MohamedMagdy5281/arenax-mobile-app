@@ -14,7 +14,7 @@ class AppLoaderView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: kBGColor,
-        body: AppLoaderViewBody(),
+        body: const SafeArea(child: AppLoaderViewBody()),
       ),
     );
   }

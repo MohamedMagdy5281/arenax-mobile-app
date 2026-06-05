@@ -57,11 +57,11 @@ class CustomButton extends StatelessWidget {
       child: Material(
         color: isDisabled != null && isDisabled == true
             ? disabledButtonColor ?? kDisableButtonColor
-            : backgroundColor ?? kBlackColor,
-        borderRadius: BorderRadius.circular(16.0),
+            : backgroundColor ?? kPrimaryColor,
+        borderRadius: BorderRadius.circular(32.0),
         child: InkWell(
           onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(32.0),
           splashFactory: InkRipple.splashFactory,
           child: Container(
             width: width,
@@ -72,7 +72,7 @@ class CustomButton extends StatelessWidget {
                   color: isDisabled != null && isDisabled == true
                       ? disabledBorderColor ?? Colors.transparent
                       : borderColor ?? Colors.transparent),
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(32),
             ),
             child: isLoading == true
                 ? Row(
@@ -81,7 +81,7 @@ class CustomButton extends StatelessWidget {
                     children: [
                       Text(
                         loadingText ?? '',
-                        style: Styles.textStyle16.copyWith(
+                        style: Styles.textStyle20.copyWith(
                           color: kWhiteColor,
                         ),
                       ),
@@ -105,11 +105,11 @@ class CustomButton extends StatelessWidget {
                                 Text(
                                   text,
                                   style: textStyle ??
-                                      Styles.textStyle16.copyWith(
+                                      Styles.textStyle20.copyWith(
                                         color: isDisabled != null &&
                                                 isDisabled == true
-                                            ? disabledTextColor ?? kWhiteColor
-                                            : textColor ?? kWhiteColor,
+                                            ? disabledTextColor ?? kHintColor
+                                            : textColor ?? kTextColor,
                                       ),
                                   textAlign: TextAlign.center,
                                   overflow: TextOverflow.visible,
@@ -129,12 +129,12 @@ class CustomButton extends StatelessWidget {
                                     Text(
                                       text,
                                       style: textStyle ??
-                                          Styles.textStyle16.copyWith(
+                                          Styles.textStyle20.copyWith(
                                             color: isDisabled != null &&
                                                     isDisabled == true
                                                 ? disabledTextColor ??
-                                                    kWhiteColor
-                                                : textColor ?? kWhiteColor,
+                                                    kHintColor
+                                                : textColor ?? kTextColor,
                                           ),
                                       textAlign: TextAlign.center,
                                       overflow: TextOverflow.visible,
@@ -159,12 +159,12 @@ class CustomButton extends StatelessWidget {
                                         Text(
                                           text,
                                           style: textStyle ??
-                                              Styles.textStyle16.copyWith(
+                                              Styles.textStyle20.copyWith(
                                                 color: isDisabled != null &&
                                                         isDisabled == true
                                                     ? disabledTextColor ??
-                                                        kWhiteColor
-                                                    : textColor ?? kWhiteColor,
+                                                        kHintColor
+                                                    : textColor ?? kTextColor,
                                               ),
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.visible,
@@ -175,12 +175,200 @@ class CustomButton extends StatelessWidget {
                                       child: Text(
                                         text,
                                         style: textStyle ??
-                                            Styles.textStyle16.copyWith(
+                                            Styles.textStyle20.copyWith(
                                               color: isDisabled != null &&
                                                       isDisabled == true
                                                   ? disabledTextColor ??
-                                                      kWhiteColor
-                                                  : textColor ?? kWhiteColor,
+                                                      kHintColor
+                                                  : textColor ?? kTextColor,
+                                            ),
+                                        textAlign: TextAlign.center,
+                                        overflow: TextOverflow.visible,
+                                      ),
+                                    ),
+                    ],
+                  ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButtonWithNoBG extends StatelessWidget {
+  final String text;
+  final VoidCallback itemCallBack;
+  final double? height;
+  final double? width;
+  final IconData? icon;
+  final Widget? previousIcon;
+  final Color? borderColor;
+  final Color? textColor;
+  final Color? backgroundColor;
+  final Color? iconColor;
+  final bool? isLoading;
+  final String? loadingText;
+  final bool? isDisabled;
+  final Color? disabledTextColor;
+  final Color? disabledBorderColor;
+  final Color? disabledButtonColor;
+  final TextStyle? textStyle;
+  final String? image;
+
+  const CustomButtonWithNoBG({
+    super.key,
+    required this.text,
+    required this.itemCallBack,
+    this.height,
+    this.width,
+    this.icon,
+    this.borderColor,
+    this.textColor,
+    this.backgroundColor,
+    this.iconColor,
+    this.isLoading,
+    this.loadingText,
+    this.isDisabled,
+    this.disabledTextColor,
+    this.disabledBorderColor,
+    this.disabledButtonColor,
+    this.textStyle,
+    this.previousIcon,
+    this.image,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      height: height ?? 66,
+      child: Material(
+        color: isDisabled != null && isDisabled == true
+            ? disabledButtonColor ?? kDisableButtonColor
+            : backgroundColor ?? kBackGroundColor,
+        borderRadius: BorderRadius.circular(32.0),
+        child: InkWell(
+          onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
+          borderRadius: BorderRadius.circular(32),
+          splashFactory: InkRipple.splashFactory,
+          child: Container(
+            width: width,
+            height: height ?? 56,
+            decoration: BoxDecoration(
+              border: Border.all(
+                  width: 1,
+                  color: isDisabled != null && isDisabled == true
+                      ? disabledBorderColor ?? kHintColor
+                      : borderColor ?? kHintColor),
+              borderRadius: BorderRadius.circular(32.0),
+            ),
+            child: isLoading == true
+                ? Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        loadingText ?? '',
+                        style: Styles.textStyle20.copyWith(
+                          color: kWhiteColor,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      const CustomLoadingIndicator(
+                        color: kWhiteColor,
+                        height: 20,
+                        width: 20,
+                      )
+                    ],
+                  )
+                : Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      icon != null
+                          ? Row(
+                              children: [
+                                Text(
+                                  text,
+                                  style: textStyle ??
+                                      Styles.textStyle20.copyWith(
+                                        color: isDisabled != null &&
+                                                isDisabled == true
+                                            ? disabledTextColor ?? kHintColor
+                                            : textColor ?? kTextColor,
+                                      ),
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.visible,
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Icon(
+                                  icon,
+                                  color: iconColor ?? kWhiteColor,
+                                ),
+                              ],
+                            )
+                          : image != null
+                              ? Row(
+                                  children: [
+                                    Text(
+                                      text,
+                                      style: textStyle ??
+                                          Styles.textStyle20.copyWith(
+                                            color: isDisabled != null &&
+                                                    isDisabled == true
+                                                ? disabledTextColor ??
+                                                    kHintColor
+                                                : textColor ?? kTextColor,
+                                          ),
+                                      textAlign: TextAlign.center,
+                                      overflow: TextOverflow.visible,
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Image.asset(
+                                      image!,
+                                      width: 24,
+                                      height: 24,
+                                    ),
+                                  ],
+                                )
+                              : previousIcon != null
+                                  ? Row(
+                                      children: [
+                                        previousIcon!,
+                                        const SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          text,
+                                          style: textStyle ??
+                                              Styles.textStyle20.copyWith(
+                                                color: isDisabled != null &&
+                                                        isDisabled == true
+                                                    ? disabledTextColor ??
+                                                        kHintColor
+                                                    : textColor ?? kTextColor,
+                                              ),
+                                          textAlign: TextAlign.center,
+                                          overflow: TextOverflow.visible,
+                                        ),
+                                      ],
+                                    )
+                                  : Flexible(
+                                      child: Text(
+                                        text,
+                                        style: textStyle ??
+                                            Styles.textStyle20.copyWith(
+                                              color: isDisabled != null &&
+                                                      isDisabled == true
+                                                  ? disabledTextColor ??
+                                                      kHintColor
+                                                  : textColor ?? kTextColor,
                                             ),
                                         textAlign: TextAlign.center,
                                         overflow: TextOverflow.visible,
@@ -363,7 +551,7 @@ class CustomRoundedButtonWithOptionalIcon extends StatelessWidget {
           children: [
             Text(
               text ?? AppLocalizations.of(context)!.signIn,
-              style: Styles.textStyle16.copyWith(
+              style: Styles.textStyle20.copyWith(
                 fontWeight: FontWeight.w600,
                 color: textColor ?? kWhiteColor,
               ),
@@ -429,7 +617,7 @@ class CustomButtonWithArrow extends StatelessWidget {
               children: [
                 Text(
                   text,
-                  style: Styles.textStyle16.copyWith(
+                  style: Styles.textStyle20.copyWith(
                     color: kWhiteColor,
                   ),
                   textAlign: TextAlign.center,
@@ -564,7 +752,7 @@ class CustomButtonWithShadow extends StatelessWidget {
                       children: [
                         Text(
                           loadingText ?? '',
-                          style: Styles.textStyle16.copyWith(
+                          style: Styles.textStyle20.copyWith(
                             color: kWhiteColor,
                           ),
                         ),
@@ -588,7 +776,7 @@ class CustomButtonWithShadow extends StatelessWidget {
                                   Text(
                                     text,
                                     style: textStyle ??
-                                        Styles.textStyle16.copyWith(
+                                        Styles.textStyle20.copyWith(
                                           color: isDisabled != null &&
                                                   isDisabled == true
                                               ? disabledTextColor ?? kWhiteColor
@@ -610,7 +798,7 @@ class CustomButtonWithShadow extends StatelessWidget {
                                 child: Text(
                                   text,
                                   style: textStyle ??
-                                      Styles.textStyle16.copyWith(
+                                      Styles.textStyle20.copyWith(
                                         color: isDisabled != null &&
                                                 isDisabled == true
                                             ? disabledTextColor ?? kWhiteColor
@@ -714,7 +902,7 @@ class CustomSelectedButton extends StatelessWidget {
                       children: [
                         Text(
                           loadingText ?? '',
-                          style: Styles.textStyle16.copyWith(
+                          style: Styles.textStyle20.copyWith(
                             color: kWhiteColor,
                           ),
                         ),
@@ -740,7 +928,7 @@ class CustomSelectedButton extends StatelessWidget {
                               Text(
                                 text,
                                 style: textStyle ??
-                                    Styles.textStyle16.copyWith(
+                                    Styles.textStyle20.copyWith(
                                       color: isDisabled != null &&
                                               isDisabled == true
                                           ? disabledTextColor ?? kWhiteColor
@@ -762,7 +950,7 @@ class CustomSelectedButton extends StatelessWidget {
                               child: Text(
                                 text,
                                 style: textStyle ??
-                                    Styles.textStyle16.copyWith(
+                                    Styles.textStyle20.copyWith(
                                       color: isDisabled != null &&
                                               isDisabled == true
                                           ? disabledTextColor ?? kWhiteColor

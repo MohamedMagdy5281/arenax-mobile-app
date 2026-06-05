@@ -320,12 +320,6 @@ abstract class AppLocalizations {
   /// **'Current chat'**
   String get currentChat;
 
-  /// No description provided for @continueLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get continueLabel;
-
   /// No description provided for @newChat.
   ///
   /// In en, this message translates to:
@@ -1610,12 +1604,6 @@ abstract class AppLocalizations {
   /// **'Others'**
   String get others;
 
-  /// No description provided for @next.
-  ///
-  /// In en, this message translates to:
-  /// **'Next'**
-  String get next;
-
   /// No description provided for @locationPermissionSettings.
   ///
   /// In en, this message translates to:
@@ -1633,6 +1621,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add'**
   String get add;
+
+  /// No description provided for @findBookPlayTogether.
+  ///
+  /// In en, this message translates to:
+  /// **'Find. Book. Play. Together.'**
+  String get findBookPlayTogether;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @continueLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueLabel;
+
+  /// No description provided for @findYourPlaceToPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Find your place to play'**
+  String get findYourPlaceToPlay;
+
+  /// No description provided for @discoverThings.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover padel, football pitches, and co-working spaces near you.'**
+  String get discoverThings;
+
+  /// No description provided for @findBookPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Find. Book. Play.'**
+  String get findBookPlay;
+
+  /// No description provided for @together.
+  ///
+  /// In en, this message translates to:
+  /// **'Together.'**
+  String get together;
+
+  /// No description provided for @bookThenSplit.
+  ///
+  /// In en, this message translates to:
+  /// **'Book padel, football, and co-working spaces — then split it with your crew.'**
+  String get bookThenSplit;
+
+  /// No description provided for @continueWithPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with phone'**
+  String get continueWithPhone;
+
+  /// No description provided for @iAlreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'I already have an account'**
+  String get iAlreadyHaveAnAccount;
+
+  /// No description provided for @byContinuingYouAgreeToOur.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to our'**
+  String get byContinuingYouAgreeToOur;
+
+  /// No description provided for @terms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms'**
+  String get terms;
+
+  /// No description provided for @privacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacy;
 }
 
 class _AppLocalizationsDelegate

@@ -1,13 +1,16 @@
 import 'dart:io';
 import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/functions/onboarding_check.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/notification_service.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/app_loader_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/auth_intro_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/interests_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/location_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/onboarding_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,9 +33,9 @@ import 'package:device_info_plus/device_info_plus.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: kBGColor, // top status bar color
+    statusBarColor: kBackGroundColor, // top status bar color
     statusBarIconBrightness: Brightness.dark, // dark icons for white background
-    systemNavigationBarColor: kBGColor,
+    systemNavigationBarColor: kBackGroundColor,
     statusBarBrightness: Brightness.light, // for ios
     systemNavigationBarIconBrightness: Brightness.dark, // dark icons
   ));
@@ -100,7 +103,7 @@ void main() async {
   // Bloc.observer = SimpleBlocObserver();
   // setupFirebaseMessaging();
   runApp(
-    const RestartWidget(
+    RestartWidget(
       child: ProviderScope(child: MyApp()),
     ),
   );
@@ -185,7 +188,9 @@ Future<void> getIOSDeviceType() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+  });
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -291,6 +296,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           navigatorKey: globals.navigatorKey,
           initialRoute: AppLoaderView.id,
           routes: {
+            OnboardingView.id: (context) => const OnboardingView(),
+            AuthIntroView.id: (context) => const AuthIntroView(),
             LoginView.id: (context) => const LoginView(),
             RegisterView.id: (context) => const RegisterView(),
             OtpVerificationView.id: (context) => const OtpVerificationView(),

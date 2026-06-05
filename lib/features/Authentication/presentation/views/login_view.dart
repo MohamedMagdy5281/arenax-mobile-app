@@ -14,7 +14,7 @@ class LoginView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: kBGColor,
-        body: LoginViewBody(),
+        body: const SafeArea(child: LoginViewBody()),
       ),
     );
   }

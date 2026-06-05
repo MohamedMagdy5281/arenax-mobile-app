@@ -120,9 +120,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get currentChat => 'المحادثة الحالية';
 
   @override
-  String get continueLabel => 'استمرار';
-
-  @override
   String get newChat => 'محادثة جديدة';
 
   @override
@@ -787,9 +784,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get others => 'أخرى';
 
   @override
-  String get next => 'التالي';
-
-  @override
   String get locationPermissionSettings =>
       'مطلوب الوصول إلى الموقع. يرجى تمكين إذن الموقع في إعدادات التطبيق.';
 
@@ -798,4 +792,48 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get add => 'إضافة';
+
+  @override
+  String get findBookPlayTogether => 'ابحث. احجز. العب. معاً.';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get continueLabel => 'استمرار';
+
+  @override
+  String get findYourPlaceToPlay => 'ابحث عن مكانك للاستمتاع باللعب';
+
+  @override
+  String get discoverThings =>
+      'اكتشف ملاعب البادل وكرة القدم ومساحات العمل المشتركة القريبة منك.';
+
+  @override
+  String get findBookPlay => 'ابحث. احجز. العب.';
+
+  @override
+  String get together => 'معاً.';
+
+  @override
+  String get bookThenSplit =>
+      'احجز ملاعب البادل وكرة القدم ومساحات العمل المشتركة — ثم قسمها مع فريقك.';
+
+  @override
+  String get continueWithPhone => 'استمرار باستخدام الهاتف';
+
+  @override
+  String get iAlreadyHaveAnAccount => 'لدي حساب بالفعل';
+
+  @override
+  String get byContinuingYouAgreeToOur => 'بالمتابعة، فإنك توافق على';
+
+  @override
+  String get terms => 'الشروط';
+
+  @override
+  String get privacy => 'الخصوصية';
 }

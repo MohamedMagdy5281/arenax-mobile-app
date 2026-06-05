@@ -149,10 +149,6 @@
   "@currentChat":{
     "currentChat":""
   },
-  "continueLabel":"Continue",
-  "@continueLabel":{
-    "continueLabel":""
-  },
   "newChat":"New chat",
   "@newChat":{
     "newChat":""
@@ -1013,10 +1009,6 @@
   "@others":{
     "others":""
   },
-  "next":"Next",
-  "@next":{
-    "next":""
-  },
   "locationPermissionSettings":"Location access is required. Please enable location permission in the app settings.",
   "@locationPermissionSettings":{
     "locationPermissionSettings":""
@@ -1028,5 +1020,67 @@
   "add":"Add",
   "@add":{
     "add":""
+  },
+
+
+
+  "findBookPlayTogether":"Find. Book. Play. Together.",
+  "@findBookPlayTogether":{
+    "findBookPlayTogether":""
+  },
+  "skip":"Skip",
+  "@skip":{
+    "skip":""
+  },
+  "next":"Next",
+  "@next":{
+    "next":""
+  },
+  "continueLabel":"Continue",
+  "@continueLabel":{
+    "continueLabel":""
+  },
+  "findYourPlaceToPlay":"Find your place to play",
+  "@findYourPlaceToPlay":{
+    "findYourPlaceToPlay":""
+  },
+  "discoverThings":"Discover padel, football pitches, and co-working spaces near you.",
+  "@discoverThings":{
+    "discoverThings":""
+  },
+  "findBookPlay":"Find. Book. Play.",
+  "@findBookPlay":{
+    "findBookPlay":""
+  },
+  "together":"Together.",
+  "@together":{
+    "together":""
+  },
+  "bookThenSplit":"Book padel, football, and co-working spaces — then split it with your crew.",
+  "@bookThenSplit":{
+    "bookThenSplit":""
+  },
+  "continueWithPhone":"Continue with phone",
+  "@continueWithPhone":{
+    "continueWithPhone":""
+  },
+  "iAlreadyHaveAnAccount":"I already have an account",
+  "@iAlreadyHaveAnAccount":{
+    "iAlreadyHaveAnAccount":""
+  },
+  "byContinuingYouAgreeToOur":"By continuing, you agree to our",
+  "@byContinuingYouAgreeToOur":{
+    "byContinuingYouAgreeToOur":""
+  },
+  "terms":"Terms",
+  "@terms":{
+    "terms":""
+  },
+  "privacy":"Privacy",
+  "@privacy":{
+    "privacy":""
   }
 }
+
+  
+
