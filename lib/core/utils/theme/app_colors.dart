@@ -37,6 +37,8 @@ class AppColors extends ThemeExtension<AppColors> {
 
   final Color kCountryCodeBGColor;
 
+  final Color kBorderRoundColor;
+
   const AppColors({
     required this.kWhiteColor,
     required this.kBlackColor,
@@ -62,61 +64,62 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.kHintColor,
     required this.kDisabledButtonColor,
     required this.kCountryCodeBGColor,
+    required this.kBorderRoundColor,
   });
 
   static const dark = AppColors(
-    kWhiteColor: Colors.white,
-    kBlackColor: Colors.black,
-    kPrimaryColor: Color(0xFF7B2FF7),
-    kPrimaryDarkColor: Color(0xFF241B3D),
-    kPrimaryLightColor: Color(0x2EFFFFFF),
-    kBackGroundColor: Color(0xFF0E0B16),
-    kSurfaceColor: Color(0xFF1A1626),
-    kAccentColor: Color(0xFFC2F526),
-    kAccentTextColor: Color(0xFF2E3B00),
-    kSuccessColor: Color(0xFF19C37D),
-    kSuccessTextColor: Color(0xFF5DCAA5),
-    kSuccessBGColor: Color(0xFF0E2E25),
-    kWarningColor: Color(0xFFFFB020),
-    kWarningTextColor: Color(0xFFF5C16B),
-    kWarningBGColor: Color(0xFF33260D),
-    kErrorColor: Color(0xFFFF4D5E),
-    kInfoColor: Color(0xFF3B9DFF),
-    kInfoTextColor: Color(0xFF8FC4FF),
-    kInfoBGColor: Color(0xFF0C2440),
-    kTextColor: Color(0xFFF5F3FA),
-    kTextMutedColor: Color(0xFFA9A3BD),
-    kHintColor: Color(0xFF6B6577),
-    kDisabledButtonColor: Color(0xFF322B45),
-    kCountryCodeBGColor: Color(0xFF15121F),
-  );
+      kWhiteColor: Colors.white,
+      kBlackColor: Colors.black,
+      kPrimaryColor: Color(0xFF7B2FF7),
+      kPrimaryDarkColor: Color(0xFF241B3D),
+      kPrimaryLightColor: Color(0x2EFFFFFF),
+      kBackGroundColor: Color(0xFF0E0B16),
+      kSurfaceColor: Color(0xFF1A1626),
+      kAccentColor: Color(0xFFC2F526),
+      kAccentTextColor: Color(0xFF2E3B00),
+      kSuccessColor: Color(0xFF19C37D),
+      kSuccessTextColor: Color(0xFF5DCAA5),
+      kSuccessBGColor: Color(0xFF0E2E25),
+      kWarningColor: Color(0xFFFFB020),
+      kWarningTextColor: Color(0xFFF5C16B),
+      kWarningBGColor: Color(0xFF33260D),
+      kErrorColor: Color(0xFFFF4D5E),
+      kInfoColor: Color(0xFF3B9DFF),
+      kInfoTextColor: Color(0xFF8FC4FF),
+      kInfoBGColor: Color(0xFF0C2440),
+      kTextColor: Color(0xFFF5F3FA),
+      kTextMutedColor: Color(0xFFA9A3BD),
+      kHintColor: Color(0xFF6B6577),
+      kDisabledButtonColor: Color(0xFF322B45),
+      kCountryCodeBGColor: Color(0xFF15121F),
+      kBorderRoundColor: Color(0XFF4F4A5E));
 
   static const light = AppColors(
-    kWhiteColor: Colors.white,
-    kBlackColor: Colors.black,
-    kPrimaryColor: Color(0xFF7B2FF7),
-    kPrimaryDarkColor: Color(0xFF5A20B5),
-    kPrimaryLightColor: Color(0xFFE8D8FF),
-    kBackGroundColor: Color(0xFFF8F8FA),
-    kSurfaceColor: Colors.white,
-    kAccentColor: Color(0xFFA4D61C),
-    kAccentTextColor: Color(0xFF1F2A00),
-    kSuccessColor: Color(0xFF19C37D),
-    kSuccessTextColor: Color(0xFF0F5132),
-    kSuccessBGColor: Color(0xFFD1FAE5),
-    kWarningColor: Color(0xFFFFB020),
-    kWarningTextColor: Color(0xFF8A5A00),
-    kWarningBGColor: Color(0xFFFFF4D6),
-    kErrorColor: Color(0xFFE53935),
-    kInfoColor: Color(0xFF3B9DFF),
-    kInfoTextColor: Color(0xFF0A58CA),
-    kInfoBGColor: Color(0xFFD6ECFF),
-    kTextColor: Color(0xFF1B1B1B),
-    kTextMutedColor: Color(0xFF666666),
-    kHintColor: Color(0xFF9E9E9E),
-    kDisabledButtonColor: Color(0xFFE0E0E0),
-    kCountryCodeBGColor: Color(0xFFF2F2F2),
-  );
+      kWhiteColor: Colors.white,
+      kBlackColor: Colors.black,
+      kPrimaryColor: Color(0xFF7B2FF7),
+      kPrimaryDarkColor: Color(0xFF5A20B5),
+      kPrimaryLightColor: Color(0xFFE8D8FF),
+      kBackGroundColor: Color(0xFFF4F1FA),
+      kSurfaceColor: Color(0XFFFFFFFF),
+      kAccentColor: Color(0xFFA4D61C),
+      kAccentTextColor: Color(0xFF1F2A00),
+      kSuccessColor: Color(0xFF19C37D),
+      kSuccessTextColor: Color(0xFF0F5132),
+      kSuccessBGColor: Color(0xFFD1FAE5),
+      kWarningColor: Color(0xFFFFB020),
+      kWarningTextColor: Color(0xFF8A5A00),
+      kWarningBGColor: Color(0xFFFFF4D6),
+      kErrorColor: Color(0xFFE53935),
+      kInfoColor: Color(0xFF3B9DFF),
+      kInfoTextColor: Color(0xFF0A58CA),
+      kInfoBGColor: Color(0xFFD6ECFF),
+      kTextColor: Color(0xFF15121F),
+      kTextMutedColor: Color(0xFF6B6577),
+      kHintColor: Color(0xFF948FA3),
+      kDisabledButtonColor: Color(0xFFE6E2EF),
+      kCountryCodeBGColor: Color(0xFFF8F7FC),
+      kBorderRoundColor: Color(0XFFC9C5D4));
 
   @override
   AppColors copyWith({
@@ -144,6 +147,7 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? kHintColor,
     Color? kDisabledButtonColor,
     Color? kCountryCodeBGColor,
+    Color? kBorderRoundColor,
   }) {
     return AppColors(
       kWhiteColor: kWhiteColor ?? this.kWhiteColor,
@@ -170,6 +174,7 @@ class AppColors extends ThemeExtension<AppColors> {
       kHintColor: kHintColor ?? this.kHintColor,
       kDisabledButtonColor: kDisabledButtonColor ?? this.kDisabledButtonColor,
       kCountryCodeBGColor: kCountryCodeBGColor ?? this.kCountryCodeBGColor,
+      kBorderRoundColor: kBorderRoundColor ?? this.kBorderRoundColor,
     );
   }
 
@@ -214,6 +219,11 @@ class AppColors extends ThemeExtension<AppColors> {
       kCountryCodeBGColor: Color.lerp(
         kCountryCodeBGColor,
         other.kCountryCodeBGColor,
+        t,
+      )!,
+      kBorderRoundColor: Color.lerp(
+        kBorderRoundColor,
+        other.kBorderRoundColor,
         t,
       )!,
     );

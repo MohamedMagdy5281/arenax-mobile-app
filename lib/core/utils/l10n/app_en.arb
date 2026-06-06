@@ -9,33 +9,13 @@
   "@authenticateMsg":{
     "authenticateMsg":""
   },
-  "cantBeEmpty":"This field can't be empty",
-  "@cantBeEmpty":{
-    "cantBeEmpty":""
-  },
-  "welcomeBack":"Welcome Back",
-  "@welcomeBack":{
-    "welcomeBack":""
-  },
   "email":"Email",
   "@email":{
     "email":""
   },
-  "password":"Password",
-  "@password":{
-    "password":""
-  },
   "signIn":"Sign In",
   "@signIn":{
     "signIn":""
-  },
-  "dontHaveAcc":"Don't have an account? ",
-  "@dontHaveAcc":{
-    "dontHaveAcc":""
-  },
-  "signUp":"Sign up",
-  "@signUp":{
-    "signUp":""
   },
   "letsGetStarted":"Let's get started by filling out the form below",
   "@letsGetStarted":{
@@ -140,10 +120,6 @@
   "enterEmail":"Enter your email ",
   "@enterEmail":{
     "enterEmail":""
-  },
-  "enterPassword":"Enter your password ",
-  "@enterPassword":{
-    "enterPassword":""
   },
   "currentChat":"Current chat",
   "@currentChat":{
@@ -321,10 +297,6 @@
   "@languageChange":{
     "languageChange":""
   },
-  "newPassword":"New password",
-  "@newPassword":{
-    "newPassword":""
-  },
   "confirmNewPassword":"Confirm new password",
   "@confirmNewPassword":{
     "confirmNewPassword":""
@@ -341,10 +313,6 @@
   "@english":{
     "english":""
    },
-  "login":"Login",
-  "@login":{
-    "login":""
-  },
   "signForNewAcc":"Sign up for new account",
   "@signForNewAcc":{
     "signForNewAcc":""
@@ -373,18 +341,7 @@
   "@enterLastName":{
     "enterLastName":""
   },
-  "confirmPassword":"Confirm password",
-  "@confirmPassword":{
-    "confirmPassword":""
-  },
-  "enterConfirmPassword":"Enter your confirm password",
-  "@enterConfirmPassword":{
-    "enterConfirmPassword":""
-  },
-  "createPassword":"Create password",
-  "@createPassword":{
-    "createPassword":""
-  },
+  
   "confirm":"Confirm",
   "@confirm":{
     "confirm":""
@@ -589,10 +546,6 @@
   "@enterCurrentPassword":{
     "enterCurrentPassword":""
   },
-  "enterNewPassword":"Enter new password",
-  "@enterNewPassword":{
-    "enterNewPassword":""
-  },
   "enterNewConfirmPassword":"Enter confirm new password",
   "@enterNewConfirmPassword":{
     "enterNewConfirmPassword":""
@@ -689,10 +642,7 @@
   "@galleryPermissionError":{
     "galleryPermissionError":""
   },
-  "cancel":"Cancel",
-  "@cancel":{
-    "cancel":""
-  },
+
   "settings":"Settings",
   "@settings":{
     "settings":""
@@ -736,10 +686,6 @@
   "loginWithGmail":"Login with gmail",
   "@loginWithGmail":{
     "loginWithGmail":""
-  },
-  "or":"Or",
-  "@or":{
-    "or":""
   },
   "resetPassword":"Reset password",
   "@resetPassword":{
@@ -1111,6 +1057,126 @@
   "changeNumber":"Change number",
   "@changeNumber":{
     "changeNumber":""
+  },
+  "createPassword":"Create a password",
+  "@createPassword":{
+    "createPassword":""
+  },
+  "charactersWithLettersAndNumbers":"8+ characters with a letter and a number.",
+  "@charactersWithLettersAndNumbers":{
+    "charactersWithLettersAndNumbers":""
+  },
+  "password":"Password",
+  "@password":{
+    "password":""
+  },
+  "enterPassword":"Enter password ",
+  "@enterPassword":{
+    "enterPassword":""
+  },
+  "confirmPassword":"Confirm password",
+  "@confirmPassword":{
+    "confirmPassword":""
+  },
+  "enterConfirmPassword":"Re-enter password",
+  "@enterConfirmPassword":{
+    "enterConfirmPassword":""
+  },
+  "cantBeEmpty":"This field can't be empty",
+  "@cantBeEmpty":{
+    "cantBeEmpty":""
+  },
+  "thisFieldCantContainSpaces":"This field can't contain spaces",
+  "@thisFieldCantContainSpaces":{
+    "thisFieldCantContainSpaces":""
+  },
+  "fieldIsNotValid":"This field doesn't meet the required format",
+  "@fieldIsNotValid":{
+    "fieldIsNotValid":""
+  },
+  "confirmPassNotMatchingPass":"Confirm password doesn't match the password",
+  "@confirmPassNotMatchingPass":{
+    "confirmPassNotMatchingPass":""
+  },
+  "signInFaster":"Sign in faster next time",
+  "@signInFaster":{
+    "signInFaster":""
+  },
+  "useFaceIdOrTouchId":"Use Face ID or Touch ID to unlock ArenaX without typing your password.",
+  "@useFaceIdOrTouchId":{
+    "useFaceIdOrTouchId":""
+  },
+  "enableFaceId":"Enable Face ID",
+  "@enableFaceId":{
+    "enableFaceId":""
+  },
+  "notNow":"Not now",
+  "@notNow":{
+    "notNow":""
+  },
+  "welcomeBack":"Welcome back",
+  "@welcomeBack":{
+    "welcomeBack":""
+  },
+  "signInToContinue":"Sign in to continue.",
+  "@signInToContinue":{
+    "signInToContinue":""
+  },
+  "forgot":"Forgot?",
+  "@forgot":{
+    "forgot":""
+  },
+  "login":"Log in",
+  "@login":{
+    "login":""
+  },
+  "or":"OR",
+  "@or":{
+    "or":""
+  },
+  "useFaceId":"Use Facee Id",
+  "@useFaceId":{
+    "useFaceId":""
+  },
+    "dontHaveAcc":"Don't have an account? ",
+  "@dontHaveAcc":{
+    "dontHaveAcc":""
+  },
+  "signUp":"Sign up",
+  "@signUp":{
+    "signUp":""
+  },
+  "cancel":"Cancel",
+  "@cancel":{
+    "cancel":""
+  },
+  "forgotYourPassword":"Forgot your password?",
+  "@forgotYourPassword":{
+    "forgotYourPassword":""
+  },
+  "enterYourPhoneAndWeSendCode":"Enter your phone number and we'll sendyou a code to reset it.",
+  "@enterYourPhoneAndWeSendCode":{
+    "enterYourPhoneAndWeSendCode":""
+  },
+  "resetYourPassword":"Reset your password",
+  "@resetYourPassword":{
+    "resetYourPassword":""
+  },
+  "codeSentTo":"Code sent to ",
+  "@codeSentTo":{
+    "codeSentTo":""
+  },
+  "newPassword":"New password",
+  "@newPassword":{
+    "newPassword":""
+  },
+  "enterNewPassword":"Enter new password",
+  "@enterNewPassword":{
+    "enterNewPassword":""
+  },
+  "saveAndSignIn":"Save and sign in",
+  "@saveAndSignIn":{
+    "saveAndSignIn":""
   }
 }
 

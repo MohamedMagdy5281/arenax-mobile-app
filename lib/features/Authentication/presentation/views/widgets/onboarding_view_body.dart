@@ -148,7 +148,7 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                   decoration: BoxDecoration(
                                     color: state.currentPage == index
                                         ? colors.kPrimaryColor
-                                        : colors.kTextMutedColor,
+                                        : colors.kBorderRoundColor,
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                 ),

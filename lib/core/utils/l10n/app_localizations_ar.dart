@@ -15,25 +15,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authenticateMsg => 'يرجى المصادقة للوصول إلى التطبيق';
 
   @override
-  String get cantBeEmpty => 'لا يمكن ان يكون هذا الحقل فارغا';
-
-  @override
-  String get welcomeBack => 'مرحبا بعودتك';
-
-  @override
   String get email => 'البريد الإلكتروني';
 
   @override
-  String get password => 'كلمة المرور';
-
-  @override
-  String get signIn => 'تسجيل الدخول';
-
-  @override
-  String get dontHaveAcc => 'لا تملك حسابا؟ ';
-
-  @override
-  String get signUp => 'تسجيل';
+  String get signIn => 'Sign In';
 
   @override
   String get letsGetStarted => 'لنبدأ بملء النموذج أدناه';
@@ -112,9 +97,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterEmail => 'ادخل البريد الإلكتروني';
-
-  @override
-  String get enterPassword => 'ادخل كلمة المرور';
 
   @override
   String get currentChat => 'المحادثة الحالية';
@@ -248,9 +230,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get languageChange => 'تغيير اللغة';
 
   @override
-  String get newPassword => 'كلمة المرور الجديدة';
-
-  @override
   String get confirmNewPassword => 'تأكيد كلمة المرور الجديدة';
 
   @override
@@ -261,9 +240,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get english => 'الإنجليزية';
-
-  @override
-  String get login => 'تسجيل الدخول';
 
   @override
   String get signForNewAcc => 'سجل للحصول على حساب جديد';
@@ -285,15 +261,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterLastName => 'أدخل اسمك الاخير';
-
-  @override
-  String get confirmPassword => 'تأكيد كلمة المرور';
-
-  @override
-  String get enterConfirmPassword => 'ادخل تأكيد كلمة المرور';
-
-  @override
-  String get createPassword => 'إنشاء كلمة المرور';
 
   @override
   String get confirm => 'تأكيد';
@@ -454,9 +421,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterCurrentPassword => 'أدخل كلمة المرور الحالية';
 
   @override
-  String get enterNewPassword => 'أدخل كلمة المرور الجديدة';
-
-  @override
   String get enterNewConfirmPassword => 'أدخل تأكيد كلمة المرور الجديدة';
 
   @override
@@ -537,9 +501,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get galleryPermissionError => 'تم رفض إذن المعرض';
 
   @override
-  String get cancel => 'إلغاء';
-
-  @override
   String get settings => 'الإعدادات';
 
   @override
@@ -571,9 +532,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loginWithGmail => 'تسجيل الدخول باستخدام Gmail';
-
-  @override
-  String get or => 'أو';
 
   @override
   String get resetPassword => 'إعادة تعيين كلمة المرور';
@@ -861,4 +819,99 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get changeNumber => 'تغيير الرقم';
+
+  @override
+  String get createPassword => 'قم بإنشاء كلمة مرور';
+
+  @override
+  String get charactersWithLettersAndNumbers =>
+      'ثمانية أحرف أو أكثر، تتضمن حرفًا ورقمًا.';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get enterPassword => 'أدخل كلمة المرور';
+
+  @override
+  String get confirmPassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get enterConfirmPassword => 'أعد إدخال كلمة المرور';
+
+  @override
+  String get cantBeEmpty => 'لا يمكن ان يكون هذا الحقل فارغا';
+
+  @override
+  String get thisFieldCantContainSpaces =>
+      'لا يمكن أن يحتوي هذا الحقل على مسافات';
+
+  @override
+  String get fieldIsNotValid => 'هذا الحقل لا يفي بالتنسيق المطلوب';
+
+  @override
+  String get confirmPassNotMatchingPass =>
+      'تأكيد كلمة المرور لا يطابق كلمة المرور';
+
+  @override
+  String get signInFaster => 'سجل دخولك بشكل أسرع في المرة القادمة';
+
+  @override
+  String get useFaceIdOrTouchId =>
+      'استخدم خاصية التعرف على الوجه أو بصمة الإصبع لفتح ArenaX دون كتابة كلمة المرور الخاصة بك.';
+
+  @override
+  String get enableFaceId => 'تمكين معرف الوجه  ';
+
+  @override
+  String get notNow => 'ليس الآن';
+
+  @override
+  String get welcomeBack => 'مرحبًا بعودتك';
+
+  @override
+  String get signInToContinue => 'سجّل الدخول للمتابعة.';
+
+  @override
+  String get forgot => 'هل نسيت؟';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get useFaceId => 'استخدم معرف الوجه';
+
+  @override
+  String get dontHaveAcc => 'ليس لديك حساب؟ ';
+
+  @override
+  String get signUp => 'اشتراك';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get forgotYourPassword => 'نسيت كلمة السر؟';
+
+  @override
+  String get enterYourPhoneAndWeSendCode =>
+      'أدخل رقم هاتفك وسنرسل لك رمزًا لإعادة ضبطه.';
+
+  @override
+  String get resetYourPassword => 'إعادة تعيين كلمة المرور الخاصة بك';
+
+  @override
+  String get codeSentTo => 'تم إرسال الرمز إلى ';
+
+  @override
+  String get newPassword => 'كلمة المرور الجديدة';
+
+  @override
+  String get enterNewPassword => 'أدخل كلمة المرور الجديدة';
+
+  @override
+  String get saveAndSignIn => 'حفظ وتسجيل الدخول';
 }

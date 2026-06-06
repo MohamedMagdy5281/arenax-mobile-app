@@ -1,26 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_loader_notifier_provider.dart';
+part of 'enable_face_id_notifier_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appLoaderNotifierHash() => r'106613ab24065721fd4e2d1df53c9ee558f3b686';
+String _$enableFaceIdNotifierHash() =>
+    r'920dabbd63d8489121ed028c65faecb86e50d2db';
 
-/// See also [AppLoaderNotifier].
-@ProviderFor(AppLoaderNotifier)
-final appLoaderNotifierProvider =
-    AutoDisposeNotifierProvider<AppLoaderNotifier, AppLoaderState>.internal(
-  AppLoaderNotifier.new,
-  name: r'appLoaderNotifierProvider',
+/// See also [EnableFaceIdNotifier].
+@ProviderFor(EnableFaceIdNotifier)
+final enableFaceIdNotifierProvider = AutoDisposeNotifierProvider<
+    EnableFaceIdNotifier, EnableFaceIdState>.internal(
+  EnableFaceIdNotifier.new,
+  name: r'enableFaceIdNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$appLoaderNotifierHash,
+      : _$enableFaceIdNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AppLoaderNotifier = AutoDisposeNotifier<AppLoaderState>;
+typedef _$EnableFaceIdNotifier = AutoDisposeNotifier<EnableFaceIdState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

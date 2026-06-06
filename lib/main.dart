@@ -10,13 +10,15 @@ import 'package:arenax_mobile_app/core/utils/theme/app_theme_manager.dart';
 import 'package:arenax_mobile_app/core/utils/theme/provider/theme_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/app_loader_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/auth_intro_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/create_password_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/enable_face_id_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
-import 'package:arenax_mobile_app/features/Authentication/presentation/views/interests_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/location_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/onboarding_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/reset_password_otp_verification_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -325,9 +327,12 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
             RegisterView.id: (context) => const RegisterView(),
             OtpVerificationView.id: (context) => const OtpVerificationView(),
             ForgetPasswordView.id: (context) => const ForgetPasswordView(),
-            InterestsView.id: (context) => const InterestsView(),
             AppLoaderView.id: (context) => const AppLoaderView(),
             LocationView.id: (context) => const LocationView(),
+            CreatePasswordView.id: (context) => const CreatePasswordView(),
+            EnableFaceIdView.id: (context) => const EnableFaceIdView(),
+            ResetPasswordOtpVerificationView.id: (context) =>
+                const ResetPasswordOtpVerificationView(),
           },
         );
       },

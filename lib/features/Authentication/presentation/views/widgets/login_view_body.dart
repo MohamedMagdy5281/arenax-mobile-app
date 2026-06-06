@@ -1,3 +1,5 @@
+import 'package:arenax_mobile_app/core/utils/assets.dart';
+import 'package:arenax_mobile_app/core/utils/functions/password_validator.dart';
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_mobile_text_field_with_country.dart';
@@ -26,13 +28,15 @@ class LoginViewBody extends ConsumerStatefulWidget {
 
 class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
   TextEditingController phoneNumberController = TextEditingController();
-  // TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey();
   String? countryCodeChoose;
+  String password = "";
 
   @override
   void dispose() {
     phoneNumberController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
@@ -42,6 +46,8 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
         (Theme.of(context).brightness == Brightness.dark
             ? AppColors.dark
             : AppColors.light);
+
+    final validation = validatePassword(password);
     final state = ref.watch(loginNotifierProvider);
     final notifier = ref.read(loginNotifierProvider.notifier);
     return Stack(
@@ -63,7 +69,7 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: Column(
                     children: [
                       Expanded(
@@ -71,30 +77,35 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              CustomHeader(
-                                title: "",
-                                optionalPrefixIcon: Container(
-                                  decoration: BoxDecoration(
-                                    color: colors.kSurfaceColor,
-                                    borderRadius: BorderRadius.circular(10),
+                              SizedBox(
+                                height: 52,
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    AssetsData.logo,
+                                    width: 40,
+                                    height: 40,
                                   ),
-                                  width: 38,
-                                  height: 38,
-                                  child: Icon(
-                                    globals.appLang == "en"
-                                        ? Iconsax.arrow_left_2
-                                        : Iconsax.arrow_right_2,
-                                    color: colors.kTextColor,
-                                    size: 12,
+                                  SizedBox(
+                                    width: 4,
                                   ),
-                                ),
+                                  Text(
+                                    "Arena",
+                                    style: Styles.textStyle20(context)
+                                        .copyWith(color: colors.kTextColor),
+                                  ),
+                                  Text("X",
+                                      style: Styles.textStyle20(context)
+                                          .copyWith(color: colors.kAccentColor))
+                                ],
                               ),
                               const SizedBox(height: 12),
                               Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16.0),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: Text(
-                                  AppLocalizations.of(context)!.enterPhone,
+                                  AppLocalizations.of(context)!.welcomeBack,
                                   style: Styles.textStyle22(context).copyWith(
                                     fontWeight: FontWeight.w900,
                                     color: colors.kTextColor,
@@ -103,11 +114,11 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                               ),
                               const SizedBox(height: 12),
                               Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16.0),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: Text(
                                   AppLocalizations.of(context)!
-                                      .weWillSendDigits,
+                                      .signInToContinue,
                                   style: Styles.textStyle14(context).copyWith(
                                     color: colors.kTextMutedColor,
                                   ),
@@ -121,7 +132,7 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0),
+                                          horizontal: 8.0),
                                       child:
                                           CustomPhoneTextFieldWithNoCountryChange(
                                         controller: phoneNumberController,
@@ -133,83 +144,82 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                       ),
                                     ),
 
-                                    const SizedBox(height: 8),
+                                    const SizedBox(height: 14),
 
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0),
-                                      child: Text(
-                                        AppLocalizations.of(context)!
-                                            .egyptionsOnly,
-                                        style: Styles.textStyle12(context)
-                                            .copyWith(
-                                          color: colors.kTextMutedColor,
+                                          horizontal: 8.0),
+                                      child: TextFormFieldWithTitle(
+                                        controller: passwordController,
+                                        title: AppLocalizations.of(context)!
+                                            .password,
+                                        placeholder:
+                                            AppLocalizations.of(context)!
+                                                .enterPassword,
+                                        obscureText: !state.showPassword,
+                                        optionalLabelButtonOnTap: () {
+                                          globals.navigatorKey.currentState!
+                                              .pushNamed(ForgetPasswordView.id);
+                                        },
+                                        optionalLabelButton: Text(
+                                            AppLocalizations.of(context)!
+                                                .forgot,
+                                            style: Styles.textStyle12(context)
+                                                .copyWith(
+                                                    color:
+                                                        colors.kPrimaryColor)),
+                                        suffix: GestureDetector(
+                                          onTap: () {
+                                            notifier.toggleShowPassword();
+                                          },
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 12),
+                                            child: Center(
+                                              child: Text(
+                                                globals.appLang == "ar"
+                                                    ? state.showPassword
+                                                        ? "إخفاء"
+                                                        : "إظهار"
+                                                    : state.showPassword
+                                                        ? "HIDE"
+                                                        : "SHOW",
+                                                style:
+                                                    Styles.textStyle14(context)
+                                                        .copyWith(
+                                                  color: colors.kTextMutedColor,
+                                                  fontWeight: FontWeight.w700,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                         ),
+                                        validator: (String? pass) {
+                                          final value = pass ?? "";
+
+                                          if (value.isEmpty) {
+                                            return AppLocalizations.of(context)!
+                                                .cantBeEmpty;
+                                          }
+
+                                          if (value.contains(" ")) {
+                                            return AppLocalizations.of(context)!
+                                                .thisFieldCantContainSpaces;
+                                          }
+
+                                          if (!validation.isValid) {
+                                            return AppLocalizations.of(context)!
+                                                .fieldIsNotValid;
+                                          }
+
+                                          return null;
+                                        },
                                       ),
                                     ),
 
                                     const SizedBox(height: 16),
 
                                     // checkbox here (same as before)
-                                    Row(
-                                      children: [
-                                        Checkbox(
-                                          value: state.termsAndPrivacyChecked,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(4),
-                                          ),
-                                          side: BorderSide(
-                                            color: colors.kHintColor,
-                                            width: 1.5,
-                                          ),
-                                          onChanged: (_) {
-                                            ref
-                                                .read(loginNotifierProvider
-                                                    .notifier)
-                                                .toggleTermsAndPrivacyChecked();
-                                          },
-                                        ),
-                                        Expanded(
-                                          child: RichText(
-                                            text: TextSpan(
-                                              style: Styles.textStyle14(context)
-                                                  .copyWith(
-                                                color: colors.kTextMutedColor,
-                                              ),
-                                              children: [
-                                                TextSpan(
-                                                  text: globals.appLang == "en"
-                                                      ? "I Agree on ArenaX's "
-                                                      : "أوافق على ",
-                                                ),
-                                                TextSpan(
-                                                  text: globals.appLang == "en"
-                                                      ? "Terms "
-                                                      : "شروط وأحكام ",
-                                                  style: TextStyle(
-                                                    color: colors.kPrimaryColor,
-                                                  ),
-                                                ),
-                                                TextSpan(
-                                                  text: globals.appLang == "en"
-                                                      ? "and "
-                                                      : "و",
-                                                ),
-                                                TextSpan(
-                                                  text: globals.appLang == "en"
-                                                      ? "Privacy Policy"
-                                                      : "سياسة الخصوصية",
-                                                  style: TextStyle(
-                                                    color: colors.kPrimaryColor,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
                                   ],
                                 ),
                               ),
@@ -220,17 +230,94 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
 
                       // 🔥 THIS PUSHES BUTTON TO BOTTOM
                       Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 16, left: 16, right: 16),
+                        padding: const EdgeInsets.only(left: 8, right: 8),
                         child: state.isLoginButtonLoading
                             ? const CustomLoadingIndicator()
                             : CustomButton(
-                                text: AppLocalizations.of(context)!.sendCode,
+                                text: AppLocalizations.of(context)!.login,
                                 itemCallBack: () {
                                   if (loginFormKey.currentState!.validate()) {}
                                 },
                               ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                color: colors.kDisabledButtonColor,
+                                thickness: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12),
+                              child: Text(
+                                AppLocalizations.of(context)!.or,
+                                style: Styles.textStyle12(context).copyWith(
+                                  color: colors.kTextMutedColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                color: colors.kDisabledButtonColor,
+                                thickness: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: CustomButtonWithNoBG(
+                            previousIcon: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 4.0),
+                              child: Image.asset(
+                                AssetsData.faceIdIcon,
+                                width: 25,
+                                height: 25,
+                              ),
+                            ),
+                            text: AppLocalizations.of(context)!.useFaceId,
+                            itemCallBack: () {}),
+                      ),
+                      SizedBox(
+                        height: 18,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.dontHaveAcc,
+                            style: Styles.textStyle12(context)
+                                .copyWith(color: colors.kTextMutedColor),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              globals.navigatorKey.currentState!
+                                  .pushNamed(RegisterView.id);
+                            },
+                            child: Text(
+                              AppLocalizations.of(context)!.signUp,
+                              style: Styles.textStyle12(context)
+                                  .copyWith(color: colors.kPrimaryColor),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 82,
+                      )
                     ],
                   ),
                 ),

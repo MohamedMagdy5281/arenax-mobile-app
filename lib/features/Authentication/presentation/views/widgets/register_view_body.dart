@@ -1,7 +1,6 @@
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
-import 'package:arenax_mobile_app/core/utils/theme/provider/theme_provider.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_phone_text_field_with_no_country_change.dart';
-import 'package:arenax_mobile_app/features/Authentication/presentation/manager/loginRiverpod/login_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/manager/registerRiverpod/register_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 
 import 'package:flutter/material.dart';
@@ -9,7 +8,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
@@ -37,8 +35,8 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(loginNotifierProvider);
-    final notifier = ref.read(loginNotifierProvider.notifier);
+    final state = ref.watch(registerNotifierProvider);
+    final notifier = ref.read(registerNotifierProvider.notifier);
     final colors = Theme.of(context).extension<AppColors>() ??
         (Theme.of(context).brightness == Brightness.dark
             ? AppColors.dark
@@ -89,27 +87,18 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                 ),
                               ),
                               const SizedBox(height: 12),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16.0),
-                                child: Text(
-                                  AppLocalizations.of(context)!.enterPhone,
-                                  style: Styles.textStyle22(context).copyWith(
-                                    fontWeight: FontWeight.w900,
-                                    color: colors.kTextColor,
-                                  ),
+                              Text(
+                                AppLocalizations.of(context)!.enterPhone,
+                                style: Styles.textStyle22(context).copyWith(
+                                  fontWeight: FontWeight.w900,
+                                  color: colors.kTextColor,
                                 ),
                               ),
                               const SizedBox(height: 12),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16.0),
-                                child: Text(
-                                  AppLocalizations.of(context)!
-                                      .weWillSendDigits,
-                                  style: Styles.textStyle14(context).copyWith(
-                                    color: colors.kTextMutedColor,
-                                  ),
+                              Text(
+                                AppLocalizations.of(context)!.weWillSendDigits,
+                                style: Styles.textStyle14(context).copyWith(
+                                  color: colors.kTextMutedColor,
                                 ),
                               ),
                               const SizedBox(height: 32),
@@ -118,57 +107,65 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0),
-                                      child:
-                                          CustomPhoneTextFieldWithNoCountryChange(
-                                        controller: phoneNumberController,
-                                        title: AppLocalizations.of(context)!
-                                            .phoneNumber,
-                                        placeholder:
-                                            AppLocalizations.of(context)!
-                                                .enterPhone,
-                                      ),
+                                    CustomPhoneTextFieldWithNoCountryChange(
+                                      controller: phoneNumberController,
+                                      title: AppLocalizations.of(context)!
+                                          .phoneNumber,
+                                      placeholder: AppLocalizations.of(context)!
+                                          .enterPhone,
                                     ),
 
                                     const SizedBox(height: 8),
 
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0),
-                                      child: Text(
-                                        AppLocalizations.of(context)!
-                                            .egyptionsOnly,
-                                        style: Styles.textStyle12(context)
-                                            .copyWith(
-                                          color: colors.kTextMutedColor,
-                                        ),
+                                    Text(
+                                      AppLocalizations.of(context)!
+                                          .egyptionsOnly,
+                                      style:
+                                          Styles.textStyle12(context).copyWith(
+                                        color: colors.kTextMutedColor,
                                       ),
                                     ),
 
-                                    const SizedBox(height: 16),
+                                    const SizedBox(height: 32),
 
                                     // checkbox here (same as before)
                                     Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
-                                        Checkbox(
-                                          value: state.termsAndPrivacyChecked,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(4),
+                                        Transform.translate(
+                                          offset: const Offset(-4,
+                                              0), // aligns checkbox with text field edge
+                                          child: Checkbox(
+                                            value: state.termsAndPrivacyChecked,
+                                            checkColor: colors.kTextColor,
+                                            activeColor: colors.kPrimaryColor,
+                                            materialTapTargetSize:
+                                                MaterialTapTargetSize
+                                                    .shrinkWrap,
+                                            visualDensity: const VisualDensity(
+                                              horizontal:
+                                                  VisualDensity.minimumDensity,
+                                              vertical:
+                                                  VisualDensity.minimumDensity,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(4),
+                                            ),
+                                            side: BorderSide(
+                                              color: colors.kHintColor,
+                                              width: 1.5,
+                                            ),
+                                            onChanged: (_) {
+                                              ref
+                                                  .read(registerNotifierProvider
+                                                      .notifier)
+                                                  .toggleTermsAndPrivacyChecked();
+                                            },
                                           ),
-                                          side: BorderSide(
-                                            color: colors.kHintColor,
-                                            width: 1.5,
-                                          ),
-                                          onChanged: (_) {
-                                            ref
-                                                .read(loginNotifierProvider
-                                                    .notifier)
-                                                .toggleTermsAndPrivacyChecked();
-                                          },
                                         ),
+                                        const SizedBox(width: 4),
                                         Expanded(
                                           child: RichText(
                                             text: TextSpan(
@@ -220,7 +217,8 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                       // 🔥 THIS PUSHES BUTTON TO BOTTOM
                       Padding(
                         padding: const EdgeInsets.only(
-                            bottom: 16, left: 16, right: 16),
+                          bottom: 16,
+                        ),
                         child: state.isLoginButtonLoading
                             ? const CustomLoadingIndicator()
                             : CustomButton(

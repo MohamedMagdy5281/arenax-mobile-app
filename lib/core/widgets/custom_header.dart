@@ -34,8 +34,6 @@ class CustomHeader extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.only(
-        left: 16,
-        right: 16,
         top: 55,
         bottom: 24,
       ),

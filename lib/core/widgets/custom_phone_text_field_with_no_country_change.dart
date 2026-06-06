@@ -5,7 +5,7 @@ import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 
-class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
+class CustomPhoneTextFieldWithNoCountryChange extends StatefulWidget {
   const CustomPhoneTextFieldWithNoCountryChange({
     super.key,
     required this.controller,
@@ -20,6 +20,33 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
   final String placeholder;
   final String? Function(String?)? validator;
   final bool readOnly;
+
+  @override
+  State<CustomPhoneTextFieldWithNoCountryChange> createState() =>
+      _CustomPhoneTextFieldWithNoCountryChangeState();
+}
+
+class _CustomPhoneTextFieldWithNoCountryChangeState
+    extends State<CustomPhoneTextFieldWithNoCountryChange> {
+  final FocusNode _focusNode = FocusNode();
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _focusNode.addListener(() {
+      setState(() {
+        _isFocused = _focusNode.hasFocus;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   String? _validator(String? value, BuildContext context) {
     final text = value ?? "";
@@ -48,11 +75,12 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
         (Theme.of(context).brightness == Brightness.dark
             ? AppColors.dark
             : AppColors.light);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          widget.title,
           style: Styles.textStyle18(context).copyWith(
             fontWeight: FontWeight.w500,
             color: colors.kTextColor,
@@ -60,8 +88,14 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         FormField<String>(
-          validator: (value) => _validator(controller.text, context),
+          validator: (value) => _validator(widget.controller.text, context),
           builder: (state) {
+            final borderColor = state.hasError
+                ? colors.kErrorColor
+                : _isFocused
+                    ? colors.kPrimaryColor
+                    : colors.kDisabledButtonColor;
+
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -69,15 +103,10 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: colors.kSurfaceColor,
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: state.hasError
-                          ? colors.kErrorColor
-                          : colors.kDisabledButtonColor,
-                    ),
+                    border: Border.all(color: borderColor),
                   ),
                   child: Row(
                     children: [
-                      // COUNTRY CODE
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
@@ -86,12 +115,9 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: colors.kCountryCodeBGColor,
                           border: Border(
-                            right: BorderSide(
-                              color: colors.kDisabledButtonColor,
-                              width: 1,
-                            ),
+                            right: BorderSide(color: borderColor),
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(20),
                             bottomLeft: Radius.circular(20),
                           ),
@@ -99,43 +125,38 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Image.asset(
-                              AssetsData.egFlag,
-                              width: 24,
-                              height: 24,
-                            ),
+                            Image.asset(AssetsData.egFlag,
+                                width: 24, height: 24),
                             const SizedBox(width: 4),
                             Text(
                               "+20",
-                              style: Styles.textStyle12(context).copyWith(
-                                color: colors.kHintColor,
+                              style: Styles.textStyle16(context).copyWith(
+                                color: colors.kTextColor,
                               ),
                             ),
                           ],
                         ),
                       ),
-
-                      // INPUT
                       Expanded(
                         child: TextFormField(
-                          controller: controller,
-                          readOnly: readOnly,
+                          focusNode: _focusNode, // 🔥 IMPORTANT
+                          controller: widget.controller,
+                          readOnly: widget.readOnly,
                           keyboardType: TextInputType.phone,
-                          style: Styles.textStyle14(context).copyWith(
+                          style: Styles.textStyle16(context).copyWith(
                             color: colors.kTextColor,
+                            fontWeight: FontWeight.w400,
                           ),
                           decoration: InputDecoration(
-                            hint: Text(
-                              placeholder,
-                              style: Styles.textStyle14(context)
-                                  .copyWith(color: colors.kHintColor),
-                            ),
+                            hintText: widget.placeholder,
+                            hintStyle: Styles.textStyle14(context)
+                                .copyWith(color: colors.kHintColor),
                             border: InputBorder.none,
                             enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             errorBorder: InputBorder.none,
                             focusedErrorBorder: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                               horizontal: 12,
                               vertical: 16,
                             ),
@@ -148,8 +169,6 @@ class CustomPhoneTextFieldWithNoCountryChange extends StatelessWidget {
                     ],
                   ),
                 ),
-
-                // 🔥 ERROR OUTSIDE FIELD (FIX)
                 if (state.hasError)
                   Padding(
                     padding: const EdgeInsets.only(top: 8, left: 12),

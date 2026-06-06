@@ -1,26 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_loader_notifier_provider.dart';
+part of 'create_password_notifier_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appLoaderNotifierHash() => r'106613ab24065721fd4e2d1df53c9ee558f3b686';
+String _$createPasswordNotifierHash() =>
+    r'7b0f1b77161db9450584f60d41bd194c40df1134';
 
-/// See also [AppLoaderNotifier].
-@ProviderFor(AppLoaderNotifier)
-final appLoaderNotifierProvider =
-    AutoDisposeNotifierProvider<AppLoaderNotifier, AppLoaderState>.internal(
-  AppLoaderNotifier.new,
-  name: r'appLoaderNotifierProvider',
+/// See also [CreatePasswordNotifier].
+@ProviderFor(CreatePasswordNotifier)
+final createPasswordNotifierProvider = AutoDisposeNotifierProvider<
+    CreatePasswordNotifier, CreatePasswordState>.internal(
+  CreatePasswordNotifier.new,
+  name: r'createPasswordNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$appLoaderNotifierHash,
+      : _$createPasswordNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AppLoaderNotifier = AutoDisposeNotifier<AppLoaderState>;
+typedef _$CreatePasswordNotifier = AutoDisposeNotifier<CreatePasswordState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

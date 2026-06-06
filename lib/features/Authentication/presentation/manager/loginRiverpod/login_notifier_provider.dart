@@ -5,23 +5,22 @@ part 'login_notifier_provider.g.dart';
 class LoginState {
   final bool isPageLoading;
   final bool isLoginButtonLoading;
-  final bool termsAndPrivacyChecked;
+  final bool showPassword;
   const LoginState({
     this.isPageLoading = false,
     this.isLoginButtonLoading = false,
-    this.termsAndPrivacyChecked = false,
+    this.showPassword = false,
   });
 
-  LoginState copyWith({
-    bool? isPageLoading,
-    bool? isLoginButtonLoading,
-    bool? termsAndPrivacyChecked,
-  }) {
+  LoginState copyWith(
+      {bool? isPageLoading,
+      bool? isLoginButtonLoading,
+      bool? termsAndPrivacyChecked,
+      bool? showPassword}) {
     return LoginState(
       isPageLoading: isPageLoading ?? this.isPageLoading,
       isLoginButtonLoading: isLoginButtonLoading ?? this.isLoginButtonLoading,
-      termsAndPrivacyChecked:
-          termsAndPrivacyChecked ?? this.termsAndPrivacyChecked,
+      showPassword: showPassword ?? this.showPassword,
     );
   }
 }
@@ -41,8 +40,7 @@ class LoginNotifier extends _$LoginNotifier {
     state = state.copyWith(isLoginButtonLoading: isLoading);
   }
 
-  void toggleTermsAndPrivacyChecked() {
-    state =
-        state.copyWith(termsAndPrivacyChecked: !state.termsAndPrivacyChecked);
+  void toggleShowPassword() {
+    state = state.copyWith(showPassword: !state.showPassword);
   }
 }

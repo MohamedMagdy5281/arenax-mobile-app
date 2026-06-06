@@ -15,25 +15,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authenticateMsg => 'Please authenticate to access the app';
 
   @override
-  String get cantBeEmpty => 'This field can\'t be empty';
-
-  @override
-  String get welcomeBack => 'Welcome Back';
-
-  @override
   String get email => 'Email';
 
   @override
-  String get password => 'Password';
-
-  @override
   String get signIn => 'Sign In';
-
-  @override
-  String get dontHaveAcc => 'Don\'t have an account? ';
-
-  @override
-  String get signUp => 'Sign up';
 
   @override
   String get letsGetStarted =>
@@ -113,9 +98,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterEmail => 'Enter your email ';
-
-  @override
-  String get enterPassword => 'Enter your password ';
 
   @override
   String get currentChat => 'Current chat';
@@ -249,9 +231,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get languageChange => 'Change language';
 
   @override
-  String get newPassword => 'New password';
-
-  @override
   String get confirmNewPassword => 'Confirm new password';
 
   @override
@@ -262,9 +241,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get english => 'English';
-
-  @override
-  String get login => 'Login';
 
   @override
   String get signForNewAcc => 'Sign up for new account';
@@ -286,15 +262,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterLastName => 'Enter your last name';
-
-  @override
-  String get confirmPassword => 'Confirm password';
-
-  @override
-  String get enterConfirmPassword => 'Enter your confirm password';
-
-  @override
-  String get createPassword => 'Create password';
 
   @override
   String get confirm => 'Confirm';
@@ -461,9 +428,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterCurrentPassword => 'Enter current password';
 
   @override
-  String get enterNewPassword => 'Enter new password';
-
-  @override
   String get enterNewConfirmPassword => 'Enter confirm new password';
 
   @override
@@ -543,9 +507,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get galleryPermissionError => 'Gallery permission is denied';
 
   @override
-  String get cancel => 'Cancel';
-
-  @override
   String get settings => 'Settings';
 
   @override
@@ -577,9 +538,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginWithGmail => 'Login with gmail';
-
-  @override
-  String get or => 'Or';
 
   @override
   String get resetPassword => 'Reset password';
@@ -873,4 +831,98 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get changeNumber => 'Change number';
+
+  @override
+  String get createPassword => 'Create a password';
+
+  @override
+  String get charactersWithLettersAndNumbers =>
+      '8+ characters with a letter and a number.';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get enterPassword => 'Enter password ';
+
+  @override
+  String get confirmPassword => 'Confirm password';
+
+  @override
+  String get enterConfirmPassword => 'Re-enter password';
+
+  @override
+  String get cantBeEmpty => 'This field can\'t be empty';
+
+  @override
+  String get thisFieldCantContainSpaces => 'This field can\'t contain spaces';
+
+  @override
+  String get fieldIsNotValid => 'This field doesn\'t meet the required format';
+
+  @override
+  String get confirmPassNotMatchingPass =>
+      'Confirm password doesn\'t match the password';
+
+  @override
+  String get signInFaster => 'Sign in faster next time';
+
+  @override
+  String get useFaceIdOrTouchId =>
+      'Use Face ID or Touch ID to unlock ArenaX without typing your password.';
+
+  @override
+  String get enableFaceId => 'Enable Face ID';
+
+  @override
+  String get notNow => 'Not now';
+
+  @override
+  String get welcomeBack => 'Welcome back';
+
+  @override
+  String get signInToContinue => 'Sign in to continue.';
+
+  @override
+  String get forgot => 'Forgot?';
+
+  @override
+  String get login => 'Log in';
+
+  @override
+  String get or => 'OR';
+
+  @override
+  String get useFaceId => 'Use Facee Id';
+
+  @override
+  String get dontHaveAcc => 'Don\'t have an account? ';
+
+  @override
+  String get signUp => 'Sign up';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get forgotYourPassword => 'Forgot your password?';
+
+  @override
+  String get enterYourPhoneAndWeSendCode =>
+      'Enter your phone number and we\'ll sendyou a code to reset it.';
+
+  @override
+  String get resetYourPassword => 'Reset your password';
+
+  @override
+  String get codeSentTo => 'Code sent to ';
+
+  @override
+  String get newPassword => 'New password';
+
+  @override
+  String get enterNewPassword => 'Enter new password';
+
+  @override
+  String get saveAndSignIn => 'Save and sign in';
 }
