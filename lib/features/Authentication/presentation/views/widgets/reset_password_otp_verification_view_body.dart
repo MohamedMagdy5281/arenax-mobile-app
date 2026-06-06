@@ -54,32 +54,32 @@ class _ResetPasswordOtpVerificationViewBodyState
     PasswordValidation validation,
   ) {
     final strength = validation.score <= 2
-        ? "Weak"
+        ? AppLocalizations.of(context)!.weak
         : validation.score <= 4
-            ? "Medium"
-            : "Strong";
+            ? AppLocalizations.of(context)!.medium
+            : AppLocalizations.of(context)!.strong;
 
     if (!validation.hasMinLength) {
-      return "$strength — add more characters to strengthen";
+      return "$strength — ${AppLocalizations.of(context)!.addMoreChar}";
     }
 
     if (!validation.hasUppercase) {
-      return "$strength — add a capital letter to strengthen";
+      return "$strength — ${AppLocalizations.of(context)!.addCapitalLetter}";
     }
 
     if (!validation.hasLowercase) {
-      return "$strength — add a lowercase letter to strengthen";
+      return "$strength — ${AppLocalizations.of(context)!.addLowercaseLetter}";
     }
 
     if (!validation.hasNumber) {
-      return "$strength — add a number to strengthen";
+      return "$strength — ${AppLocalizations.of(context)!.addNumber}";
     }
 
     if (!validation.hasSpecialChar) {
-      return "$strength —  add a special character (@ , & or _ ) to strengthen";
+      return "$strength —  ${AppLocalizations.of(context)!.addSpecialChar}";
     }
 
-    return "Strong";
+    return "$strength —  ${AppLocalizations.of(context)!.strong}";
   }
 
   @override
@@ -321,7 +321,10 @@ class _ResetPasswordOtpVerificationViewBodyState
                                 style: Styles.textStyle12(context).copyWith(
                                   color:
                                       _getPasswordHint(context, validation) ==
-                                              "Strong"
+                                                  "Strong" ||
+                                              _getPasswordHint(
+                                                      context, validation) ==
+                                                  "قوي"
                                           ? Colors.green
                                           : colors.kTextMutedColor,
                                 ),

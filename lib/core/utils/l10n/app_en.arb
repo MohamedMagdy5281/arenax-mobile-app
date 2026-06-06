@@ -1177,7 +1177,40 @@
   "saveAndSignIn":"Save and sign in",
   "@saveAndSignIn":{
     "saveAndSignIn":""
+  },
+  "weak":"Weak",
+  "@weak":{
+    "weak":""
+  },
+  "medium":"Medium",
+  "@medium":{
+    "medium":""
+  },
+  "strong":"Strong",
+  "@strong":{
+    "strong":""
+  },
+  "addMoreChar":"add more characters to strengthen",
+  "@addMoreChar":{
+    "addMoreChar":""
+  },
+  "addCapitalLetter":"add a capital letter to strengthen",
+  "@addCapitalLetter":{
+    "addCapitalLetter":""
+  },
+  "addLowercaseLetter":"add a lowercase letter to strengthen",
+  "@addLowercaseLetter":{
+    "addLowercaseLetter":""
+  },
+  "addNumber":"add a number to strengthen",
+  "@addNumber":{
+    "addNumber":""
+  },
+  "addSpecialChar":"add a special character (@ , & or _ ) to strengthen",
+  "@addSpecialChar":{
+    "addSpecialChar":""
   }
+  
 }
 
   
