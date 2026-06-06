@@ -23,7 +23,7 @@
 //         const SizedBox(width: 8),
 //         Text(
 //           '+966',
-//           style: Styles.textStyle16,
+//           style: Styles.textStyle16(context),
 //         ),
 //         const SizedBox(width: 8),
 //       ],

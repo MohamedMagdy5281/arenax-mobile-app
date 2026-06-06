@@ -1,53 +1,124 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:arenax_mobile_app/core/utils/colors.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 
 abstract class Styles {
-  static TextStyle textStyle12 = TextStyle(
-    fontSize: 12.spMin,
-    fontWeight: FontWeight.w400,
-    color: kSubTitleColor,
-  );
+  // Helper to get colors safely
+  static AppColors _colors(BuildContext context) {
+    return Theme.of(context).extension<AppColors>()!;
+  }
 
-  static TextStyle textStyle14 = TextStyle(
-    fontSize: 14.spMin,
-    fontWeight: FontWeight.w400,
-    color: kDarkBlackColor,
-  );
+  // ---------------- TEXT STYLES ----------------
 
-  static TextStyle textStyle16 = TextStyle(
-    fontSize: 16.spMin,
-    fontWeight: FontWeight.w600,
-    color: kDarkBlackColor,
-  );
+  static TextStyle textStyle12(BuildContext context) {
+    final colors = _colors(context);
 
-  static TextStyle textStyle18 = TextStyle(
-    fontSize: 18.spMin,
-    fontWeight: FontWeight.w600,
-    color: kDarkBlackColor,
-  );
+    return TextStyle(
+      fontSize: 12.spMin,
+      fontWeight: FontWeight.w400,
+      color: colors.kTextMutedColor,
+    );
+  }
 
-  static TextStyle textStyle20 = TextStyle(
-    fontSize: 20.spMin,
-    fontWeight: FontWeight.w600,
-    color: kDarkBlackColor,
-  );
+  static TextStyle textStyle14(BuildContext context) {
+    final colors = _colors(context);
 
-  static TextStyle textStyle22 = TextStyle(
-    fontSize: 22.spMin,
-    fontWeight: FontWeight.w600,
-    color: kDarkBlackColor,
-  );
+    return TextStyle(
+      fontSize: 14.spMin,
+      fontWeight: FontWeight.w400,
+      color: colors.kTextColor,
+    );
+  }
 
-  static TextStyle textStyle24 = TextStyle(
-    fontSize: 24.spMin,
-    fontWeight: FontWeight.w600,
-    color: kDarkBlackColor,
-  );
+  static TextStyle textStyle16(BuildContext context) {
+    final colors = _colors(context);
 
-  static TextStyle textStyle32 = TextStyle(
-    fontSize: 32.spMin,
-    fontWeight: FontWeight.w600,
-    color: kDarkBlackColor,
-  );
+    return TextStyle(
+      fontSize: 16.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kTextColor,
+    );
+  }
+
+  static TextStyle textStyle18(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 18.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kTextColor,
+    );
+  }
+
+  static TextStyle textStyle20(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 20.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kTextColor,
+    );
+  }
+
+  static TextStyle textStyle22(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 22.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kTextColor,
+    );
+  }
+
+  static TextStyle textStyle24(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 24.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kTextColor,
+    );
+  }
+
+  static TextStyle textStyle32(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 32.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kTextColor,
+    );
+  }
+
+  // ---------------- SPECIAL STYLES ----------------
+
+  static TextStyle subtitle(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 12.spMin,
+      fontWeight: FontWeight.w400,
+      color: colors.kTextMutedColor,
+    );
+  }
+
+  static TextStyle errorText(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 14.spMin,
+      fontWeight: FontWeight.w500,
+      color: colors.kErrorColor,
+    );
+  }
+
+  static TextStyle buttonText(BuildContext context) {
+    final colors = _colors(context);
+
+    return TextStyle(
+      fontSize: 16.spMin,
+      fontWeight: FontWeight.w600,
+      color: colors.kWhiteColor,
+    );
+  }
 }

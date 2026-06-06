@@ -108,7 +108,7 @@
 //                       ),
 //                       child: Text(
 //                         widget.title,
-//                         style: Styles.textStyle18,
+//                         style: Styles.textStyle18(context),
 //                       ),
 //                     ),
 //                     filled: true,
@@ -146,7 +146,7 @@
 //                     prefixIcon: Icon(Iconsax.language_circle),
 //                     hintText: widget.hintText ??
 //                         AppLocalizations.of(context)!.searchYourLang,
-//                     hintStyle: Styles.textStyle14.copyWith(
+//                     hintStyle: Styles.textStyle14(context).copyWith(
 //                       color: kHintColor,
 //                       fontWeight: FontWeight.w400,
 //                     ),

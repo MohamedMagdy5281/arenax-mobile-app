@@ -110,47 +110,17 @@ abstract class AppLocalizations {
   /// **'Please authenticate to access the app'**
   String get authenticateMsg;
 
-  /// No description provided for @cantBeEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'This field can\'t be empty'**
-  String get cantBeEmpty;
-
-  /// No description provided for @welcomeBack.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome Back'**
-  String get welcomeBack;
-
   /// No description provided for @email.
   ///
   /// In en, this message translates to:
   /// **'Email'**
   String get email;
 
-  /// No description provided for @password.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get password;
-
   /// No description provided for @signIn.
   ///
   /// In en, this message translates to:
   /// **'Sign In'**
   String get signIn;
-
-  /// No description provided for @dontHaveAcc.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t have an account? '**
-  String get dontHaveAcc;
-
-  /// No description provided for @signUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign up'**
-  String get signUp;
 
   /// No description provided for @letsGetStarted.
   ///
@@ -308,23 +278,11 @@ abstract class AppLocalizations {
   /// **'Enter your email '**
   String get enterEmail;
 
-  /// No description provided for @enterPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your password '**
-  String get enterPassword;
-
   /// No description provided for @currentChat.
   ///
   /// In en, this message translates to:
   /// **'Current chat'**
   String get currentChat;
-
-  /// No description provided for @continueLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get continueLabel;
 
   /// No description provided for @newChat.
   ///
@@ -578,12 +536,6 @@ abstract class AppLocalizations {
   /// **'Change language'**
   String get languageChange;
 
-  /// No description provided for @newPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'New password'**
-  String get newPassword;
-
   /// No description provided for @confirmNewPassword.
   ///
   /// In en, this message translates to:
@@ -607,12 +559,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'English'**
   String get english;
-
-  /// No description provided for @login.
-  ///
-  /// In en, this message translates to:
-  /// **'Login'**
-  String get login;
 
   /// No description provided for @signForNewAcc.
   ///
@@ -655,36 +601,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your last name'**
   String get enterLastName;
-
-  /// No description provided for @enterPhone.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your phone number'**
-  String get enterPhone;
-
-  /// No description provided for @phoneNumber.
-  ///
-  /// In en, this message translates to:
-  /// **'Phone Number'**
-  String get phoneNumber;
-
-  /// No description provided for @confirmPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm password'**
-  String get confirmPassword;
-
-  /// No description provided for @enterConfirmPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your confirm password'**
-  String get enterConfirmPassword;
-
-  /// No description provided for @createPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Create password'**
-  String get createPassword;
 
   /// No description provided for @confirm.
   ///
@@ -992,12 +908,6 @@ abstract class AppLocalizations {
   /// **'Enter current password'**
   String get enterCurrentPassword;
 
-  /// No description provided for @enterNewPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter new password'**
-  String get enterNewPassword;
-
   /// No description provided for @enterNewConfirmPassword.
   ///
   /// In en, this message translates to:
@@ -1142,12 +1052,6 @@ abstract class AppLocalizations {
   /// **'Gallery permission is denied'**
   String get galleryPermissionError;
 
-  /// No description provided for @cancel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancel;
-
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:
@@ -1190,12 +1094,6 @@ abstract class AppLocalizations {
   /// **'Join me to try ArenaX today!'**
   String get joinGlosa;
 
-  /// No description provided for @mobileValidateMsg.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a valid mobile number'**
-  String get mobileValidateMsg;
-
   /// No description provided for @searchCountry.
   ///
   /// In en, this message translates to:
@@ -1219,12 +1117,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login with gmail'**
   String get loginWithGmail;
-
-  /// No description provided for @or.
-  ///
-  /// In en, this message translates to:
-  /// **'Or'**
-  String get or;
 
   /// No description provided for @resetPassword.
   ///
@@ -1610,12 +1502,6 @@ abstract class AppLocalizations {
   /// **'Others'**
   String get others;
 
-  /// No description provided for @next.
-  ///
-  /// In en, this message translates to:
-  /// **'Next'**
-  String get next;
-
   /// No description provided for @locationPermissionSettings.
   ///
   /// In en, this message translates to:
@@ -1633,6 +1519,336 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add'**
   String get add;
+
+  /// No description provided for @findBookPlayTogether.
+  ///
+  /// In en, this message translates to:
+  /// **'Find. Book. Play. Together.'**
+  String get findBookPlayTogether;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @continueLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueLabel;
+
+  /// No description provided for @findYourPlaceToPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Find your place to play'**
+  String get findYourPlaceToPlay;
+
+  /// No description provided for @discoverThings.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover padel, football pitches, and co-working spaces near you.'**
+  String get discoverThings;
+
+  /// No description provided for @findBookPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Find. Book. Play.'**
+  String get findBookPlay;
+
+  /// No description provided for @together.
+  ///
+  /// In en, this message translates to:
+  /// **'Together.'**
+  String get together;
+
+  /// No description provided for @bookThenSplit.
+  ///
+  /// In en, this message translates to:
+  /// **'Book padel, football, and co-working spaces — then split it with your crew.'**
+  String get bookThenSplit;
+
+  /// No description provided for @continueWithPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with phone'**
+  String get continueWithPhone;
+
+  /// No description provided for @iAlreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'I already have an account'**
+  String get iAlreadyHaveAnAccount;
+
+  /// No description provided for @byContinuingYouAgreeToOur.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to our'**
+  String get byContinuingYouAgreeToOur;
+
+  /// No description provided for @terms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms'**
+  String get terms;
+
+  /// No description provided for @privacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacy;
+
+  /// No description provided for @mobileValidateMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid mobile number'**
+  String get mobileValidateMsg;
+
+  /// No description provided for @invalidPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid phone number'**
+  String get invalidPhoneNumber;
+
+  /// No description provided for @enterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get enterPhone;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
+
+  /// No description provided for @phoneIsRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your phone number'**
+  String get phoneIsRequired;
+
+  /// No description provided for @weWillSendDigits.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll send a 6-digit code to verify it\'s you.'**
+  String get weWillSendDigits;
+
+  /// No description provided for @egyptionsOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian mobile numbers only at launch'**
+  String get egyptionsOnly;
+
+  /// No description provided for @sendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Send code'**
+  String get sendCode;
+
+  /// No description provided for @enterTheCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the code'**
+  String get enterTheCode;
+
+  /// No description provided for @weSentItToYou.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent it to '**
+  String get weSentItToYou;
+
+  /// No description provided for @changeNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Change number'**
+  String get changeNumber;
+
+  /// No description provided for @createPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a password'**
+  String get createPassword;
+
+  /// No description provided for @charactersWithLettersAndNumbers.
+  ///
+  /// In en, this message translates to:
+  /// **'8+ characters with a letter and a number.'**
+  String get charactersWithLettersAndNumbers;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @enterPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter password '**
+  String get enterPassword;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get confirmPassword;
+
+  /// No description provided for @enterConfirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enter password'**
+  String get enterConfirmPassword;
+
+  /// No description provided for @cantBeEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'This field can\'t be empty'**
+  String get cantBeEmpty;
+
+  /// No description provided for @thisFieldCantContainSpaces.
+  ///
+  /// In en, this message translates to:
+  /// **'This field can\'t contain spaces'**
+  String get thisFieldCantContainSpaces;
+
+  /// No description provided for @fieldIsNotValid.
+  ///
+  /// In en, this message translates to:
+  /// **'This field doesn\'t meet the required format'**
+  String get fieldIsNotValid;
+
+  /// No description provided for @confirmPassNotMatchingPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password doesn\'t match the password'**
+  String get confirmPassNotMatchingPass;
+
+  /// No description provided for @signInFaster.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in faster next time'**
+  String get signInFaster;
+
+  /// No description provided for @useFaceIdOrTouchId.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Face ID or Touch ID to unlock ArenaX without typing your password.'**
+  String get useFaceIdOrTouchId;
+
+  /// No description provided for @enableFaceId.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Face ID'**
+  String get enableFaceId;
+
+  /// No description provided for @notNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get notNow;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back'**
+  String get welcomeBack;
+
+  /// No description provided for @signInToContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to continue.'**
+  String get signInToContinue;
+
+  /// No description provided for @forgot.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot?'**
+  String get forgot;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get login;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'OR'**
+  String get or;
+
+  /// No description provided for @useFaceId.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Facee Id'**
+  String get useFaceId;
+
+  /// No description provided for @dontHaveAcc.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account? '**
+  String get dontHaveAcc;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signUp;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @forgotYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot your password?'**
+  String get forgotYourPassword;
+
+  /// No description provided for @enterYourPhoneAndWeSendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number and we\'ll sendyou a code to reset it.'**
+  String get enterYourPhoneAndWeSendCode;
+
+  /// No description provided for @resetYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset your password'**
+  String get resetYourPassword;
+
+  /// No description provided for @codeSentTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Code sent to '**
+  String get codeSentTo;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New password'**
+  String get newPassword;
+
+  /// No description provided for @enterNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter new password'**
+  String get enterNewPassword;
+
+  /// No description provided for @saveAndSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Save and sign in'**
+  String get saveAndSignIn;
 }
 
 class _AppLocalizationsDelegate
