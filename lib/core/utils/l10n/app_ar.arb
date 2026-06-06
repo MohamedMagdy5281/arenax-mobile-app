@@ -296,7 +296,16 @@
     "codeSentTo":"تم إرسال الرمز إلى ",
     "newPassword":"كلمة المرور الجديدة",
     "enterNewPassword":"أدخل كلمة المرور الجديدة",
-    "saveAndSignIn":"حفظ وتسجيل الدخول"
+    "saveAndSignIn":"حفظ وتسجيل الدخول",
+    "weak":"ضعيف",
+    "medium":"متوسط",
+    "strong":"قوي",
+    "addMoreChar":"أضف المزيد من الشخصيات لتعزيزها",
+    "addCapitalLetter":"أضف حرفًا كبيرًا لتقوية",
+    "addLowercaseLetter":"أضف حرفًا صغيرًا لتقوية",
+    "addNumber":"أضف رقمًا لتقوية",
+    "addSpecialChar":"أضف رمزًا خاصًا (@ أو & أو _) لتقوية"
+
 
 
 
