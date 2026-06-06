@@ -288,12 +288,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterLastName => 'Enter your last name';
 
   @override
-  String get enterPhone => 'Enter your phone number';
-
-  @override
-  String get phoneNumber => 'Phone Number';
-
-  @override
   String get confirmPassword => 'Confirm password';
 
   @override
@@ -573,9 +567,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get joinGlosa => 'Join me to try ArenaX today!';
 
   @override
-  String get mobileValidateMsg => 'Please enter a valid mobile number';
-
-  @override
   String get searchCountry => 'Search for the country';
 
   @override
@@ -848,4 +839,38 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacy => 'Privacy';
+
+  @override
+  String get mobileValidateMsg => 'Please enter a valid mobile number';
+
+  @override
+  String get invalidPhoneNumber => 'Invalid phone number';
+
+  @override
+  String get enterPhone => 'Enter your phone number';
+
+  @override
+  String get phoneNumber => 'Phone Number';
+
+  @override
+  String get phoneIsRequired => 'Please enter your phone number';
+
+  @override
+  String get weWillSendDigits =>
+      'We\'ll send a 6-digit code to verify it\'s you.';
+
+  @override
+  String get egyptionsOnly => 'Egyptian mobile numbers only at launch';
+
+  @override
+  String get sendCode => 'Send code';
+
+  @override
+  String get enterTheCode => 'Enter the code';
+
+  @override
+  String get weSentItToYou => 'We sent it to ';
+
+  @override
+  String get changeNumber => 'Change number';
 }

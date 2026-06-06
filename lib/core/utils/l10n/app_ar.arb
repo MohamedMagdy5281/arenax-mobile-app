@@ -94,8 +94,6 @@
   "firstName":"الاسم الأول",
   "enterFirstName":"أدخل اسمك الأول",
   "enterLastName":"أدخل اسمك الاخير",
-  "enterPhone":"أدخل رقم جوالك",
-  "phoneNumber":"رقم الجوال",
   "confirmPassword":"تأكيد كلمة المرور",
   "enterConfirmPassword":"ادخل تأكيد كلمة المرور",
   "createPassword":"إنشاء كلمة المرور",
@@ -181,7 +179,6 @@
   "editAccent":"تعديل اللهجة",
   "avatarMuted":"تم كتم صوت الصورة الرمزية",
   "joinGlosa":"شاركني تجربة ArenaX اليوم!",
-  "mobileValidateMsg":"من فضلك أدخل رقم جوال صحيح",
   "searchCountry":"ابحث عن الدولة",
   "passwordRulesInfo":"قواعد كلمة المرور",
   "passwordNoArabic":"يجب ان لا تحتوى كلمة المرور على حروف عربية",
@@ -273,8 +270,18 @@
     "iAlreadyHaveAnAccount":"لدي حساب بالفعل",
     "byContinuingYouAgreeToOur":"بالمتابعة، فإنك توافق على",
     "terms":"الشروط",
-    "privacy":"الخصوصية"
-
+    "privacy":"الخصوصية",
+    "mobileValidateMsg":"من فضلك أدخل رقم جوال صحيح",
+    "invalidPhoneNumber":"رقم الهاتف غير صحيح",
+    "enterPhone":"أدخل رقم جوالك",
+    "phoneNumber":"رقم الجوال",
+    "phoneIsRequired":"الرجاء إدخال رقم هاتفك",
+    "weWillSendDigits":"سنرسل لك رمزًا مكونًا من 6 أرقام للتحقق من هويتك.",
+    "egyptionsOnly":"أرقام الهواتف المصرية فقط عند الإطلاق",
+    "sendCode":"إرسال الرمز",
+    "enterTheCode":"أدخل الرمز",
+    "weSentItToYou":"لقد أرسلناه إلي رقم ",
+    "changeNumber":"تغيير الرقم"
 
 
 

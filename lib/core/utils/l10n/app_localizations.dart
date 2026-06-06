@@ -650,18 +650,6 @@ abstract class AppLocalizations {
   /// **'Enter your last name'**
   String get enterLastName;
 
-  /// No description provided for @enterPhone.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your phone number'**
-  String get enterPhone;
-
-  /// No description provided for @phoneNumber.
-  ///
-  /// In en, this message translates to:
-  /// **'Phone Number'**
-  String get phoneNumber;
-
   /// No description provided for @confirmPassword.
   ///
   /// In en, this message translates to:
@@ -1184,12 +1172,6 @@ abstract class AppLocalizations {
   /// **'Join me to try ArenaX today!'**
   String get joinGlosa;
 
-  /// No description provided for @mobileValidateMsg.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a valid mobile number'**
-  String get mobileValidateMsg;
-
   /// No description provided for @searchCountry.
   ///
   /// In en, this message translates to:
@@ -1705,6 +1687,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Privacy'**
   String get privacy;
+
+  /// No description provided for @mobileValidateMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid mobile number'**
+  String get mobileValidateMsg;
+
+  /// No description provided for @invalidPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid phone number'**
+  String get invalidPhoneNumber;
+
+  /// No description provided for @enterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get enterPhone;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
+
+  /// No description provided for @phoneIsRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your phone number'**
+  String get phoneIsRequired;
+
+  /// No description provided for @weWillSendDigits.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll send a 6-digit code to verify it\'s you.'**
+  String get weWillSendDigits;
+
+  /// No description provided for @egyptionsOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian mobile numbers only at launch'**
+  String get egyptionsOnly;
+
+  /// No description provided for @sendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Send code'**
+  String get sendCode;
+
+  /// No description provided for @enterTheCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the code'**
+  String get enterTheCode;
+
+  /// No description provided for @weSentItToYou.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent it to '**
+  String get weSentItToYou;
+
+  /// No description provided for @changeNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Change number'**
+  String get changeNumber;
 }
 
 class _AppLocalizationsDelegate

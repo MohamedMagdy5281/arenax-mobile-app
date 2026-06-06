@@ -4,6 +4,10 @@ import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/functions/onboarding_check.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/notification_service.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_theme.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_theme_manager.dart';
+import 'package:arenax_mobile_app/core/utils/theme/provider/theme_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/app_loader_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/auth_intro_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
@@ -32,13 +36,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
 void main() async {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: kBackGroundColor, // top status bar color
-    statusBarIconBrightness: Brightness.dark, // dark icons for white background
-    systemNavigationBarColor: kBackGroundColor,
-    statusBarBrightness: Brightness.light, // for ios
-    systemNavigationBarIconBrightness: Brightness.dark, // dark icons
-  ));
   WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setPreferredOrientations(
@@ -102,9 +99,18 @@ void main() async {
   // await checkLocationServices();
   // Bloc.observer = SimpleBlocObserver();
   // setupFirebaseMessaging();
+
+  final prefs = await SharedPreferences.getInstance();
+
+  final savedMode = switch (prefs.getString('theme_mode')) {
+    'dark' => ThemeMode.dark,
+    'light' => ThemeMode.light,
+    _ => ThemeMode.system,
+  };
+
   runApp(
     RestartWidget(
-      child: ProviderScope(child: MyApp()),
+      child: ProviderScope(child: MyApp(initialThemeMode: savedMode)),
     ),
   );
 }
@@ -187,16 +193,17 @@ Future<void> getIOSDeviceType() async {
   }
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({
     super.key,
+    required this.initialThemeMode,
   });
-
+  final ThemeMode initialThemeMode;
   @override
-  State<MyApp> createState() => _MyAppState();
+  ConsumerState<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
   final LocalAuthentication _localAuth = LocalAuthentication();
   bool isAuthenticated = false;
   bool isInBackground = false;
@@ -230,6 +237,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     // Use CasheHelper's already initialized SharedPreferences
     sharedPrefs = CasheHelper.sharedPreferences;
     WidgetsBinding.instance.addObserver(this);
+    Future.microtask(() {
+      ref.read(themeProvider.notifier).init(widget.initialThemeMode);
+    });
   }
 
   @override
@@ -255,6 +265,22 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
+
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: colors.kBackGroundColor,
+        systemNavigationBarColor: colors.kBackGroundColor,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+    );
+
+    final themeMode = ref.watch(themeProvider);
+
     try {
       // ✅ Safe null-check for SharedPreferences
       if (sharedPrefs != null) {
@@ -287,12 +313,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             Locale('ar'), // Arabic
           ],
           locale: Locale(globals.appLang),
-          theme: ThemeData(
-            colorScheme: const ColorScheme.light(primary: kPrimaryColor),
-            useMaterial3: true,
-            textTheme: GoogleFonts.ibmPlexSansArabicTextTheme(),
-            primaryColor: kPrimaryColor,
-          ),
+          theme: lightTheme,
+          darkTheme: darkTheme,
+          themeMode: themeMode,
           navigatorKey: globals.navigatorKey,
           initialRoute: AppLoaderView.id,
           routes: {

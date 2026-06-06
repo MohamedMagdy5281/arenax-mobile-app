@@ -1,11 +1,13 @@
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/otpVerificationRiverpod/otp_verification_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/interests_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
@@ -13,7 +15,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpVerificationViewBody extends ConsumerStatefulWidget {
-  const OtpVerificationViewBody({super.key});
+  const OtpVerificationViewBody({super.key, required this.phoneNumber});
+
+  final String phoneNumber;
 
   @override
   ConsumerState<OtpVerificationViewBody> createState() =>
@@ -35,6 +39,10 @@ class _OtpVerificationViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     final state = ref.watch(otpVerificationNotifierProvider);
     final notifier = ref.read(otpVerificationNotifierProvider.notifier);
 
@@ -55,32 +63,78 @@ class _OtpVerificationViewBodyState
                     CustomHeader(
                       title: AppLocalizations.of(context)!.verification,
                       optionalPrefixIcon: globals.appLang == "en"
-                          ? Iconsax.arrow_left_2
-                          : Iconsax.arrow_right_2,
+                          ? Container(
+                              decoration: BoxDecoration(
+                                color: colors.kSurfaceColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 38,
+                              height: 38,
+                              child: Icon(
+                                Iconsax.arrow_left_2,
+                                color: colors.kTextColor,
+                                size: 12,
+                              ),
+                            )
+                          : Container(
+                              decoration: BoxDecoration(
+                                color: colors.kSurfaceColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 38,
+                              height: 38,
+                              child: Icon(
+                                Iconsax.arrow_right_2,
+                                color: colors.kTextColor,
+                                size: 12,
+                              ),
+                            ),
                     ),
                     const SizedBox(
                       height: 8,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        AppLocalizations.of(context)!.sendCode,
+                        style: Styles.textStyle22(context).copyWith(
+                          fontWeight: FontWeight.w900,
+                          color: colors.kTextColor,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Row(
                         children: [
                           Text(
-                            AppLocalizations.of(context)!
-                                .weSentConfirmationCode,
-                            style: Styles.textStyle14.copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: kGrey3Color),
-                          ),
-                          SizedBox(
-                            height: 4,
+                            AppLocalizations.of(context)!.weSentItToYou,
+                            style: Styles.textStyle14(context).copyWith(
+                              color: colors.kTextMutedColor,
+                            ),
                           ),
                           Text(
-                            "+20 1234567890",
-                            style: Styles.textStyle14.copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: kSoftDarkishColor),
+                            "${widget.phoneNumber}.",
+                            style: Styles.textStyle16(context).copyWith(
+                              color: colors.kTextColor,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              globals.navigatorKey.currentState!.pop();
+                              globals.navigatorKey.currentState!
+                                  .pushReplacementNamed(RegisterView.id);
+                            },
+                            child: Text(
+                              AppLocalizations.of(context)!.changeNumber,
+                              style: Styles.textStyle16(context).copyWith(
+                                color: colors.kPrimaryColor,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -100,25 +154,27 @@ class _OtpVerificationViewBodyState
                               defaultPinTheme: PinTheme(
                                 width: 54,
                                 height: 54,
-                                textStyle: Styles.textStyle18
-                                    .copyWith(color: kSoftDarkishColor),
+                                textStyle: Styles.textStyle18(context)
+                                    .copyWith(color: colors.kTextColor),
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 8),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: kGreyColor),
+                                  border: Border.all(
+                                      color: colors.kDisabledButtonColor),
                                 ),
                               ),
                               focusedPinTheme: PinTheme(
                                 width: 54,
                                 height: 54,
-                                textStyle: Styles.textStyle18
-                                    .copyWith(color: kSoftDarkishColor),
+                                textStyle: Styles.textStyle18(context)
+                                    .copyWith(color: colors.kTextColor),
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 8),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(color: kPrimaryColor),
+                                  border:
+                                      Border.all(color: colors.kPrimaryColor),
                                 ),
                               ),
                               cursor: Column(
@@ -127,15 +183,15 @@ class _OtpVerificationViewBodyState
                                   Container(
                                     width: 22,
                                     height: 2,
-                                    color: kPrimaryColor,
+                                    color: colors.kPrimaryColor,
                                   ),
                                 ],
                               ),
                               errorPinTheme: PinTheme(
                                 width: 54,
                                 height: 54,
-                                textStyle: Styles.textStyle18
-                                    .copyWith(color: kPrimaryColor),
+                                textStyle: Styles.textStyle18(context)
+                                    .copyWith(color: colors.kPrimaryColor),
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 8),
                                 decoration: BoxDecoration(
@@ -180,11 +236,13 @@ class _OtpVerificationViewBodyState
                                               child: Text(
                                                 AppLocalizations.of(context)!
                                                     .resendCode,
-                                                style: Styles.textStyle14
-                                                    .copyWith(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: kPrimaryColor),
+                                                style:
+                                                    Styles.textStyle14(context)
+                                                        .copyWith(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            color: colors
+                                                                .kPrimaryColor),
                                               ),
                                               onTap: () {
                                                 notifier.setResendButtonLoading(
@@ -201,11 +259,13 @@ class _OtpVerificationViewBodyState
                                                 Text(
                                                   AppLocalizations.of(context)!
                                                       .resendCodeIn,
-                                                  style: Styles.textStyle14
+                                                  style: Styles.textStyle14(
+                                                          context)
                                                       .copyWith(
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          color: kGrey3Color),
+                                                          color: colors
+                                                              .kTextMutedColor),
                                                 ),
                                                 SizedBox(
                                                   width: 4,
@@ -213,12 +273,13 @@ class _OtpVerificationViewBodyState
                                                 Text(
                                                     notifier.formatTime(
                                                         state.otpRemainingTime),
-                                                    style: Styles.textStyle14
+                                                    style: Styles.textStyle14(
+                                                            context)
                                                         .copyWith(
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            color:
-                                                                kPrimaryColor)),
+                                                            color: colors
+                                                                .kPrimaryColor)),
                                               ],
                                             ),
                                     ],

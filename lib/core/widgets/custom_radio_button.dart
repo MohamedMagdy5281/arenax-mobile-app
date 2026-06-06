@@ -1,3 +1,4 @@
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
@@ -25,9 +26,14 @@ class CustomRadioButton extends StatefulWidget {
 class _CustomRadioButtonState extends State<CustomRadioButton> {
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     return Container(
-      decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(width: 1, color: kHintColor))),
+      decoration: BoxDecoration(
+          border:
+              Border(bottom: BorderSide(width: 1, color: colors.kHintColor))),
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +50,8 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                   : const SizedBox(),
               Text(
                 widget.title,
-                style: Styles.textStyle14.copyWith(color: kDarkBlackColor),
+                style: Styles.textStyle14(context)
+                    .copyWith(color: colors.kTextColor),
               ),
             ],
           ),
@@ -60,18 +67,18 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                   width: widget.value == widget.groupValue ? 0 : 2,
                   color: widget.value == widget.groupValue
                       ? Colors.transparent
-                      : kPrimaryColor,
+                      : colors.kPrimaryColor,
                 ),
                 color: widget.value == widget.groupValue
-                    ? kPrimaryColor
-                    : kBGColor,
+                    ? colors.kPrimaryColor
+                    : colors.kBackGroundColor,
                 shape: BoxShape.circle,
               ),
               child: widget.value == widget.groupValue
-                  ? const Icon(
+                  ? Icon(
                       Icons.check,
                       size: 15,
-                      color: kBGColor,
+                      color: colors.kBackGroundColor,
                     )
                   : const SizedBox(),
             ),

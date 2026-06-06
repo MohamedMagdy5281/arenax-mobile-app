@@ -1,6 +1,7 @@
 import 'package:arenax_mobile_app/core/utils/assets.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/locationRiverpod/location_notifier_riverpod.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,10 @@ class _LocationViewBodyState extends ConsumerState<LocationViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     final state = ref.watch(locationNotifierProvider);
     final notifier = ref.read(locationNotifierProvider.notifier);
 
@@ -80,9 +85,9 @@ class _LocationViewBodyState extends ConsumerState<LocationViewBody> {
                               ),
                               filled: true,
                               fillColor: Colors.white,
-                              suffixIcon: const Icon(
+                              suffixIcon: Icon(
                                 Icons.search,
-                                color: kPrimaryColor,
+                                color: colors.kPrimaryColor,
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -156,9 +161,9 @@ class _LocationViewBodyState extends ConsumerState<LocationViewBody> {
                               ),
                             ],
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.my_location,
-                            color: kPrimaryColor,
+                            color: colors.kPrimaryColor,
                           ),
                         ),
                       ),

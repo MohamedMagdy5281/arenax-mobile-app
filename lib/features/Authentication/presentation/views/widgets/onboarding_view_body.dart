@@ -2,6 +2,7 @@ import 'package:arenax_mobile_app/core/utils/assets.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/onboardingRiverpod/onboarding_notifier_provider.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,15 @@ class OnboardingViewBody extends ConsumerStatefulWidget {
 class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     final state = ref.watch(onboardingNotifierProvider);
     final notifier = ref.read(onboardingNotifierProvider.notifier);
 
     return Container(
-        color: kBackGroundColor,
+        color: colors.kBackGroundColor,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Padding(
@@ -47,9 +52,9 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                   horizontal: 16, vertical: 16),
                               child: Text(
                                 AppLocalizations.of(context)!.skip,
-                                style: Styles.textStyle18.copyWith(
+                                style: Styles.textStyle18(context).copyWith(
                                   fontWeight: FontWeight.w400,
-                                  color: kHintColor,
+                                  color: colors.kHintColor,
                                 ),
                               ),
                             ),
@@ -69,8 +74,8 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                   AppLocalizations.of(context)!
                                       .findYourPlaceToPlay,
                                   textAlign: TextAlign.center,
-                                  style: Styles.textStyle24.copyWith(
-                                    color: kTextColor,
+                                  style: Styles.textStyle24(context).copyWith(
+                                    color: colors.kTextColor,
                                   ),
                                 )
                               : state.currentPage == 1
@@ -78,16 +83,18 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                       AppLocalizations.of(context)!
                                           .findYourPlaceToPlay,
                                       textAlign: TextAlign.center,
-                                      style: Styles.textStyle24.copyWith(
-                                        color: kTextColor,
+                                      style:
+                                          Styles.textStyle24(context).copyWith(
+                                        color: colors.kTextColor,
                                       ),
                                     )
                                   : Text(
                                       AppLocalizations.of(context)!
                                           .findYourPlaceToPlay,
                                       textAlign: TextAlign.center,
-                                      style: Styles.textStyle24.copyWith(
-                                        color: kTextColor,
+                                      style:
+                                          Styles.textStyle24(context).copyWith(
+                                        color: colors.kTextColor,
                                       ),
                                     ),
                           SizedBox(height: 16),
@@ -95,8 +102,8 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                               ? Text(
                                   AppLocalizations.of(context)!.discoverThings,
                                   textAlign: TextAlign.center,
-                                  style: Styles.textStyle16.copyWith(
-                                    color: kTextMutedColor,
+                                  style: Styles.textStyle16(context).copyWith(
+                                    color: colors.kTextMutedColor,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 )
@@ -105,8 +112,9 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                       AppLocalizations.of(context)!
                                           .discoverThings,
                                       textAlign: TextAlign.center,
-                                      style: Styles.textStyle16.copyWith(
-                                        color: kTextMutedColor,
+                                      style:
+                                          Styles.textStyle16(context).copyWith(
+                                        color: colors.kTextMutedColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     )
@@ -114,8 +122,9 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                       AppLocalizations.of(context)!
                                           .discoverThings,
                                       textAlign: TextAlign.center,
-                                      style: Styles.textStyle16.copyWith(
-                                        color: kTextMutedColor,
+                                      style:
+                                          Styles.textStyle16(context).copyWith(
+                                        color: colors.kTextMutedColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -138,8 +147,8 @@ class _OnboardingViewBodyState extends ConsumerState<OnboardingViewBody> {
                                   height: 8,
                                   decoration: BoxDecoration(
                                     color: state.currentPage == index
-                                        ? kPrimaryColor
-                                        : kTextMutedColor,
+                                        ? colors.kPrimaryColor
+                                        : colors.kTextMutedColor,
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                 ),

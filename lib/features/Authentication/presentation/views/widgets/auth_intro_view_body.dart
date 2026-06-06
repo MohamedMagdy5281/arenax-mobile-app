@@ -2,6 +2,7 @@ import 'package:arenax_mobile_app/core/utils/assets.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
@@ -13,8 +14,13 @@ class AuthIntroViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
+
     return Container(
-        color: kBackGroundColor,
+        color: colors.kBackGroundColor,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Padding(
@@ -40,17 +46,17 @@ class AuthIntroViewBody extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Arena',
-                                    style: Styles.textStyle32.copyWith(
+                                    style: Styles.textStyle32(context).copyWith(
                                       fontWeight: FontWeight.bold,
-                                      color: kTextColor,
+                                      color: colors.kTextColor,
                                     ),
                                   ),
                                   SizedBox(width: 1),
                                   Text(
                                     'X',
-                                    style: Styles.textStyle32.copyWith(
+                                    style: Styles.textStyle32(context).copyWith(
                                       fontWeight: FontWeight.bold,
-                                      color: kAccentColor,
+                                      color: colors.kAccentColor,
                                     ),
                                   ),
                                 ],
@@ -59,14 +65,14 @@ class AuthIntroViewBody extends StatelessWidget {
                               Column(children: [
                                 Text(
                                   AppLocalizations.of(context)!.findBookPlay,
-                                  style: Styles.textStyle32.copyWith(
-                                    color: kTextColor,
+                                  style: Styles.textStyle32(context).copyWith(
+                                    color: colors.kTextColor,
                                   ),
                                 ),
                                 Text(
                                   AppLocalizations.of(context)!.together,
-                                  style: Styles.textStyle24.copyWith(
-                                    color: kAccentColor,
+                                  style: Styles.textStyle24(context).copyWith(
+                                    color: colors.kAccentColor,
                                   ),
                                 ),
                               ]),
@@ -74,8 +80,8 @@ class AuthIntroViewBody extends StatelessWidget {
                               Text(
                                 AppLocalizations.of(context)!.bookThenSplit,
                                 textAlign: TextAlign.center,
-                                style: Styles.textStyle16.copyWith(
-                                  color: kTextMutedColor,
+                                style: Styles.textStyle16(context).copyWith(
+                                  color: colors.kTextMutedColor,
                                   fontWeight: FontWeight.w400,
                                 ),
                               )
@@ -107,8 +113,8 @@ class AuthIntroViewBody extends StatelessWidget {
                                   Text(
                                     AppLocalizations.of(context)!
                                         .byContinuingYouAgreeToOur,
-                                    style: Styles.textStyle14.copyWith(
-                                      color: kHintColor,
+                                    style: Styles.textStyle14(context).copyWith(
+                                      color: colors.kHintColor,
                                     ),
                                   ),
                                   SizedBox(height: 4),
@@ -121,11 +127,13 @@ class AuthIntroViewBody extends StatelessWidget {
                                         },
                                         child: Text(
                                           AppLocalizations.of(context)!.terms,
-                                          style: Styles.textStyle14.copyWith(
-                                            color: kTextMutedColor,
+                                          style: Styles.textStyle14(context)
+                                              .copyWith(
+                                            color: colors.kTextMutedColor,
                                             decoration:
                                                 TextDecoration.underline,
-                                            decorationColor: kTextMutedColor,
+                                            decorationColor:
+                                                colors.kTextMutedColor,
                                             decorationThickness: 1,
                                           ),
                                         ),
@@ -133,8 +141,9 @@ class AuthIntroViewBody extends StatelessWidget {
                                       SizedBox(width: 4),
                                       Text(
                                         '-',
-                                        style: Styles.textStyle14.copyWith(
-                                          color: kHintColor,
+                                        style: Styles.textStyle14(context)
+                                            .copyWith(
+                                          color: colors.kHintColor,
                                         ),
                                       ),
                                       SizedBox(width: 4),
@@ -144,11 +153,13 @@ class AuthIntroViewBody extends StatelessWidget {
                                         },
                                         child: Text(
                                           AppLocalizations.of(context)!.privacy,
-                                          style: Styles.textStyle14.copyWith(
-                                            color: kTextMutedColor,
+                                          style: Styles.textStyle14(context)
+                                              .copyWith(
+                                            color: colors.kTextMutedColor,
                                             decoration:
                                                 TextDecoration.underline,
-                                            decorationColor: kTextMutedColor,
+                                            decorationColor:
+                                                colors.kTextMutedColor,
                                             decorationThickness: 1,
                                           ),
                                         ),

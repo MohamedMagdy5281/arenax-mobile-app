@@ -287,12 +287,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterLastName => 'أدخل اسمك الاخير';
 
   @override
-  String get enterPhone => 'أدخل رقم جوالك';
-
-  @override
-  String get phoneNumber => 'رقم الجوال';
-
-  @override
   String get confirmPassword => 'تأكيد كلمة المرور';
 
   @override
@@ -567,9 +561,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get joinGlosa => 'شاركني تجربة ArenaX اليوم!';
 
   @override
-  String get mobileValidateMsg => 'من فضلك أدخل رقم جوال صحيح';
-
-  @override
   String get searchCountry => 'ابحث عن الدولة';
 
   @override
@@ -836,4 +827,38 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get privacy => 'الخصوصية';
+
+  @override
+  String get mobileValidateMsg => 'من فضلك أدخل رقم جوال صحيح';
+
+  @override
+  String get invalidPhoneNumber => 'رقم الهاتف غير صحيح';
+
+  @override
+  String get enterPhone => 'أدخل رقم جوالك';
+
+  @override
+  String get phoneNumber => 'رقم الجوال';
+
+  @override
+  String get phoneIsRequired => 'الرجاء إدخال رقم هاتفك';
+
+  @override
+  String get weWillSendDigits =>
+      'سنرسل لك رمزًا مكونًا من 6 أرقام للتحقق من هويتك.';
+
+  @override
+  String get egyptionsOnly => 'أرقام الهواتف المصرية فقط عند الإطلاق';
+
+  @override
+  String get sendCode => 'إرسال الرمز';
+
+  @override
+  String get enterTheCode => 'أدخل الرمز';
+
+  @override
+  String get weSentItToYou => 'لقد أرسلناه إلي رقم ';
+
+  @override
+  String get changeNumber => 'تغيير الرقم';
 }

@@ -45,7 +45,7 @@ Future<void> removeStringFromSP(String key) async {
 }
 
 Future<void> restartApp() async {
-  runApp(const MyApp());
+  runApp(const MyApp(initialThemeMode: ThemeMode.system));
 }
 
 String convertArabicNumbersToEnglish(String input) {
@@ -58,6 +58,6 @@ String convertArabicNumbersToEnglish(String input) {
   return input;
 }
 
-Future<void> showUpdateDialog(BuildContext context, String updateUrl) async {
-  await customUpdateDialog(context, updateUrl: updateUrl);
-}
+// Future<void> showUpdateDialog(BuildContext context, String updateUrl) async {
+//   await customUpdateDialog(context, updateUrl: updateUrl);
+// }

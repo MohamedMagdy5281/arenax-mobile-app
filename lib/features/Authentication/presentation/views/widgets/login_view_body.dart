@@ -1,4 +1,7 @@
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_mobile_text_field_with_country.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_phone_text_field_with_no_country_change.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/loginRiverpod/login_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
@@ -22,243 +25,214 @@ class LoginViewBody extends ConsumerStatefulWidget {
 }
 
 class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
   // TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey();
   String? countryCodeChoose;
 
   @override
   void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
+    phoneNumberController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     final state = ref.watch(loginNotifierProvider);
     final notifier = ref.read(loginNotifierProvider.notifier);
     return Stack(
       children: [
         // Image.asset(AssetsData.pageBg),
         state.isPageLoading
-            ? Center(
-                child: CustomLoadingIndicator(),
-              )
-            : SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomHeader(
-                      title: AppLocalizations.of(context)!.signIn,
-                      optionalPrefixIcon: globals.appLang == "en"
-                          ? Iconsax.arrow_left_2
-                          : Iconsax.arrow_right_2,
-                      onPrefixIconTap: () {},
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                      child: Text(
-                        AppLocalizations.of(context)!.giveCreadential,
-                        style: Styles.textStyle14.copyWith(
-                            fontWeight: FontWeight.w500, color: kGrey3Color),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 38,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Form(
-                        key: loginFormKey,
-                        child: Column(
-                          children: [
-                            TextFormFieldWithNoTitle(
-                              inputType: TextInputType.emailAddress,
-                              controller: emailController,
-                              placeholder:
-                                  AppLocalizations.of(context)!.enterEmail,
-                              // prefixWidget: MobilePrefixField(),
-                              prefix: Icon(
-                                Icons.email_outlined,
-                                size: 24,
-                                color: kGrey3Color,
-                              ),
-                              validator: (data) {
-                                if (data!.isEmpty) {
-                                  return AppLocalizations.of(context)!
-                                      .cantBeEmpty;
-                                } else {
-                                  return null;
-                                }
-                              },
-                              // validator: (data) {
-                              // if (data == null || data.isEmpty) {
-                              //   return AppLocalizations.of(context)!
-                              //       .cantBeEmpty;
-                              // }
-                              // final englishNumberRegex = RegExp(r'^[0-9]+$');
-                              // if (!englishNumberRegex.hasMatch(data)) {
-                              //   return AppLocalizations.of(context)!
-                              //       .mobileValidateMsg;
-                              // }
-                              // if (data.length == 10) {
-                              //   if (!(data.startsWith("051") ||
-                              //       data.startsWith("052") ||
-                              //       data.startsWith("05"))) {
-                              //     return AppLocalizations.of(context)!
-                              //         .mobileValidateMsg;
-                              //   }
-                              // } else if (data.length == 9) {
-                              //   if (!(data.startsWith("51") ||
-                              //       data.startsWith("52") ||
-                              //       data.startsWith("5"))) {
-                              //     return AppLocalizations.of(context)!
-                              //         .mobileValidateMsg;
-                              //   }
-                              // } else {
-                              //   return AppLocalizations.of(context)!
-                              //       .mobileValidateMsg;
-                              // }
-                              // return null;
-                              // },
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            TextFormFieldWithNoTitle(
-                              validator: (data) {
-                                if (data!.isEmpty) {
-                                  return AppLocalizations.of(context)!
-                                      .cantBeEmpty;
-                                } else {
-                                  return null;
-                                }
-                              },
-                              controller: passwordController,
-                              placeholder:
-                                  AppLocalizations.of(context)!.enterPassword,
-                              obscureText: state.isPasswordVisible,
-                              prefix: Icon(
-                                Iconsax.lock,
-                                size: 24,
-                                color: kGrey3Color,
-                              ),
-                              suffix: GestureDetector(
-                                onTap: () {
-                                  notifier.togglePasswordVisibility();
-                                },
-                                child: Icon(
-                                  state.isPasswordVisible
-                                      ? Iconsax.eye_slash
-                                      : Iconsax.eye,
-                                  color: kGrey3Color,
+            ? Container(
+                color: colors.kBackGroundColor,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Center(
+                    child: CustomLoadingIndicator(),
+                  ),
+                ))
+            : Container(
+                color: colors.kBackGroundColor,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomHeader(
+                                title: "",
+                                optionalPrefixIcon: Container(
+                                  decoration: BoxDecoration(
+                                    color: colors.kSurfaceColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  width: 38,
+                                  height: 38,
+                                  child: Icon(
+                                    globals.appLang == "en"
+                                        ? Iconsax.arrow_left_2
+                                        : Iconsax.arrow_right_2,
+                                    color: colors.kTextColor,
+                                    size: 12,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 2,
+                              const SizedBox(height: 12),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: Text(
+                                  AppLocalizations.of(context)!.enterPhone,
+                                  style: Styles.textStyle22(context).copyWith(
+                                    fontWeight: FontWeight.w900,
+                                    color: colors.kTextColor,
+                                  ),
                                 ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Transform.scale(
-                                        scale: 0.8,
-                                        child: Switch(
-                                          value: state.isRememberMeChecked,
-                                          onChanged: (value) {
-                                            notifier.toggleRememberMe();
-                                          },
+                              ),
+                              const SizedBox(height: 12),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: Text(
+                                  AppLocalizations.of(context)!
+                                      .weWillSendDigits,
+                                  style: Styles.textStyle14(context).copyWith(
+                                    color: colors.kTextMutedColor,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 32),
+                              Form(
+                                key: loginFormKey,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 16.0),
+                                      child:
+                                          CustomPhoneTextFieldWithNoCountryChange(
+                                        controller: phoneNumberController,
+                                        title: AppLocalizations.of(context)!
+                                            .phoneNumber,
+                                        placeholder:
+                                            AppLocalizations.of(context)!
+                                                .enterPhone,
+                                      ),
+                                    ),
+
+                                    const SizedBox(height: 8),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 16.0),
+                                      child: Text(
+                                        AppLocalizations.of(context)!
+                                            .egyptionsOnly,
+                                        style: Styles.textStyle12(context)
+                                            .copyWith(
+                                          color: colors.kTextMutedColor,
                                         ),
                                       ),
-                                      Text(
-                                        AppLocalizations.of(context)!
-                                            .rememberMe,
-                                        style: Styles.textStyle12,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    globals.navigatorKey.currentState!
-                                        .pushNamed(ForgetPasswordView.id);
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4),
-                                    child: Text(
-                                        AppLocalizations.of(context)!
-                                            .forgotPassword,
-                                        style: Styles.textStyle14.copyWith(
-                                          color: kPrimaryColor,
-                                        )),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 52,
-                            ),
-                            state.isLoginButtonLoading == true
-                                ? Center(child: CustomLoadingIndicator())
-                                : Column(
-                                    children: [
-                                      CustomButton(
-                                        text: AppLocalizations.of(context)!
-                                            .signIn,
-                                        itemCallBack: () async {
-                                          if (loginFormKey.currentState!
-                                              .validate()) {}
-                                        },
-                                      ),
-                                      const SizedBox(
-                                        height: 16,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            AppLocalizations.of(context)!
-                                                .dontHaveAcc,
-                                            style: Styles.textStyle14,
+                                    ),
+
+                                    const SizedBox(height: 16),
+
+                                    // checkbox here (same as before)
+                                    Row(
+                                      children: [
+                                        Checkbox(
+                                          value: state.termsAndPrivacyChecked,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(4),
                                           ),
-                                          const SizedBox(
-                                            width: 4,
+                                          side: BorderSide(
+                                            color: colors.kHintColor,
+                                            width: 1.5,
                                           ),
-                                          GestureDetector(
-                                            onTap: () {
-                                              globals.navigatorKey.currentState!
-                                                  .pushNamed(RegisterView.id);
-                                            },
-                                            child: Text(
-                                              AppLocalizations.of(context)!
-                                                  .signUp,
-                                              style: Styles.textStyle14
+                                          onChanged: (_) {
+                                            ref
+                                                .read(loginNotifierProvider
+                                                    .notifier)
+                                                .toggleTermsAndPrivacyChecked();
+                                          },
+                                        ),
+                                        Expanded(
+                                          child: RichText(
+                                            text: TextSpan(
+                                              style: Styles.textStyle14(context)
                                                   .copyWith(
-                                                      color: kPrimaryColor),
+                                                color: colors.kTextMutedColor,
+                                              ),
+                                              children: [
+                                                TextSpan(
+                                                  text: globals.appLang == "en"
+                                                      ? "I Agree on ArenaX's "
+                                                      : "أوافق على ",
+                                                ),
+                                                TextSpan(
+                                                  text: globals.appLang == "en"
+                                                      ? "Terms "
+                                                      : "شروط وأحكام ",
+                                                  style: TextStyle(
+                                                    color: colors.kPrimaryColor,
+                                                  ),
+                                                ),
+                                                TextSpan(
+                                                  text: globals.appLang == "en"
+                                                      ? "and "
+                                                      : "و",
+                                                ),
+                                                TextSpan(
+                                                  text: globals.appLang == "en"
+                                                      ? "Privacy Policy"
+                                                      : "سياسة الخصوصية",
+                                                  style: TextStyle(
+                                                    color: colors.kPrimaryColor,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 55),
-                  ],
+
+                      // 🔥 THIS PUSHES BUTTON TO BOTTOM
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 16, left: 16, right: 16),
+                        child: state.isLoginButtonLoading
+                            ? const CustomLoadingIndicator()
+                            : CustomButton(
+                                text: AppLocalizations.of(context)!.sendCode,
+                                itemCallBack: () {
+                                  if (loginFormKey.currentState!.validate()) {}
+                                },
+                              ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
       ],

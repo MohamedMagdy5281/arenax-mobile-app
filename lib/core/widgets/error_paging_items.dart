@@ -20,7 +20,7 @@ class NoItemsWidget extends StatelessWidget {
           ),
           Text(
             text,
-            style: Styles.textStyle20,
+            style: Styles.textStyle20(context),
           ),
         ],
       ),
@@ -48,12 +48,12 @@ class ErrorLoadingItem extends StatelessWidget {
             Text(
               textAlign: TextAlign.center,
               failedText,
-              style: Styles.textStyle16,
+              style: Styles.textStyle16(context),
             ),
             Text(
               textAlign: TextAlign.center,
               AppLocalizations.of(context)!.tryAgainMsg,
-              style: Styles.textStyle16,
+              style: Styles.textStyle16(context),
             ),
             SizedBox(height: 16),
             CustomButton(

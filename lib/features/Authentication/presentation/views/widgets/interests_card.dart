@@ -1,5 +1,6 @@
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class InterestsCard extends StatefulWidget {
@@ -23,6 +24,10 @@ class InterestsCard extends StatefulWidget {
 class _InterestsCardState extends State<InterestsCard> {
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     return GestureDetector(
       onTap: widget.onTap,
       child: Column(
@@ -32,9 +37,11 @@ class _InterestsCardState extends State<InterestsCard> {
             width: 120,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: kGrey2Color,
+              color: colors.kDisabledButtonColor,
               border: Border.all(
-                color: widget.isSelected ? kPrimaryColor : Colors.transparent,
+                color: widget.isSelected
+                    ? colors.kPrimaryColor
+                    : Colors.transparent,
                 width: 2,
               ),
             ),
@@ -52,7 +59,7 @@ class _InterestsCardState extends State<InterestsCard> {
           const SizedBox(height: 8),
           Text(
             widget.name,
-            style: Styles.textStyle14,
+            style: Styles.textStyle14(context),
           ),
         ],
       ),

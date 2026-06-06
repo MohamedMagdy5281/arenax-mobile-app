@@ -1,6 +1,7 @@
 import 'package:arenax_mobile_app/core/utils/colors.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
@@ -21,6 +22,10 @@ class InterestsViewBody extends ConsumerStatefulWidget {
 class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     final state = ref.watch(interestsNotifierProvider);
     final notifier = ref.watch(interestsNotifierProvider.notifier);
 
@@ -65,7 +70,7 @@ class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
                                       height: 120,
                                       width: 120,
                                       decoration: BoxDecoration(
-                                          color: kGrey2Color,
+                                          color: colors.kDisabledButtonColor,
                                           borderRadius:
                                               BorderRadius.circular(8)),
                                       child: Center(
@@ -77,7 +82,7 @@ class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
                                               height: 12,
                                               width: 12,
                                               decoration: BoxDecoration(
-                                                color: kPrimaryColor,
+                                                color: colors.kPrimaryColor,
                                                 shape: BoxShape.circle,
                                               ),
                                             ),
@@ -88,7 +93,7 @@ class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
                                               height: 12,
                                               width: 12,
                                               decoration: BoxDecoration(
-                                                color: kPrimaryColor,
+                                                color: colors.kPrimaryColor,
                                                 shape: BoxShape.circle,
                                               ),
                                             ),
@@ -99,7 +104,7 @@ class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
                                               height: 12,
                                               width: 12,
                                               decoration: BoxDecoration(
-                                                color: kPrimaryColor,
+                                                color: colors.kPrimaryColor,
                                                 shape: BoxShape.circle,
                                               ),
                                             ),
@@ -111,7 +116,7 @@ class _InterestsViewBodyState extends ConsumerState<InterestsViewBody> {
                                   const SizedBox(height: 8),
                                   Text(
                                     AppLocalizations.of(context)!.others,
-                                    style: Styles.textStyle14,
+                                    style: Styles.textStyle14(context),
                                   ),
                                 ],
                               );

@@ -1,3 +1,4 @@
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
@@ -51,13 +52,17 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     return SizedBox(
       width: width,
       height: height ?? 66,
       child: Material(
         color: isDisabled != null && isDisabled == true
-            ? disabledButtonColor ?? kDisableButtonColor
-            : backgroundColor ?? kPrimaryColor,
+            ? disabledButtonColor ?? colors.kDisabledButtonColor
+            : backgroundColor ?? colors.kPrimaryColor,
         borderRadius: BorderRadius.circular(32.0),
         child: InkWell(
           onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
@@ -81,15 +86,15 @@ class CustomButton extends StatelessWidget {
                     children: [
                       Text(
                         loadingText ?? '',
-                        style: Styles.textStyle20.copyWith(
-                          color: kWhiteColor,
+                        style: Styles.textStyle20(context).copyWith(
+                          color: colors.kWhiteColor,
                         ),
                       ),
                       const SizedBox(
                         width: 12,
                       ),
-                      const CustomLoadingIndicator(
-                        color: kWhiteColor,
+                      CustomLoadingIndicator(
+                        color: colors.kWhiteColor,
                         height: 20,
                         width: 20,
                       )
@@ -105,11 +110,12 @@ class CustomButton extends StatelessWidget {
                                 Text(
                                   text,
                                   style: textStyle ??
-                                      Styles.textStyle20.copyWith(
+                                      Styles.textStyle20(context).copyWith(
                                         color: isDisabled != null &&
                                                 isDisabled == true
-                                            ? disabledTextColor ?? kHintColor
-                                            : textColor ?? kTextColor,
+                                            ? disabledTextColor ??
+                                                colors.kHintColor
+                                            : textColor ?? colors.kTextColor,
                                       ),
                                   textAlign: TextAlign.center,
                                   overflow: TextOverflow.visible,
@@ -119,7 +125,7 @@ class CustomButton extends StatelessWidget {
                                 ),
                                 Icon(
                                   icon,
-                                  color: iconColor ?? kWhiteColor,
+                                  color: iconColor ?? colors.kWhiteColor,
                                 ),
                               ],
                             )
@@ -129,12 +135,13 @@ class CustomButton extends StatelessWidget {
                                     Text(
                                       text,
                                       style: textStyle ??
-                                          Styles.textStyle20.copyWith(
+                                          Styles.textStyle20(context).copyWith(
                                             color: isDisabled != null &&
                                                     isDisabled == true
                                                 ? disabledTextColor ??
-                                                    kHintColor
-                                                : textColor ?? kTextColor,
+                                                    colors.kHintColor
+                                                : textColor ??
+                                                    colors.kTextColor,
                                           ),
                                       textAlign: TextAlign.center,
                                       overflow: TextOverflow.visible,
@@ -159,12 +166,14 @@ class CustomButton extends StatelessWidget {
                                         Text(
                                           text,
                                           style: textStyle ??
-                                              Styles.textStyle20.copyWith(
+                                              Styles.textStyle20(context)
+                                                  .copyWith(
                                                 color: isDisabled != null &&
                                                         isDisabled == true
                                                     ? disabledTextColor ??
-                                                        kHintColor
-                                                    : textColor ?? kTextColor,
+                                                        colors.kHintColor
+                                                    : textColor ??
+                                                        colors.kTextColor,
                                               ),
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.visible,
@@ -175,12 +184,14 @@ class CustomButton extends StatelessWidget {
                                       child: Text(
                                         text,
                                         style: textStyle ??
-                                            Styles.textStyle20.copyWith(
+                                            Styles.textStyle20(context)
+                                                .copyWith(
                                               color: isDisabled != null &&
                                                       isDisabled == true
                                                   ? disabledTextColor ??
-                                                      kHintColor
-                                                  : textColor ?? kTextColor,
+                                                      colors.kHintColor
+                                                  : textColor ??
+                                                      colors.kTextColor,
                                             ),
                                         textAlign: TextAlign.center,
                                         overflow: TextOverflow.visible,
@@ -239,13 +250,17 @@ class CustomButtonWithNoBG extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     return SizedBox(
       width: width,
       height: height ?? 66,
       child: Material(
         color: isDisabled != null && isDisabled == true
-            ? disabledButtonColor ?? kDisableButtonColor
-            : backgroundColor ?? kBackGroundColor,
+            ? disabledButtonColor ?? colors.kDisabledButtonColor
+            : backgroundColor ?? colors.kBackGroundColor,
         borderRadius: BorderRadius.circular(32.0),
         child: InkWell(
           onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
@@ -258,8 +273,8 @@ class CustomButtonWithNoBG extends StatelessWidget {
               border: Border.all(
                   width: 1,
                   color: isDisabled != null && isDisabled == true
-                      ? disabledBorderColor ?? kHintColor
-                      : borderColor ?? kHintColor),
+                      ? disabledBorderColor ?? colors.kHintColor
+                      : borderColor ?? colors.kHintColor),
               borderRadius: BorderRadius.circular(32.0),
             ),
             child: isLoading == true
@@ -269,15 +284,15 @@ class CustomButtonWithNoBG extends StatelessWidget {
                     children: [
                       Text(
                         loadingText ?? '',
-                        style: Styles.textStyle20.copyWith(
-                          color: kWhiteColor,
+                        style: Styles.textStyle20(context).copyWith(
+                          color: colors.kWhiteColor,
                         ),
                       ),
                       const SizedBox(
                         width: 12,
                       ),
-                      const CustomLoadingIndicator(
-                        color: kWhiteColor,
+                      CustomLoadingIndicator(
+                        color: colors.kWhiteColor,
                         height: 20,
                         width: 20,
                       )
@@ -293,11 +308,12 @@ class CustomButtonWithNoBG extends StatelessWidget {
                                 Text(
                                   text,
                                   style: textStyle ??
-                                      Styles.textStyle20.copyWith(
+                                      Styles.textStyle20(context).copyWith(
                                         color: isDisabled != null &&
                                                 isDisabled == true
-                                            ? disabledTextColor ?? kHintColor
-                                            : textColor ?? kTextColor,
+                                            ? disabledTextColor ??
+                                                colors.kHintColor
+                                            : textColor ?? colors.kTextColor,
                                       ),
                                   textAlign: TextAlign.center,
                                   overflow: TextOverflow.visible,
@@ -307,7 +323,7 @@ class CustomButtonWithNoBG extends StatelessWidget {
                                 ),
                                 Icon(
                                   icon,
-                                  color: iconColor ?? kWhiteColor,
+                                  color: iconColor ?? colors.kWhiteColor,
                                 ),
                               ],
                             )
@@ -317,12 +333,13 @@ class CustomButtonWithNoBG extends StatelessWidget {
                                     Text(
                                       text,
                                       style: textStyle ??
-                                          Styles.textStyle20.copyWith(
+                                          Styles.textStyle20(context).copyWith(
                                             color: isDisabled != null &&
                                                     isDisabled == true
                                                 ? disabledTextColor ??
-                                                    kHintColor
-                                                : textColor ?? kTextColor,
+                                                    colors.kHintColor
+                                                : textColor ??
+                                                    colors.kTextColor,
                                           ),
                                       textAlign: TextAlign.center,
                                       overflow: TextOverflow.visible,
@@ -347,12 +364,14 @@ class CustomButtonWithNoBG extends StatelessWidget {
                                         Text(
                                           text,
                                           style: textStyle ??
-                                              Styles.textStyle20.copyWith(
+                                              Styles.textStyle20(context)
+                                                  .copyWith(
                                                 color: isDisabled != null &&
                                                         isDisabled == true
                                                     ? disabledTextColor ??
-                                                        kHintColor
-                                                    : textColor ?? kTextColor,
+                                                        colors.kHintColor
+                                                    : textColor ??
+                                                        colors.kTextColor,
                                               ),
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.visible,
@@ -363,12 +382,14 @@ class CustomButtonWithNoBG extends StatelessWidget {
                                       child: Text(
                                         text,
                                         style: textStyle ??
-                                            Styles.textStyle20.copyWith(
+                                            Styles.textStyle20(context)
+                                                .copyWith(
                                               color: isDisabled != null &&
                                                       isDisabled == true
                                                   ? disabledTextColor ??
-                                                      kHintColor
-                                                  : textColor ?? kTextColor,
+                                                      colors.kHintColor
+                                                  : textColor ??
+                                                      colors.kTextColor,
                                             ),
                                         textAlign: TextAlign.center,
                                         overflow: TextOverflow.visible,
@@ -383,591 +404,591 @@ class CustomButtonWithNoBG extends StatelessWidget {
   }
 }
 
-class CustomButtonWithOptionalIconAndSuffix extends StatelessWidget {
-  final VoidCallback itemCallBack;
-  final double? height;
-  final double? width;
-  final String? text;
-  final String? icon;
-  final IconData? optionalIcon;
-  final IconData? suffixIcon;
-  final Color? borderColor;
-  final Color? textColor;
-  final Color? iconColor;
-  final Color? backgroundColor;
-  final TextStyle? labelStyle;
-  final double? iconSize;
+// class CustomButtonWithOptionalIconAndSuffix extends StatelessWidget {
+//   final VoidCallback itemCallBack;
+//   final double? height;
+//   final double? width;
+//   final String? text;
+//   final String? icon;
+//   final IconData? optionalIcon;
+//   final IconData? suffixIcon;
+//   final Color? borderColor;
+//   final Color? textColor;
+//   final Color? iconColor;
+//   final Color? backgroundColor;
+//   final TextStyle? labelStyle;
+//   final double? iconSize;
 
-  const CustomButtonWithOptionalIconAndSuffix({
-    super.key,
-    required this.itemCallBack,
-    this.height,
-    this.width,
-    this.text,
-    this.icon,
-    this.borderColor,
-    this.textColor,
-    this.iconColor,
-    this.optionalIcon,
-    this.backgroundColor,
-    this.suffixIcon,
-    this.labelStyle,
-    this.iconSize,
-  });
+//   const CustomButtonWithOptionalIconAndSuffix({
+//     super.key,
+//     required this.itemCallBack,
+//     this.height,
+//     this.width,
+//     this.text,
+//     this.icon,
+//     this.borderColor,
+//     this.textColor,
+//     this.iconColor,
+//     this.optionalIcon,
+//     this.backgroundColor,
+//     this.suffixIcon,
+//     this.labelStyle,
+//     this.iconSize,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width ?? MediaQuery.of(context).size.width,
-      height: height ?? 66,
-      decoration: BoxDecoration(
-          color: backgroundColor ?? kButtonBg,
-          border: Border.all(
-              width: 1,
-              color: borderColor ?? Colors.transparent,
-              style: BorderStyle.solid),
-          borderRadius: BorderRadius.circular(28)),
-      child: ElevatedButton(
-        onPressed: itemCallBack,
-        style: ButtonStyle(
-          elevation: const WidgetStatePropertyAll(0),
-          backgroundColor:
-              WidgetStateProperty.all(backgroundColor ?? kButtonBg),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(28),
-            ),
-          ),
-        ),
-        child: optionalIcon != null || suffixIcon != null
-            ? Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      if (icon != null)
-                        SvgPicture.asset(
-                          icon!,
-                        )
-                      else
-                        Icon(
-                          optionalIcon ?? Iconsax.send_2,
-                          size: iconSize ?? 28,
-                          color: iconColor ?? kWhiteColor,
-                        ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        text ?? AppLocalizations.of(context)!.signIn,
-                        style: labelStyle ??
-                            Styles.textStyle22.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: textColor ?? kWhiteColor,
-                            ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                  suffixIcon != null
-                      ? Icon(
-                          suffixIcon ?? Iconsax.send_2,
-                          size: 28,
-                          color: iconColor ?? kWhiteColor,
-                        )
-                      : SizedBox(),
-                ],
-              )
-            : Center(
-                child: Text(
-                  text ?? AppLocalizations.of(context)!.signIn,
-                  style: labelStyle ??
-                      Styles.textStyle22.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: textColor ?? kWhiteColor,
-                      ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: width ?? MediaQuery.of(context).size.width,
+//       height: height ?? 66,
+//       decoration: BoxDecoration(
+//           color: backgroundColor ?? kButtonBg,
+//           border: Border.all(
+//               width: 1,
+//               color: borderColor ?? Colors.transparent,
+//               style: BorderStyle.solid),
+//           borderRadius: BorderRadius.circular(28)),
+//       child: ElevatedButton(
+//         onPressed: itemCallBack,
+//         style: ButtonStyle(
+//           elevation: const WidgetStatePropertyAll(0),
+//           backgroundColor:
+//               WidgetStateProperty.all(backgroundColor ?? kButtonBg),
+//           shape: WidgetStateProperty.all(
+//             RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(28),
+//             ),
+//           ),
+//         ),
+//         child: optionalIcon != null || suffixIcon != null
+//             ? Row(
+//                 mainAxisSize: MainAxisSize.max,
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   Row(
+//                     children: [
+//                       if (icon != null)
+//                         SvgPicture.asset(
+//                           icon!,
+//                         )
+//                       else
+//                         Icon(
+//                           optionalIcon ?? Iconsax.send_2,
+//                           size: iconSize ?? 28,
+//                           color: iconColor ?? kWhiteColor,
+//                         ),
+//                       const SizedBox(
+//                         width: 8,
+//                       ),
+//                       Text(
+//                         text ?? AppLocalizations.of(context)!.signIn,
+//                         style: labelStyle ??
+//                             Styles.textStyle22.copyWith(
+//                               fontWeight: FontWeight.w600,
+//                               color: textColor ?? kWhiteColor,
+//                             ),
+//                         textAlign: TextAlign.center,
+//                       ),
+//                     ],
+//                   ),
+//                   suffixIcon != null
+//                       ? Icon(
+//                           suffixIcon ?? Iconsax.send_2,
+//                           size: 28,
+//                           color: iconColor ?? kWhiteColor,
+//                         )
+//                       : SizedBox(),
+//                 ],
+//               )
+//             : Center(
+//                 child: Text(
+//                   text ?? AppLocalizations.of(context)!.signIn,
+//                   style: labelStyle ??
+//                       Styles.textStyle22.copyWith(
+//                         fontWeight: FontWeight.w600,
+//                         color: textColor ?? kWhiteColor,
+//                       ),
+//                   textAlign: TextAlign.center,
+//                 ),
+//               ),
+//       ),
+//     );
+//   }
+// }
 
-class CustomRoundedButtonWithOptionalIcon extends StatelessWidget {
-  final VoidCallback itemCallBack;
-  final double? height;
-  final double? width;
-  final String? text;
-  final String? icon;
-  final IconData? optionalIcon;
-  final Color? borderColor;
-  final Color? textColor;
-  final Color? iconColor;
-  final Color? backgroundColor;
+// class CustomRoundedButtonWithOptionalIcon extends StatelessWidget {
+//   final VoidCallback itemCallBack;
+//   final double? height;
+//   final double? width;
+//   final String? text;
+//   final String? icon;
+//   final IconData? optionalIcon;
+//   final Color? borderColor;
+//   final Color? textColor;
+//   final Color? iconColor;
+//   final Color? backgroundColor;
 
-  const CustomRoundedButtonWithOptionalIcon({
-    super.key,
-    required this.itemCallBack,
-    this.height,
-    this.width,
-    this.text,
-    this.icon,
-    this.borderColor,
-    this.textColor,
-    this.iconColor,
-    this.optionalIcon,
-    this.backgroundColor,
-  });
+//   const CustomRoundedButtonWithOptionalIcon({
+//     super.key,
+//     required this.itemCallBack,
+//     this.height,
+//     this.width,
+//     this.text,
+//     this.icon,
+//     this.borderColor,
+//     this.textColor,
+//     this.iconColor,
+//     this.optionalIcon,
+//     this.backgroundColor,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width ?? MediaQuery.of(context).size.width,
-      height: height ?? 56,
-      decoration: BoxDecoration(
-          color: backgroundColor ?? kPrimaryColor,
-          border: Border.all(
-              width: 1,
-              color: borderColor ?? kPrimaryColor,
-              style: BorderStyle.solid),
-          borderRadius: BorderRadius.circular(28)),
-      child: ElevatedButton(
-        onPressed: itemCallBack,
-        style: ButtonStyle(
-          elevation: const WidgetStatePropertyAll(0),
-          backgroundColor:
-              WidgetStateProperty.all(backgroundColor ?? kWhiteColor),
-          shape: WidgetStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(28),
-            ),
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              text ?? AppLocalizations.of(context)!.signIn,
-              style: Styles.textStyle20.copyWith(
-                fontWeight: FontWeight.w600,
-                color: textColor ?? kWhiteColor,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              width: 8,
-            ),
-            if (optionalIcon != null)
-              Icon(
-                optionalIcon ?? Iconsax.send_2,
-                size: 28,
-                color: iconColor ?? kWhiteColor,
-              )
-            else
-              const SizedBox(),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: width ?? MediaQuery.of(context).size.width,
+//       height: height ?? 56,
+//       decoration: BoxDecoration(
+//           color: backgroundColor ?? kPrimaryColor,
+//           border: Border.all(
+//               width: 1,
+//               color: borderColor ?? kPrimaryColor,
+//               style: BorderStyle.solid),
+//           borderRadius: BorderRadius.circular(28)),
+//       child: ElevatedButton(
+//         onPressed: itemCallBack,
+//         style: ButtonStyle(
+//           elevation: const WidgetStatePropertyAll(0),
+//           backgroundColor:
+//               WidgetStateProperty.all(backgroundColor ?? kWhiteColor),
+//           shape: WidgetStateProperty.all(
+//             RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(28),
+//             ),
+//           ),
+//         ),
+//         child: Row(
+//           mainAxisSize: MainAxisSize.min,
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Text(
+//               text ?? AppLocalizations.of(context)!.signIn,
+//               style: Styles.textStyle20(context).copyWith(
+//                 fontWeight: FontWeight.w600,
+//                 color: textColor ?? kWhiteColor,
+//               ),
+//               textAlign: TextAlign.center,
+//             ),
+//             const SizedBox(
+//               width: 8,
+//             ),
+//             if (optionalIcon != null)
+//               Icon(
+//                 optionalIcon ?? Iconsax.send_2,
+//                 size: 28,
+//                 color: iconColor ?? kWhiteColor,
+//               )
+//             else
+//               const SizedBox(),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class CustomButtonWithArrow extends StatelessWidget {
-  final String text;
-  final VoidCallback itemCallBack;
-  final double? height;
-  final double? width;
-  final bool? isDisabled;
-  final bool? arrowWithBackground;
+// class CustomButtonWithArrow extends StatelessWidget {
+//   final String text;
+//   final VoidCallback itemCallBack;
+//   final double? height;
+//   final double? width;
+//   final bool? isDisabled;
+//   final bool? arrowWithBackground;
 
-  const CustomButtonWithArrow({
-    super.key,
-    required this.text,
-    required this.itemCallBack,
-    this.height,
-    this.width,
-    this.isDisabled,
-    this.arrowWithBackground,
-  });
+//   const CustomButtonWithArrow({
+//     super.key,
+//     required this.text,
+//     required this.itemCallBack,
+//     this.height,
+//     this.width,
+//     this.isDisabled,
+//     this.arrowWithBackground,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    bool isArabic = Localizations.localeOf(context).languageCode == 'ar';
+//   @override
+//   Widget build(BuildContext context) {
+//     bool isArabic = Localizations.localeOf(context).languageCode == 'ar';
 
-    return SizedBox(
-      width: width,
-      height: height ?? 56,
-      child: Material(
-        color: isDisabled != null && isDisabled == true
-            ? kDisableButtonColor
-            : kPrimaryColor,
-        borderRadius: BorderRadius.circular(12.0),
-        child: InkWell(
-          onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
-          borderRadius: BorderRadius.circular(12.0),
-          splashFactory: InkRipple.splashFactory,
-          child: SizedBox(
-            width: width,
-            height: height ?? 56,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  text,
-                  style: Styles.textStyle20.copyWith(
-                    color: kWhiteColor,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  width: 12,
-                ),
-                arrowWithBackground != null && arrowWithBackground == true
-                    ? isArabic
-                        ? Container(
-                            width: 16,
-                            height: 16,
-                            decoration: const BoxDecoration(
-                                color: kWhiteColor, shape: BoxShape.circle),
-                            alignment: Alignment.center,
-                            child: const Icon(
-                              Iconsax.arrow_left4,
-                              color: kPrimaryColor,
-                              size: 14,
-                            ),
-                          )
-                        : Container(
-                            width: 16,
-                            height: 16,
-                            decoration: const BoxDecoration(
-                                color: kWhiteColor, shape: BoxShape.circle),
-                            alignment: Alignment.center,
-                            child: const Icon(
-                              Iconsax.arrow_right_14,
-                              color: kPrimaryColor,
-                              size: 14,
-                            ),
-                          )
-                    : isArabic
-                        ? const Icon(
-                            Iconsax.arrow_left4,
-                            color: kWhiteColor,
-                          )
-                        : const Icon(
-                            Iconsax.arrow_right_14,
-                            color: kWhiteColor,
-                          ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//     return SizedBox(
+//       width: width,
+//       height: height ?? 56,
+//       child: Material(
+//         color: isDisabled != null && isDisabled == true
+//             ? kDisableButtonColor
+//             : kPrimaryColor,
+//         borderRadius: BorderRadius.circular(12.0),
+//         child: InkWell(
+//           onTap: isDisabled != null && isDisabled == true ? null : itemCallBack,
+//           borderRadius: BorderRadius.circular(12.0),
+//           splashFactory: InkRipple.splashFactory,
+//           child: SizedBox(
+//             width: width,
+//             height: height ?? 56,
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 Text(
+//                   text,
+//                   style: Styles.textStyle20(context).copyWith(
+//                     color: kWhiteColor,
+//                   ),
+//                   textAlign: TextAlign.center,
+//                 ),
+//                 const SizedBox(
+//                   width: 12,
+//                 ),
+//                 arrowWithBackground != null && arrowWithBackground == true
+//                     ? isArabic
+//                         ? Container(
+//                             width: 16,
+//                             height: 16,
+//                             decoration: const BoxDecoration(
+//                                 color: kWhiteColor, shape: BoxShape.circle),
+//                             alignment: Alignment.center,
+//                             child: const Icon(
+//                               Iconsax.arrow_left4,
+//                               color: kPrimaryColor,
+//                               size: 14,
+//                             ),
+//                           )
+//                         : Container(
+//                             width: 16,
+//                             height: 16,
+//                             decoration: const BoxDecoration(
+//                                 color: kWhiteColor, shape: BoxShape.circle),
+//                             alignment: Alignment.center,
+//                             child: const Icon(
+//                               Iconsax.arrow_right_14,
+//                               color: kPrimaryColor,
+//                               size: 14,
+//                             ),
+//                           )
+//                     : isArabic
+//                         ? const Icon(
+//                             Iconsax.arrow_left4,
+//                             color: kWhiteColor,
+//                           )
+//                         : const Icon(
+//                             Iconsax.arrow_right_14,
+//                             color: kWhiteColor,
+//                           ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class CustomButtonWithShadow extends StatelessWidget {
-  final String text;
-  final VoidCallback itemCallBack;
-  final double? height;
-  final double? width;
-  final IconData? icon;
-  final Color? borderColor;
-  final Color? textColor;
-  final Color? backgroundColor;
-  final Color? iconColor;
-  final bool? isLoading;
-  final String? loadingText;
-  final bool? isDisabled;
-  final Color? disabledTextColor;
-  final Color? disabledBorderColor;
-  final Color? disabledButtonColor;
-  final TextStyle? textStyle;
+// class CustomButtonWithShadow extends StatelessWidget {
+//   final String text;
+//   final VoidCallback itemCallBack;
+//   final double? height;
+//   final double? width;
+//   final IconData? icon;
+//   final Color? borderColor;
+//   final Color? textColor;
+//   final Color? backgroundColor;
+//   final Color? iconColor;
+//   final bool? isLoading;
+//   final String? loadingText;
+//   final bool? isDisabled;
+//   final Color? disabledTextColor;
+//   final Color? disabledBorderColor;
+//   final Color? disabledButtonColor;
+//   final TextStyle? textStyle;
 
-  const CustomButtonWithShadow({
-    super.key,
-    required this.text,
-    required this.itemCallBack,
-    this.height,
-    this.width,
-    this.icon,
-    this.borderColor,
-    this.textColor,
-    this.backgroundColor,
-    this.iconColor,
-    this.isLoading,
-    this.loadingText,
-    this.isDisabled,
-    this.disabledTextColor,
-    this.disabledBorderColor,
-    this.disabledButtonColor,
-    this.textStyle,
-  });
+//   const CustomButtonWithShadow({
+//     super.key,
+//     required this.text,
+//     required this.itemCallBack,
+//     this.height,
+//     this.width,
+//     this.icon,
+//     this.borderColor,
+//     this.textColor,
+//     this.backgroundColor,
+//     this.iconColor,
+//     this.isLoading,
+//     this.loadingText,
+//     this.isDisabled,
+//     this.disabledTextColor,
+//     this.disabledBorderColor,
+//     this.disabledButtonColor,
+//     this.textStyle,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: kLightBlueColor.withOpacity(.3),
-            spreadRadius: 0,
-            blurRadius: 12,
-            offset: Offset(2, 2),
-          ),
-        ],
-      ),
-      child: SizedBox(
-        width: width,
-        height: height ?? 56,
-        child: Material(
-          color: isDisabled != null && isDisabled == true
-              ? disabledButtonColor ?? kDisableButtonColor
-              : backgroundColor ?? kPrimaryColor,
-          borderRadius: BorderRadius.circular(16.0),
-          child: InkWell(
-            onTap:
-                isDisabled != null && isDisabled == true ? null : itemCallBack,
-            borderRadius: BorderRadius.circular(16.0),
-            splashFactory: InkRipple.splashFactory,
-            child: Container(
-              width: width,
-              height: height ?? 56,
-              decoration: BoxDecoration(
-                border: Border.all(
-                    width: 1,
-                    color: isDisabled != null && isDisabled == true
-                        ? disabledBorderColor ?? Colors.transparent
-                        : borderColor ?? kPrimaryColor),
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              child: isLoading == true
-                  ? Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          loadingText ?? '',
-                          style: Styles.textStyle20.copyWith(
-                            color: kWhiteColor,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 12,
-                        ),
-                        const CustomLoadingIndicator(
-                          color: kWhiteColor,
-                          height: 20,
-                          width: 20,
-                        )
-                      ],
-                    )
-                  : Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        icon != null
-                            ? Row(
-                                children: [
-                                  Text(
-                                    text,
-                                    style: textStyle ??
-                                        Styles.textStyle20.copyWith(
-                                          color: isDisabled != null &&
-                                                  isDisabled == true
-                                              ? disabledTextColor ?? kWhiteColor
-                                              : textColor ?? kWhiteColor,
-                                        ),
-                                    textAlign: TextAlign.center,
-                                    overflow: TextOverflow.visible,
-                                  ),
-                                  const SizedBox(
-                                    width: 8,
-                                  ),
-                                  Icon(
-                                    icon,
-                                    color: iconColor ?? kWhiteColor,
-                                  ),
-                                ],
-                              )
-                            : Flexible(
-                                child: Text(
-                                  text,
-                                  style: textStyle ??
-                                      Styles.textStyle20.copyWith(
-                                        color: isDisabled != null &&
-                                                isDisabled == true
-                                            ? disabledTextColor ?? kWhiteColor
-                                            : textColor ?? kWhiteColor,
-                                      ),
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.visible,
-                                ),
-                              ),
-                      ],
-                    ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(20),
+//         boxShadow: [
+//           BoxShadow(
+//             color: kLightBlueColor.withOpacity(.3),
+//             spreadRadius: 0,
+//             blurRadius: 12,
+//             offset: Offset(2, 2),
+//           ),
+//         ],
+//       ),
+//       child: SizedBox(
+//         width: width,
+//         height: height ?? 56,
+//         child: Material(
+//           color: isDisabled != null && isDisabled == true
+//               ? disabledButtonColor ?? kDisableButtonColor
+//               : backgroundColor ?? kPrimaryColor,
+//           borderRadius: BorderRadius.circular(16.0),
+//           child: InkWell(
+//             onTap:
+//                 isDisabled != null && isDisabled == true ? null : itemCallBack,
+//             borderRadius: BorderRadius.circular(16.0),
+//             splashFactory: InkRipple.splashFactory,
+//             child: Container(
+//               width: width,
+//               height: height ?? 56,
+//               decoration: BoxDecoration(
+//                 border: Border.all(
+//                     width: 1,
+//                     color: isDisabled != null && isDisabled == true
+//                         ? disabledBorderColor ?? Colors.transparent
+//                         : borderColor ?? kPrimaryColor),
+//                 borderRadius: BorderRadius.circular(16.0),
+//               ),
+//               child: isLoading == true
+//                   ? Row(
+//                       mainAxisSize: MainAxisSize.max,
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         Text(
+//                           loadingText ?? '',
+//                           style: Styles.textStyle20(context).copyWith(
+//                             color: kWhiteColor,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           width: 12,
+//                         ),
+//                         const CustomLoadingIndicator(
+//                           color: kWhiteColor,
+//                           height: 20,
+//                           width: 20,
+//                         )
+//                       ],
+//                     )
+//                   : Row(
+//                       mainAxisSize: MainAxisSize.max,
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         icon != null
+//                             ? Row(
+//                                 children: [
+//                                   Text(
+//                                     text,
+//                                     style: textStyle ??
+//                                         Styles.textStyle20(context).copyWith(
+//                                           color: isDisabled != null &&
+//                                                   isDisabled == true
+//                                               ? disabledTextColor ?? kWhiteColor
+//                                               : textColor ?? kWhiteColor,
+//                                         ),
+//                                     textAlign: TextAlign.center,
+//                                     overflow: TextOverflow.visible,
+//                                   ),
+//                                   const SizedBox(
+//                                     width: 8,
+//                                   ),
+//                                   Icon(
+//                                     icon,
+//                                     color: iconColor ?? kWhiteColor,
+//                                   ),
+//                                 ],
+//                               )
+//                             : Flexible(
+//                                 child: Text(
+//                                   text,
+//                                   style: textStyle ??
+//                                       Styles.textStyle20(context).copyWith(
+//                                         color: isDisabled != null &&
+//                                                 isDisabled == true
+//                                             ? disabledTextColor ?? kWhiteColor
+//                                             : textColor ?? kWhiteColor,
+//                                       ),
+//                                   textAlign: TextAlign.center,
+//                                   overflow: TextOverflow.visible,
+//                                 ),
+//                               ),
+//                       ],
+//                     ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class CustomSelectedButton extends StatelessWidget {
-  final String text;
-  final VoidCallback itemCallBack;
-  final double? height;
-  final double? width;
-  final bool? isLoading;
-  final String? loadingText;
-  final bool? isDisabled;
-  final Color? disabledTextColor;
-  final Color? disabledBorderColor;
-  final Color? disabledButtonColor;
-  final TextStyle? textStyle;
-  final bool isSelected;
-  final Widget? unselectedLeading;
-  final Widget? selectedLeading;
+// class CustomSelectedButton extends StatelessWidget {
+//   final String text;
+//   final VoidCallback itemCallBack;
+//   final double? height;
+//   final double? width;
+//   final bool? isLoading;
+//   final String? loadingText;
+//   final bool? isDisabled;
+//   final Color? disabledTextColor;
+//   final Color? disabledBorderColor;
+//   final Color? disabledButtonColor;
+//   final TextStyle? textStyle;
+//   final bool isSelected;
+//   final Widget? unselectedLeading;
+//   final Widget? selectedLeading;
 
-  const CustomSelectedButton({
-    super.key,
-    required this.text,
-    required this.itemCallBack,
-    this.height,
-    this.width,
-    this.isLoading,
-    this.loadingText,
-    this.isDisabled,
-    this.disabledTextColor,
-    this.disabledBorderColor,
-    this.disabledButtonColor,
-    this.textStyle,
-    required this.isSelected,
-    this.unselectedLeading,
-    this.selectedLeading,
-  });
+//   const CustomSelectedButton({
+//     super.key,
+//     required this.text,
+//     required this.itemCallBack,
+//     this.height,
+//     this.width,
+//     this.isLoading,
+//     this.loadingText,
+//     this.isDisabled,
+//     this.disabledTextColor,
+//     this.disabledBorderColor,
+//     this.disabledButtonColor,
+//     this.textStyle,
+//     required this.isSelected,
+//     this.unselectedLeading,
+//     this.selectedLeading,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: kLightBlueColor.withOpacity(.3),
-            spreadRadius: 0,
-            blurRadius: 12,
-            offset: Offset(2, 2),
-          ),
-        ],
-      ),
-      child: SizedBox(
-        width: width,
-        height: height ?? 56,
-        child: Material(
-          color: isDisabled != null && isDisabled == true
-              ? disabledButtonColor ?? kDisableButtonColor
-              : isSelected
-                  ? kBorderColor
-                  : kWhiteColor,
-          borderRadius: BorderRadius.circular(16.0),
-          child: InkWell(
-            onTap:
-                isDisabled != null && isDisabled == true ? null : itemCallBack,
-            borderRadius: BorderRadius.circular(16.0),
-            splashFactory: InkRipple.splashFactory,
-            child: Container(
-              width: width,
-              height: height ?? 56,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 1,
-                  color: isDisabled != null && isDisabled == true
-                      ? disabledBorderColor ?? Colors.transparent
-                      : isSelected
-                          ? kBorderColor
-                          : Colors.transparent,
-                ),
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              child: isLoading == true
-                  ? Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          loadingText ?? '',
-                          style: Styles.textStyle20.copyWith(
-                            color: kWhiteColor,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 12,
-                        ),
-                        const CustomLoadingIndicator(
-                          color: kWhiteColor,
-                          height: 20,
-                          width: 20,
-                        )
-                      ],
-                    )
-                  : unselectedLeading != null && selectedLeading != null
-                      ? Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: Row(
-                            children: [
-                              isSelected
-                                  ? selectedLeading!
-                                  : unselectedLeading!,
-                              const SizedBox(width: 8),
-                              Text(
-                                text,
-                                style: textStyle ??
-                                    Styles.textStyle20.copyWith(
-                                      color: isDisabled != null &&
-                                              isDisabled == true
-                                          ? disabledTextColor ?? kWhiteColor
-                                          : isSelected
-                                              ? kWhiteColor
-                                              : kDarkBlackColor,
-                                    ),
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.visible,
-                              ),
-                            ],
-                          ),
-                        )
-                      : Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                text,
-                                style: textStyle ??
-                                    Styles.textStyle20.copyWith(
-                                      color: isDisabled != null &&
-                                              isDisabled == true
-                                          ? disabledTextColor ?? kWhiteColor
-                                          : isSelected
-                                              ? kWhiteColor
-                                              : kDarkBlackColor,
-                                    ),
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.visible,
-                              ),
-                            ),
-                          ],
-                        ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(20),
+//         boxShadow: [
+//           BoxShadow(
+//             color: kLightBlueColor.withOpacity(.3),
+//             spreadRadius: 0,
+//             blurRadius: 12,
+//             offset: Offset(2, 2),
+//           ),
+//         ],
+//       ),
+//       child: SizedBox(
+//         width: width,
+//         height: height ?? 56,
+//         child: Material(
+//           color: isDisabled != null && isDisabled == true
+//               ? disabledButtonColor ?? kDisableButtonColor
+//               : isSelected
+//                   ? kBorderColor
+//                   : kWhiteColor,
+//           borderRadius: BorderRadius.circular(16.0),
+//           child: InkWell(
+//             onTap:
+//                 isDisabled != null && isDisabled == true ? null : itemCallBack,
+//             borderRadius: BorderRadius.circular(16.0),
+//             splashFactory: InkRipple.splashFactory,
+//             child: Container(
+//               width: width,
+//               height: height ?? 56,
+//               decoration: BoxDecoration(
+//                 border: Border.all(
+//                   width: 1,
+//                   color: isDisabled != null && isDisabled == true
+//                       ? disabledBorderColor ?? Colors.transparent
+//                       : isSelected
+//                           ? kBorderColor
+//                           : Colors.transparent,
+//                 ),
+//                 borderRadius: BorderRadius.circular(16.0),
+//               ),
+//               child: isLoading == true
+//                   ? Row(
+//                       mainAxisSize: MainAxisSize.max,
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         Text(
+//                           loadingText ?? '',
+//                           style: Styles.textStyle20(context).copyWith(
+//                             color: kWhiteColor,
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                           width: 12,
+//                         ),
+//                         const CustomLoadingIndicator(
+//                           color: kWhiteColor,
+//                           height: 20,
+//                           width: 20,
+//                         )
+//                       ],
+//                     )
+//                   : unselectedLeading != null && selectedLeading != null
+//                       ? Padding(
+//                           padding: const EdgeInsets.symmetric(horizontal: 12),
+//                           child: Row(
+//                             children: [
+//                               isSelected
+//                                   ? selectedLeading!
+//                                   : unselectedLeading!,
+//                               const SizedBox(width: 8),
+//                               Text(
+//                                 text,
+//                                 style: textStyle ??
+//                                     Styles.textStyle20(context).copyWith(
+//                                       color: isDisabled != null &&
+//                                               isDisabled == true
+//                                           ? disabledTextColor ?? kWhiteColor
+//                                           : isSelected
+//                                               ? kWhiteColor
+//                                               : kDarkBlackColor,
+//                                     ),
+//                                 textAlign: TextAlign.center,
+//                                 overflow: TextOverflow.visible,
+//                               ),
+//                             ],
+//                           ),
+//                         )
+//                       : Row(
+//                           mainAxisSize: MainAxisSize.max,
+//                           mainAxisAlignment: MainAxisAlignment.center,
+//                           children: [
+//                             Flexible(
+//                               child: Text(
+//                                 text,
+//                                 style: textStyle ??
+//                                     Styles.textStyle20(context).copyWith(
+//                                       color: isDisabled != null &&
+//                                               isDisabled == true
+//                                           ? disabledTextColor ?? kWhiteColor
+//                                           : isSelected
+//                                               ? kWhiteColor
+//                                               : kDarkBlackColor,
+//                                     ),
+//                                 textAlign: TextAlign.center,
+//                                 overflow: TextOverflow.visible,
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

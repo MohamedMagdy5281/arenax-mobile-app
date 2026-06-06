@@ -373,14 +373,6 @@
   "@enterLastName":{
     "enterLastName":""
   },
-  "enterPhone":"Enter your phone number",
-  "@enterPhone":{
-    "enterPhone":""
-  },
-  "phoneNumber":"Phone Number",
-  "@phoneNumber":{
-    "phoneNumber":""
-  },
   "confirmPassword":"Confirm password",
   "@confirmPassword":{
     "confirmPassword":""
@@ -729,10 +721,6 @@
   "@joinGlosa":{
     "joinGlosa":""
   },
-  "mobileValidateMsg":"Please enter a valid mobile number",
-  "@mobileValidateMsg":{
-    "mobileValidateMsg":""
-  },
   "searchCountry":"Search for the country",
   "@searchCountry":{
     "searchCountry":""
@@ -1079,6 +1067,50 @@
   "privacy":"Privacy",
   "@privacy":{
     "privacy":""
+  },
+  "mobileValidateMsg":"Please enter a valid mobile number",
+  "@mobileValidateMsg":{
+    "mobileValidateMsg":""
+  },
+  "invalidPhoneNumber":"Invalid phone number",
+  "@invalidPhoneNumber":{
+    "invalidPhoneNumber":""
+  },
+  "enterPhone":"Enter your phone number",
+  "@enterPhone":{
+    "enterPhone":""
+  },
+  "phoneNumber":"Phone Number",
+  "@phoneNumber":{
+    "phoneNumber":""
+  },
+  "phoneIsRequired":"Please enter your phone number",
+  "@phoneIsRequired":{
+    "phoneIsRequired":""
+  },
+  "weWillSendDigits":"We'll send a 6-digit code to verify it's you.",
+  "@weWillSendDigits":{
+    "weWillSendDigits":""
+  },
+  "egyptionsOnly":"Egyptian mobile numbers only at launch",
+  "@egyptionsOnly":{
+    "egyptionsOnly":""
+  },
+  "sendCode":"Send code",
+  "@sendCode":{
+    "sendCode":""
+  },
+  "enterTheCode":"Enter the code",
+  "@enterTheCode":{
+    "enterTheCode":""
+  },
+  "weSentItToYou":"We sent it to ",
+  "@weSentItToYou":{
+    "weSentItToYou":""
+  },
+  "changeNumber":"Change number",
+  "@changeNumber":{
+    "changeNumber":""
   }
 }
 

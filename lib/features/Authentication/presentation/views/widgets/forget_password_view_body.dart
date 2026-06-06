@@ -1,3 +1,4 @@
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/forgetPasswordRiverpod/forget_password_notifier_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -34,6 +35,11 @@ class _ForgetPasswordViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
+
     final state = ref.watch(forgetPasswordNotifierProvider);
     final notifier = ref.read(forgetPasswordNotifierProvider.notifier);
 
@@ -52,8 +58,32 @@ class _ForgetPasswordViewBodyState
                     CustomHeader(
                       title: AppLocalizations.of(context)!.resetPassword,
                       optionalPrefixIcon: globals.appLang == "en"
-                          ? Iconsax.arrow_left_2
-                          : Iconsax.arrow_right_2,
+                          ? Container(
+                              decoration: BoxDecoration(
+                                color: colors.kSurfaceColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 38,
+                              height: 38,
+                              child: Icon(
+                                Iconsax.arrow_left_2,
+                                color: colors.kTextColor,
+                                size: 12,
+                              ),
+                            )
+                          : Container(
+                              decoration: BoxDecoration(
+                                color: colors.kSurfaceColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 38,
+                              height: 38,
+                              child: Icon(
+                                Iconsax.arrow_right_2,
+                                color: colors.kTextColor,
+                                size: 12,
+                              ),
+                            ),
                     ),
                     const SizedBox(
                       height: 8,
@@ -62,8 +92,9 @@ class _ForgetPasswordViewBodyState
                       padding: const EdgeInsets.symmetric(horizontal: 28.0),
                       child: Text(
                         AppLocalizations.of(context)!.enterEmailToResetPassword,
-                        style: Styles.textStyle14.copyWith(
-                            fontWeight: FontWeight.w500, color: kGrey3Color),
+                        style: Styles.textStyle14(context).copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: colors.kTextMutedColor),
                       ),
                     ),
                     SizedBox(
@@ -75,56 +106,56 @@ class _ForgetPasswordViewBodyState
                         key: forgetPasswordFormKey,
                         child: Column(
                           children: [
-                            TextFormFieldWithNoTitle(
-                              inputType: TextInputType.emailAddress,
-                              controller: emailController,
-                              placeholder:
-                                  AppLocalizations.of(context)!.enterEmail,
-                              // prefixWidget: MobilePrefixField(),
-                              suffix: Icon(
-                                Icons.email_outlined,
-                                size: 24,
-                                color: kGrey3Color,
-                              ),
-                              validator: (data) {
-                                if (data!.isEmpty) {
-                                  return AppLocalizations.of(context)!
-                                      .cantBeEmpty;
-                                } else {
-                                  return null;
-                                }
-                              },
-                              // validator: (data) {
-                              // if (data == null || data.isEmpty) {
-                              //   return AppLocalizations.of(context)!
-                              //       .cantBeEmpty;
-                              // }
-                              // final englishNumberRegex = RegExp(r'^[0-9]+$');
-                              // if (!englishNumberRegex.hasMatch(data)) {
-                              //   return AppLocalizations.of(context)!
-                              //       .mobileValidateMsg;
-                              // }
-                              // if (data.length == 10) {
-                              //   if (!(data.startsWith("051") ||
-                              //       data.startsWith("052") ||
-                              //       data.startsWith("05"))) {
-                              //     return AppLocalizations.of(context)!
-                              //         .mobileValidateMsg;
-                              //   }
-                              // } else if (data.length == 9) {
-                              //   if (!(data.startsWith("51") ||
-                              //       data.startsWith("52") ||
-                              //       data.startsWith("5"))) {
-                              //     return AppLocalizations.of(context)!
-                              //         .mobileValidateMsg;
-                              //   }
-                              // } else {
-                              //   return AppLocalizations.of(context)!
-                              //       .mobileValidateMsg;
-                              // }
-                              // return null;
-                              // },
-                            ),
+                            // TextFormFieldWithNoTitle(
+                            //   inputType: TextInputType.emailAddress,
+                            //   controller: emailController,
+                            //   placeholder:
+                            //       AppLocalizations.of(context)!.enterEmail,
+                            //   // prefixWidget: MobilePrefixField(),
+                            //   suffix: Icon(
+                            //     Icons.email_outlined,
+                            //     size: 24,
+                            //     color: kGrey3Color,
+                            //   ),
+                            //   validator: (data) {
+                            //     if (data!.isEmpty) {
+                            //       return AppLocalizations.of(context)!
+                            //           .cantBeEmpty;
+                            //     } else {
+                            //       return null;
+                            //     }
+                            //   },
+                            // validator: (data) {
+                            // if (data == null || data.isEmpty) {
+                            //   return AppLocalizations.of(context)!
+                            //       .cantBeEmpty;
+                            // }
+                            // final englishNumberRegex = RegExp(r'^[0-9]+$');
+                            // if (!englishNumberRegex.hasMatch(data)) {
+                            //   return AppLocalizations.of(context)!
+                            //       .mobileValidateMsg;
+                            // }
+                            // if (data.length == 10) {
+                            //   if (!(data.startsWith("051") ||
+                            //       data.startsWith("052") ||
+                            //       data.startsWith("05"))) {
+                            //     return AppLocalizations.of(context)!
+                            //         .mobileValidateMsg;
+                            //   }
+                            // } else if (data.length == 9) {
+                            //   if (!(data.startsWith("51") ||
+                            //       data.startsWith("52") ||
+                            //       data.startsWith("5"))) {
+                            //     return AppLocalizations.of(context)!
+                            //         .mobileValidateMsg;
+                            //   }
+                            // } else {
+                            //   return AppLocalizations.of(context)!
+                            //       .mobileValidateMsg;
+                            // }
+                            // return null;
+                            // },
+                            // ),
                             const SizedBox(
                               height: 72,
                             ),
