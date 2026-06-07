@@ -925,4 +925,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get saveAndSignIn => 'Save and sign in';
+
+  @override
+  String get weak => 'Weak';
+
+  @override
+  String get medium => 'Medium';
+
+  @override
+  String get strong => 'Strong';
+
+  @override
+  String get addMoreChar => 'add more characters to strengthen';
+
+  @override
+  String get addCapitalLetter => 'add a capital letter to strengthen';
+
+  @override
+  String get addLowercaseLetter => 'add a lowercase letter to strengthen';
+
+  @override
+  String get addNumber => 'add a number to strengthen';
+
+  @override
+  String get addSpecialChar =>
+      'add a special character (@ , & or _ ) to strengthen';
 }
