@@ -126,7 +126,7 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                       ),
                                     ),
 
-                                    const SizedBox(height: 32),
+                                    const SizedBox(height: 24),
 
                                     // checkbox here (same as before)
                                     Row(
@@ -136,33 +136,58 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                         Transform.translate(
                                           offset: const Offset(-4,
                                               0), // aligns checkbox with text field edge
-                                          child: Checkbox(
-                                            value: state.termsAndPrivacyChecked,
-                                            checkColor: colors.kTextColor,
-                                            activeColor: colors.kPrimaryColor,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            visualDensity: const VisualDensity(
-                                              horizontal:
-                                                  VisualDensity.minimumDensity,
-                                              vertical:
-                                                  VisualDensity.minimumDensity,
-                                            ),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(4),
-                                            ),
-                                            side: BorderSide(
-                                              color: colors.kHintColor,
-                                              width: 1.5,
-                                            ),
-                                            onChanged: (_) {
-                                              ref
-                                                  .read(registerNotifierProvider
-                                                      .notifier)
-                                                  .toggleTermsAndPrivacyChecked();
-                                            },
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Checkbox(
+                                                value: state
+                                                    .termsAndPrivacyChecked,
+                                                checkColor: colors.kTextColor,
+                                                activeColor:
+                                                    colors.kPrimaryColor,
+                                                materialTapTargetSize:
+                                                    MaterialTapTargetSize
+                                                        .shrinkWrap,
+                                                visualDensity:
+                                                    const VisualDensity(
+                                                  horizontal: VisualDensity
+                                                      .minimumDensity,
+                                                  vertical: VisualDensity
+                                                      .minimumDensity,
+                                                ),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(4),
+                                                ),
+                                                side: BorderSide(
+                                                  color: colors.kHintColor,
+                                                  width: 1.5,
+                                                ),
+                                                onChanged: (_) {
+                                                  ref
+                                                      .read(
+                                                          registerNotifierProvider
+                                                              .notifier)
+                                                      .toggleTermsAndPrivacyChecked();
+                                                  
+                                                },
+                                              ),
+                                              state.checkBoxError
+                                                  ? Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              bottom: 12.0),
+                                                      child: Text("*",
+                                                          style: Styles
+                                                                  .textStyle12(
+                                                                      context)
+                                                              .copyWith(
+                                                                  color: colors
+                                                                      .kErrorColor)),
+                                                    )
+                                                  : SizedBox()
+                                            ],
                                           ),
                                         ),
                                         const SizedBox(width: 4),
@@ -233,7 +258,12 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                               "+20${phoneNumberController.text.trim()}",
                                         });
                                   } else if (state.termsAndPrivacyChecked ==
-                                      false) {}
+                                      false) {
+                                    notifier.showCheckBoxError();
+                                  } else if (state.termsAndPrivacyChecked ==
+                                      true) {
+                                    notifier.hideCheckBoxError();
+                                  }
                                 },
                               ),
                       ),

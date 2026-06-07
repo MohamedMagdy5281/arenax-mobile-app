@@ -79,7 +79,7 @@ class _ResetPasswordOtpVerificationViewBodyState
       return "$strength —  ${AppLocalizations.of(context)!.addSpecialChar}";
     }
 
-    return "$strength —  ${AppLocalizations.of(context)!.strong}";
+    return AppLocalizations.of(context)!.strong;
   }
 
   @override

@@ -77,7 +77,7 @@ class _CreatePasswordViewBodyState
       return "$strength —  ${AppLocalizations.of(context)!.addSpecialChar}";
     }
 
-    return "$strength —  ${AppLocalizations.of(context)!.strong}";
+    return AppLocalizations.of(context)!.strong;
   }
 
   @override
