@@ -1849,6 +1849,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save and sign in'**
   String get saveAndSignIn;
+
+  /// No description provided for @weak.
+  ///
+  /// In en, this message translates to:
+  /// **'Weak'**
+  String get weak;
+
+  /// No description provided for @medium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get medium;
+
+  /// No description provided for @strong.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong'**
+  String get strong;
+
+  /// No description provided for @addMoreChar.
+  ///
+  /// In en, this message translates to:
+  /// **'add more characters to strengthen'**
+  String get addMoreChar;
+
+  /// No description provided for @addCapitalLetter.
+  ///
+  /// In en, this message translates to:
+  /// **'add a capital letter to strengthen'**
+  String get addCapitalLetter;
+
+  /// No description provided for @addLowercaseLetter.
+  ///
+  /// In en, this message translates to:
+  /// **'add a lowercase letter to strengthen'**
+  String get addLowercaseLetter;
+
+  /// No description provided for @addNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'add a number to strengthen'**
+  String get addNumber;
+
+  /// No description provided for @addSpecialChar.
+  ///
+  /// In en, this message translates to:
+  /// **'add a special character (@ , & or _ ) to strengthen'**
+  String get addSpecialChar;
 }
 
 class _AppLocalizationsDelegate

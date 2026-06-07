@@ -914,4 +914,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get saveAndSignIn => 'حفظ وتسجيل الدخول';
+
+  @override
+  String get weak => 'ضعيف';
+
+  @override
+  String get medium => 'متوسط';
+
+  @override
+  String get strong => 'قوي';
+
+  @override
+  String get addMoreChar => 'أضف المزيد من الشخصيات لتعزيزها';
+
+  @override
+  String get addCapitalLetter => 'أضف حرفًا كبيرًا لتقوية';
+
+  @override
+  String get addLowercaseLetter => 'أضف حرفًا صغيرًا لتقوية';
+
+  @override
+  String get addNumber => 'أضف رقمًا لتقوية';
+
+  @override
+  String get addSpecialChar => 'أضف رمزًا خاصًا (@ أو & أو _) لتقوية';
 }
