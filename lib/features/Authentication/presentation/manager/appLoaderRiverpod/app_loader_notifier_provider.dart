@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:arenax_mobile_app/core/utils/functions/app_settings_dialog.dart';
+import 'package:arenax_mobile_app/core/utils/functions/onboarding_check.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
-import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/auth_intro_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/onboarding_view.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -42,6 +44,19 @@ class AppLoaderNotifier extends _$AppLoaderNotifier {
     return const AppLoaderState();
   }
 
+  Future<void> handleNavigationAfterLoader() async {
+    final onboardingCompleted = await AppPreferences.isOnboardingCompleted();
+
+    if (!onboardingCompleted) {
+      globals.navigatorKey.currentState!
+          .pushReplacementNamed(OnboardingView.id);
+      return;
+    } else {
+      globals.navigatorKey.currentState!.pushReplacementNamed(AuthIntroView.id);
+      return;
+    }
+  }
+
   Future<void> initLocation() async {
     LocationPermission permission;
     LatLng? userLocation;
@@ -64,7 +79,7 @@ class AppLoaderNotifier extends _$AppLoaderNotifier {
       userLocation = LatLng(position.latitude, position.longitude);
 
       globals.userPosition = userLocation;
-      globals.navigatorKey.currentState!.pushReplacementNamed(LoginView.id);
+      await handleNavigationAfterLoader();
     }
   }
 }

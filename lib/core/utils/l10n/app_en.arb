@@ -9,33 +9,13 @@
   "@authenticateMsg":{
     "authenticateMsg":""
   },
-  "cantBeEmpty":"This field can't be empty",
-  "@cantBeEmpty":{
-    "cantBeEmpty":""
-  },
-  "welcomeBack":"Welcome Back",
-  "@welcomeBack":{
-    "welcomeBack":""
-  },
   "email":"Email",
   "@email":{
     "email":""
   },
-  "password":"Password",
-  "@password":{
-    "password":""
-  },
   "signIn":"Sign In",
   "@signIn":{
     "signIn":""
-  },
-  "dontHaveAcc":"Don't have an account? ",
-  "@dontHaveAcc":{
-    "dontHaveAcc":""
-  },
-  "signUp":"Sign up",
-  "@signUp":{
-    "signUp":""
   },
   "letsGetStarted":"Let's get started by filling out the form below",
   "@letsGetStarted":{
@@ -141,17 +121,9 @@
   "@enterEmail":{
     "enterEmail":""
   },
-  "enterPassword":"Enter your password ",
-  "@enterPassword":{
-    "enterPassword":""
-  },
   "currentChat":"Current chat",
   "@currentChat":{
     "currentChat":""
-  },
-  "continueLabel":"Continue",
-  "@continueLabel":{
-    "continueLabel":""
   },
   "newChat":"New chat",
   "@newChat":{
@@ -325,10 +297,6 @@
   "@languageChange":{
     "languageChange":""
   },
-  "newPassword":"New password",
-  "@newPassword":{
-    "newPassword":""
-  },
   "confirmNewPassword":"Confirm new password",
   "@confirmNewPassword":{
     "confirmNewPassword":""
@@ -345,10 +313,6 @@
   "@english":{
     "english":""
    },
-  "login":"Login",
-  "@login":{
-    "login":""
-  },
   "signForNewAcc":"Sign up for new account",
   "@signForNewAcc":{
     "signForNewAcc":""
@@ -377,26 +341,7 @@
   "@enterLastName":{
     "enterLastName":""
   },
-  "enterPhone":"Enter your phone number",
-  "@enterPhone":{
-    "enterPhone":""
-  },
-  "phoneNumber":"Phone Number",
-  "@phoneNumber":{
-    "phoneNumber":""
-  },
-  "confirmPassword":"Confirm password",
-  "@confirmPassword":{
-    "confirmPassword":""
-  },
-  "enterConfirmPassword":"Enter your confirm password",
-  "@enterConfirmPassword":{
-    "enterConfirmPassword":""
-  },
-  "createPassword":"Create password",
-  "@createPassword":{
-    "createPassword":""
-  },
+  
   "confirm":"Confirm",
   "@confirm":{
     "confirm":""
@@ -601,10 +546,6 @@
   "@enterCurrentPassword":{
     "enterCurrentPassword":""
   },
-  "enterNewPassword":"Enter new password",
-  "@enterNewPassword":{
-    "enterNewPassword":""
-  },
   "enterNewConfirmPassword":"Enter confirm new password",
   "@enterNewConfirmPassword":{
     "enterNewConfirmPassword":""
@@ -701,10 +642,7 @@
   "@galleryPermissionError":{
     "galleryPermissionError":""
   },
-  "cancel":"Cancel",
-  "@cancel":{
-    "cancel":""
-  },
+
   "settings":"Settings",
   "@settings":{
     "settings":""
@@ -733,10 +671,6 @@
   "@joinGlosa":{
     "joinGlosa":""
   },
-  "mobileValidateMsg":"Please enter a valid mobile number",
-  "@mobileValidateMsg":{
-    "mobileValidateMsg":""
-  },
   "searchCountry":"Search for the country",
   "@searchCountry":{
     "searchCountry":""
@@ -752,10 +686,6 @@
   "loginWithGmail":"Login with gmail",
   "@loginWithGmail":{
     "loginWithGmail":""
-  },
-  "or":"Or",
-  "@or":{
-    "or":""
   },
   "resetPassword":"Reset password",
   "@resetPassword":{
@@ -1013,10 +943,6 @@
   "@others":{
     "others":""
   },
-  "next":"Next",
-  "@next":{
-    "next":""
-  },
   "locationPermissionSettings":"Location access is required. Please enable location permission in the app settings.",
   "@locationPermissionSettings":{
     "locationPermissionSettings":""
@@ -1028,5 +954,264 @@
   "add":"Add",
   "@add":{
     "add":""
+  },
+
+
+
+  "findBookPlayTogether":"Find. Book. Play. Together.",
+  "@findBookPlayTogether":{
+    "findBookPlayTogether":""
+  },
+  "skip":"Skip",
+  "@skip":{
+    "skip":""
+  },
+  "next":"Next",
+  "@next":{
+    "next":""
+  },
+  "continueLabel":"Continue",
+  "@continueLabel":{
+    "continueLabel":""
+  },
+  "findYourPlaceToPlay":"Find your place to play",
+  "@findYourPlaceToPlay":{
+    "findYourPlaceToPlay":""
+  },
+  "discoverThings":"Discover padel, football pitches, and co-working spaces near you.",
+  "@discoverThings":{
+    "discoverThings":""
+  },
+  "findBookPlay":"Find. Book. Play.",
+  "@findBookPlay":{
+    "findBookPlay":""
+  },
+  "together":"Together.",
+  "@together":{
+    "together":""
+  },
+  "bookThenSplit":"Book padel, football, and co-working spaces — then split it with your crew.",
+  "@bookThenSplit":{
+    "bookThenSplit":""
+  },
+  "continueWithPhone":"Continue with phone",
+  "@continueWithPhone":{
+    "continueWithPhone":""
+  },
+  "iAlreadyHaveAnAccount":"I already have an account",
+  "@iAlreadyHaveAnAccount":{
+    "iAlreadyHaveAnAccount":""
+  },
+  "byContinuingYouAgreeToOur":"By continuing, you agree to our",
+  "@byContinuingYouAgreeToOur":{
+    "byContinuingYouAgreeToOur":""
+  },
+  "terms":"Terms",
+  "@terms":{
+    "terms":""
+  },
+  "privacy":"Privacy",
+  "@privacy":{
+    "privacy":""
+  },
+  "mobileValidateMsg":"Please enter a valid mobile number",
+  "@mobileValidateMsg":{
+    "mobileValidateMsg":""
+  },
+  "invalidPhoneNumber":"Invalid phone number",
+  "@invalidPhoneNumber":{
+    "invalidPhoneNumber":""
+  },
+  "enterPhone":"Enter your phone number",
+  "@enterPhone":{
+    "enterPhone":""
+  },
+  "phoneNumber":"Phone Number",
+  "@phoneNumber":{
+    "phoneNumber":""
+  },
+  "phoneIsRequired":"Please enter your phone number",
+  "@phoneIsRequired":{
+    "phoneIsRequired":""
+  },
+  "weWillSendDigits":"We'll send a 6-digit code to verify it's you.",
+  "@weWillSendDigits":{
+    "weWillSendDigits":""
+  },
+  "egyptionsOnly":"Egyptian mobile numbers only at launch",
+  "@egyptionsOnly":{
+    "egyptionsOnly":""
+  },
+  "sendCode":"Send code",
+  "@sendCode":{
+    "sendCode":""
+  },
+  "enterTheCode":"Enter the code",
+  "@enterTheCode":{
+    "enterTheCode":""
+  },
+  "weSentItToYou":"We sent it to ",
+  "@weSentItToYou":{
+    "weSentItToYou":""
+  },
+  "changeNumber":"Change number",
+  "@changeNumber":{
+    "changeNumber":""
+  },
+  "createPassword":"Create a password",
+  "@createPassword":{
+    "createPassword":""
+  },
+  "charactersWithLettersAndNumbers":"8+ characters with a letter and a number.",
+  "@charactersWithLettersAndNumbers":{
+    "charactersWithLettersAndNumbers":""
+  },
+  "password":"Password",
+  "@password":{
+    "password":""
+  },
+  "enterPassword":"Enter password ",
+  "@enterPassword":{
+    "enterPassword":""
+  },
+  "confirmPassword":"Confirm password",
+  "@confirmPassword":{
+    "confirmPassword":""
+  },
+  "enterConfirmPassword":"Re-enter password",
+  "@enterConfirmPassword":{
+    "enterConfirmPassword":""
+  },
+  "cantBeEmpty":"This field can't be empty",
+  "@cantBeEmpty":{
+    "cantBeEmpty":""
+  },
+  "thisFieldCantContainSpaces":"This field can't contain spaces",
+  "@thisFieldCantContainSpaces":{
+    "thisFieldCantContainSpaces":""
+  },
+  "fieldIsNotValid":"This field doesn't meet the required format",
+  "@fieldIsNotValid":{
+    "fieldIsNotValid":""
+  },
+  "confirmPassNotMatchingPass":"Confirm password doesn't match the password",
+  "@confirmPassNotMatchingPass":{
+    "confirmPassNotMatchingPass":""
+  },
+  "signInFaster":"Sign in faster next time",
+  "@signInFaster":{
+    "signInFaster":""
+  },
+  "useFaceIdOrTouchId":"Use Face ID or Touch ID to unlock ArenaX without typing your password.",
+  "@useFaceIdOrTouchId":{
+    "useFaceIdOrTouchId":""
+  },
+  "enableFaceId":"Enable Face ID",
+  "@enableFaceId":{
+    "enableFaceId":""
+  },
+  "notNow":"Not now",
+  "@notNow":{
+    "notNow":""
+  },
+  "welcomeBack":"Welcome back",
+  "@welcomeBack":{
+    "welcomeBack":""
+  },
+  "signInToContinue":"Sign in to continue.",
+  "@signInToContinue":{
+    "signInToContinue":""
+  },
+  "forgot":"Forgot?",
+  "@forgot":{
+    "forgot":""
+  },
+  "login":"Log in",
+  "@login":{
+    "login":""
+  },
+  "or":"OR",
+  "@or":{
+    "or":""
+  },
+  "useFaceId":"Use Facee Id",
+  "@useFaceId":{
+    "useFaceId":""
+  },
+    "dontHaveAcc":"Don't have an account? ",
+  "@dontHaveAcc":{
+    "dontHaveAcc":""
+  },
+  "signUp":"Sign up",
+  "@signUp":{
+    "signUp":""
+  },
+  "cancel":"Cancel",
+  "@cancel":{
+    "cancel":""
+  },
+  "forgotYourPassword":"Forgot your password?",
+  "@forgotYourPassword":{
+    "forgotYourPassword":""
+  },
+  "enterYourPhoneAndWeSendCode":"Enter your phone number and we'll sendyou a code to reset it.",
+  "@enterYourPhoneAndWeSendCode":{
+    "enterYourPhoneAndWeSendCode":""
+  },
+  "resetYourPassword":"Reset your password",
+  "@resetYourPassword":{
+    "resetYourPassword":""
+  },
+  "codeSentTo":"Code sent to ",
+  "@codeSentTo":{
+    "codeSentTo":""
+  },
+  "newPassword":"New password",
+  "@newPassword":{
+    "newPassword":""
+  },
+  "enterNewPassword":"Enter new password",
+  "@enterNewPassword":{
+    "enterNewPassword":""
+  },
+  "saveAndSignIn":"Save and sign in",
+  "@saveAndSignIn":{
+    "saveAndSignIn":""
+  },
+  "weak":"Weak",
+  "@weak":{
+    "weak":""
+  },
+  "medium":"Medium",
+  "@medium":{
+    "medium":""
+  },
+  "strong":"Strong",
+  "@strong":{
+    "strong":""
+  },
+  "addMoreChar":"add more characters to strengthen",
+  "@addMoreChar":{
+    "addMoreChar":""
+  },
+  "addCapitalLetter":"add a capital letter to strengthen",
+  "@addCapitalLetter":{
+    "addCapitalLetter":""
+  },
+  "addLowercaseLetter":"add a lowercase letter to strengthen",
+  "@addLowercaseLetter":{
+    "addLowercaseLetter":""
+  },
+  "addNumber":"add a number to strengthen",
+  "@addNumber":{
+    "addNumber":""
+  },
+  "addSpecialChar":"add a special character (@ , & or _ ) to strengthen",
+  "@addSpecialChar":{
+    "addSpecialChar":""
   }
+  
 }
+
+  
+

@@ -1,3 +1,4 @@
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -90,20 +91,16 @@ class _DateTimePickerTextFieldState extends State<DateTimePickerTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     return Stack(
       children: [
         Container(
           height: 55,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: kLightBlueColor.withOpacity(.3),
-                spreadRadius: 0,
-                blurRadius: 12,
-                offset: Offset(2, 2),
-              ),
-            ],
           ),
         ),
         GestureDetector(
@@ -133,22 +130,22 @@ class _DateTimePickerTextFieldState extends State<DateTimePickerTextField> {
               label: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: kSideBG,
+                  color: colors.kSurfaceColor,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
                   widget.title,
-                  style: widget.titleStyle ?? Styles.textStyle18,
+                  style: widget.titleStyle ?? Styles.textStyle18(context),
                 ),
               ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               hintText: widget.placeholder,
-              hintStyle: Styles.textStyle14.copyWith(
-                color: kHintColor,
+              hintStyle: Styles.textStyle14(context).copyWith(
+                color: colors.kHintColor,
                 fontWeight: FontWeight.w400,
               ),
               filled: true,
-              fillColor: kWhiteColor,
+              fillColor: colors.kWhiteColor,
               suffixIcon: widget.suffix != null
                   ? GestureDetector(
                       onTap: () => _pickDateTime(context),
@@ -158,15 +155,18 @@ class _DateTimePickerTextFieldState extends State<DateTimePickerTextField> {
               prefixIcon: widget.prefix,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: kBorderColor, width: 1),
+                borderSide:
+                    BorderSide(color: colors.kDisabledButtonColor, width: 1),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: kBorderColor, width: 1),
+                borderSide:
+                    BorderSide(color: colors.kDisabledButtonColor, width: 1),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: kBorderColor, width: 1),
+                borderSide:
+                    BorderSide(color: colors.kDisabledButtonColor, width: 1),
               ),
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -175,11 +175,11 @@ class _DateTimePickerTextFieldState extends State<DateTimePickerTextField> {
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: kErrorColor, width: 1),
+                borderSide: BorderSide(color: colors.kErrorColor, width: 1),
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: kErrorColor, width: 1),
+                borderSide: BorderSide(color: colors.kErrorColor, width: 1),
               ),
               contentPadding: const EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 16.0),
             ),

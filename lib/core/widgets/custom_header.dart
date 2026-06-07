@@ -1,3 +1,5 @@
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:arenax_mobile_app/core/utils/colors.dart';
@@ -16,20 +18,22 @@ class CustomHeader extends StatelessWidget {
       this.onSecondSuffixIconTap});
 
   final String title;
-  final IconData? optionalPrefixIcon;
+  final Widget? optionalPrefixIcon;
   final VoidCallback? onPrefixIconTap;
-  final IconData? optionalSuffixIcon;
+  final Widget? optionalSuffixIcon;
   final VoidCallback? onSuffixIconTap;
-  final IconData? optionalSecondSuffixIcon;
+  final Widget? optionalSecondSuffixIcon;
   final VoidCallback? onSecondSuffixIconTap;
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.only(
-        left: 16,
-        right: 16,
         top: 55,
         bottom: 24,
       ),
@@ -40,51 +44,29 @@ class CustomHeader extends StatelessWidget {
               ? GestureDetector(
                   onTap: onPrefixIconTap ??
                       () => globals.navigatorKey.currentState!.pop(),
-                  child: Icon(
-                    optionalPrefixIcon,
-                    color: kSoftDarkishColor,
-                    size: 28,
-                  ),
-                )
+                  child: optionalPrefixIcon)
               : SizedBox(),
           Text(
             title,
-            style: Styles.textStyle22
-                .copyWith(fontWeight: FontWeight.w900, color: kBlackColor),
+            style: Styles.textStyle22(context).copyWith(
+                fontWeight: FontWeight.w900, color: colors.kBlackColor),
           ),
           optionalSecondSuffixIcon != null
               ? Row(
                   children: [
                     GestureDetector(
-                      onTap: onSecondSuffixIconTap,
-                      child: Icon(
-                        optionalSecondSuffixIcon,
-                        color: kSoftDarkishColor,
-                        size: 28,
-                      ),
-                    ),
+                        onTap: onSecondSuffixIconTap,
+                        child: optionalSecondSuffixIcon),
                     SizedBox(
                       width: 16,
                     ),
                     GestureDetector(
-                      onTap: onSuffixIconTap,
-                      child: Icon(
-                        optionalSuffixIcon,
-                        color: kSoftDarkishColor,
-                        size: 28,
-                      ),
-                    ),
+                        onTap: onSuffixIconTap, child: optionalSuffixIcon),
                   ],
                 )
               : optionalSuffixIcon != null
                   ? GestureDetector(
-                      onTap: onSuffixIconTap,
-                      child: Icon(
-                        optionalSuffixIcon,
-                        color: kSoftDarkishColor,
-                        size: 28,
-                      ),
-                    )
+                      onTap: onSuffixIconTap, child: optionalSuffixIcon)
                   : SizedBox(),
         ],
       ),

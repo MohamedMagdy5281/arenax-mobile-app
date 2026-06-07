@@ -3,6 +3,7 @@ library;
 // import 'package:arenax_mobile_app/client/api.dart';
 import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/functions/custom_dialog.dart';
+import 'package:arenax_mobile_app/core/utils/functions/onboarding_check.dart';
 import 'package:arenax_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -44,7 +45,7 @@ Future<void> removeStringFromSP(String key) async {
 }
 
 Future<void> restartApp() async {
-  runApp(MyApp());
+  runApp(const MyApp(initialThemeMode: ThemeMode.system));
 }
 
 String convertArabicNumbersToEnglish(String input) {
@@ -57,6 +58,6 @@ String convertArabicNumbersToEnglish(String input) {
   return input;
 }
 
-Future<void> showUpdateDialog(BuildContext context, String updateUrl) async {
-  await customUpdateDialog(context, updateUrl: updateUrl);
-}
+// Future<void> showUpdateDialog(BuildContext context, String updateUrl) async {
+//   await customUpdateDialog(context, updateUrl: updateUrl);
+// }

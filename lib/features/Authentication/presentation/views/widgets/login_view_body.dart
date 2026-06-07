@@ -1,4 +1,9 @@
+import 'package:arenax_mobile_app/core/utils/assets.dart';
+import 'package:arenax_mobile_app/core/utils/functions/password_validator.dart';
+import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_mobile_text_field_with_country.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_phone_text_field_with_no_country_change.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/loginRiverpod/login_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
@@ -22,243 +27,299 @@ class LoginViewBody extends ConsumerStatefulWidget {
 }
 
 class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
-  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  // TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey();
   String? countryCodeChoose;
+  String password = "";
 
   @override
   void dispose() {
-    emailController.dispose();
+    phoneNumberController.dispose();
     passwordController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColors>() ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? AppColors.dark
+            : AppColors.light);
+
+    final validation = validatePassword(password);
     final state = ref.watch(loginNotifierProvider);
     final notifier = ref.read(loginNotifierProvider.notifier);
     return Stack(
       children: [
         // Image.asset(AssetsData.pageBg),
         state.isPageLoading
-            ? Center(
-                child: CustomLoadingIndicator(),
-              )
-            : SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomHeader(
-                      title: AppLocalizations.of(context)!.signIn,
-                      optionalPrefixIcon: globals.appLang == "en"
-                          ? Iconsax.arrow_left_2
-                          : Iconsax.arrow_right_2,
-                      onPrefixIconTap: () {},
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                      child: Text(
-                        AppLocalizations.of(context)!.giveCreadential,
-                        style: Styles.textStyle14.copyWith(
-                            fontWeight: FontWeight.w500, color: kGrey3Color),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 38,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Form(
-                        key: loginFormKey,
-                        child: Column(
-                          children: [
-                            TextFormFieldWithNoTitle(
-                              inputType: TextInputType.emailAddress,
-                              controller: emailController,
-                              placeholder:
-                                  AppLocalizations.of(context)!.enterEmail,
-                              // prefixWidget: MobilePrefixField(),
-                              prefix: Icon(
-                                Icons.email_outlined,
-                                size: 24,
-                                color: kGrey3Color,
+            ? Container(
+                color: colors.kBackGroundColor,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Center(
+                    child: CustomLoadingIndicator(),
+                  ),
+                ))
+            : Container(
+                color: colors.kBackGroundColor,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 52,
                               ),
-                              validator: (data) {
-                                if (data!.isEmpty) {
-                                  return AppLocalizations.of(context)!
-                                      .cantBeEmpty;
-                                } else {
-                                  return null;
-                                }
-                              },
-                              // validator: (data) {
-                              // if (data == null || data.isEmpty) {
-                              //   return AppLocalizations.of(context)!
-                              //       .cantBeEmpty;
-                              // }
-                              // final englishNumberRegex = RegExp(r'^[0-9]+$');
-                              // if (!englishNumberRegex.hasMatch(data)) {
-                              //   return AppLocalizations.of(context)!
-                              //       .mobileValidateMsg;
-                              // }
-                              // if (data.length == 10) {
-                              //   if (!(data.startsWith("051") ||
-                              //       data.startsWith("052") ||
-                              //       data.startsWith("05"))) {
-                              //     return AppLocalizations.of(context)!
-                              //         .mobileValidateMsg;
-                              //   }
-                              // } else if (data.length == 9) {
-                              //   if (!(data.startsWith("51") ||
-                              //       data.startsWith("52") ||
-                              //       data.startsWith("5"))) {
-                              //     return AppLocalizations.of(context)!
-                              //         .mobileValidateMsg;
-                              //   }
-                              // } else {
-                              //   return AppLocalizations.of(context)!
-                              //       .mobileValidateMsg;
-                              // }
-                              // return null;
-                              // },
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            TextFormFieldWithNoTitle(
-                              validator: (data) {
-                                if (data!.isEmpty) {
-                                  return AppLocalizations.of(context)!
-                                      .cantBeEmpty;
-                                } else {
-                                  return null;
-                                }
-                              },
-                              controller: passwordController,
-                              placeholder:
-                                  AppLocalizations.of(context)!.enterPassword,
-                              obscureText: state.isPasswordVisible,
-                              prefix: Icon(
-                                Iconsax.lock,
-                                size: 24,
-                                color: kGrey3Color,
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    AssetsData.logo,
+                                    width: 40,
+                                    height: 40,
+                                  ),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    "Arena",
+                                    style: Styles.textStyle20(context)
+                                        .copyWith(color: colors.kTextColor),
+                                  ),
+                                  Text("X",
+                                      style: Styles.textStyle20(context)
+                                          .copyWith(color: colors.kAccentColor))
+                                ],
                               ),
-                              suffix: GestureDetector(
-                                onTap: () {
-                                  notifier.togglePasswordVisibility();
-                                },
-                                child: Icon(
-                                  state.isPasswordVisible
-                                      ? Iconsax.eye_slash
-                                      : Iconsax.eye,
-                                  color: kGrey3Color,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                            Row(
-                              children: [
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Transform.scale(
-                                        scale: 0.8,
-                                        child: Switch(
-                                          value: state.isRememberMeChecked,
-                                          onChanged: (value) {
-                                            notifier.toggleRememberMe();
-                                          },
-                                        ),
-                                      ),
-                                      Text(
-                                        AppLocalizations.of(context)!
-                                            .rememberMe,
-                                        style: Styles.textStyle12,
-                                      ),
-                                    ],
+                              const SizedBox(height: 12),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  AppLocalizations.of(context)!.welcomeBack,
+                                  style: Styles.textStyle22(context).copyWith(
+                                    fontWeight: FontWeight.w900,
+                                    color: colors.kTextColor,
                                   ),
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    globals.navigatorKey.currentState!
-                                        .pushNamed(ForgetPasswordView.id);
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4),
-                                    child: Text(
-                                        AppLocalizations.of(context)!
-                                            .forgotPassword,
-                                        style: Styles.textStyle14.copyWith(
-                                          color: kPrimaryColor,
-                                        )),
+                              ),
+                              const SizedBox(height: 12),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  AppLocalizations.of(context)!
+                                      .signInToContinue,
+                                  style: Styles.textStyle14(context).copyWith(
+                                    color: colors.kTextMutedColor,
                                   ),
                                 ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 52,
-                            ),
-                            state.isLoginButtonLoading == true
-                                ? Center(child: CustomLoadingIndicator())
-                                : Column(
-                                    children: [
-                                      CustomButton(
-                                        text: AppLocalizations.of(context)!
-                                            .signIn,
-                                        itemCallBack: () async {
-                                          if (loginFormKey.currentState!
-                                              .validate()) {}
-                                        },
-                                      ),
-                                      const SizedBox(
-                                        height: 16,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
+                              ),
+                              const SizedBox(height: 32),
+                              Form(
+                                key: loginFormKey,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child:
+                                          CustomPhoneTextFieldWithNoCountryChange(
+                                        controller: phoneNumberController,
+                                        title: AppLocalizations.of(context)!
+                                            .phoneNumber,
+                                        placeholder:
                                             AppLocalizations.of(context)!
-                                                .dontHaveAcc,
-                                            style: Styles.textStyle14,
-                                          ),
-                                          const SizedBox(
-                                            width: 4,
-                                          ),
-                                          GestureDetector(
-                                            onTap: () {
-                                              globals.navigatorKey.currentState!
-                                                  .pushNamed(RegisterView.id);
-                                            },
-                                            child: Text(
-                                              AppLocalizations.of(context)!
-                                                  .signUp,
-                                              style: Styles.textStyle14
-                                                  .copyWith(
-                                                      color: kPrimaryColor),
+                                                .enterPhone,
+                                      ),
+                                    ),
+
+                                    const SizedBox(height: 14),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: TextFormFieldWithTitle(
+                                        controller: passwordController,
+                                        title: AppLocalizations.of(context)!
+                                            .password,
+                                        placeholder:
+                                            AppLocalizations.of(context)!
+                                                .enterPassword,
+                                        obscureText: !state.showPassword,
+                                        optionalLabelButtonOnTap: () {
+                                          globals.navigatorKey.currentState!
+                                              .pushNamed(ForgetPasswordView.id);
+                                        },
+                                        optionalLabelButton: Text(
+                                            AppLocalizations.of(context)!
+                                                .forgot,
+                                            style: Styles.textStyle12(context)
+                                                .copyWith(
+                                                    color:
+                                                        colors.kPrimaryColor)),
+                                        suffix: GestureDetector(
+                                          onTap: () {
+                                            notifier.toggleShowPassword();
+                                          },
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 12),
+                                            child: Center(
+                                              child: Text(
+                                                globals.appLang == "ar"
+                                                    ? state.showPassword
+                                                        ? "إخفاء"
+                                                        : "إظهار"
+                                                    : state.showPassword
+                                                        ? "HIDE"
+                                                        : "SHOW",
+                                                style:
+                                                    Styles.textStyle14(context)
+                                                        .copyWith(
+                                                  color: colors.kTextMutedColor,
+                                                  fontWeight: FontWeight.w700,
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ],
+                                        ),
+                                        validator: (String? pass) {
+                                          final value = pass ?? "";
+
+                                          if (value.isEmpty) {
+                                            return AppLocalizations.of(context)!
+                                                .cantBeEmpty;
+                                          }
+
+                                          if (value.contains(" ")) {
+                                            return AppLocalizations.of(context)!
+                                                .thisFieldCantContainSpaces;
+                                          }
+
+                                          if (!validation.isValid) {
+                                            return AppLocalizations.of(context)!
+                                                .fieldIsNotValid;
+                                          }
+
+                                          return null;
+                                        },
                                       ),
-                                    ],
-                                  ),
+                                    ),
+
+                                    const SizedBox(height: 16),
+
+                                    // checkbox here (same as before)
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      // 🔥 THIS PUSHES BUTTON TO BOTTOM
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 8),
+                        child: state.isLoginButtonLoading
+                            ? const CustomLoadingIndicator()
+                            : CustomButton(
+                                text: AppLocalizations.of(context)!.login,
+                                itemCallBack: () {
+                                  if (loginFormKey.currentState!.validate()) {}
+                                },
+                              ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                color: colors.kDisabledButtonColor,
+                                thickness: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12),
+                              child: Text(
+                                AppLocalizations.of(context)!.or,
+                                style: Styles.textStyle12(context).copyWith(
+                                  color: colors.kTextMutedColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                color: colors.kDisabledButtonColor,
+                                thickness: 1,
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 55),
-                  ],
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: CustomButtonWithNoBG(
+                            previousIcon: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 4.0),
+                              child: Image.asset(
+                                AssetsData.faceIdIcon,
+                                width: 25,
+                                height: 25,
+                              ),
+                            ),
+                            text: AppLocalizations.of(context)!.useFaceId,
+                            itemCallBack: () {}),
+                      ),
+                      SizedBox(
+                        height: 18,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.dontHaveAcc,
+                            style: Styles.textStyle12(context)
+                                .copyWith(color: colors.kTextMutedColor),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              globals.navigatorKey.currentState!
+                                  .pushNamed(RegisterView.id);
+                            },
+                            child: Text(
+                              AppLocalizations.of(context)!.signUp,
+                              style: Styles.textStyle12(context)
+                                  .copyWith(color: colors.kPrimaryColor),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 82,
+                      )
+                    ],
+                  ),
                 ),
               ),
       ],

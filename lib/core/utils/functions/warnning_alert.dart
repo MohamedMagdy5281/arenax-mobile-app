@@ -28,7 +28,7 @@
 //                     const SizedBox(height: 24),
 //                     Text(
 //                       message,
-//                       style: Styles.textStyle14.copyWith(
+//                       style: Styles.textStyle14(context).copyWith(
 //                         fontWeight: FontWeight.w600,
 //                       ),
 //                       textAlign: TextAlign.center,
