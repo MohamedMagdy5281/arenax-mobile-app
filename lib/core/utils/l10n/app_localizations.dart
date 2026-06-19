@@ -146,12 +146,6 @@ abstract class AppLocalizations {
   /// **'Progress'**
   String get progress;
 
-  /// No description provided for @profile.
-  ///
-  /// In en, this message translates to:
-  /// **'Profile'**
-  String get profile;
-
   /// No description provided for @language.
   ///
   /// In en, this message translates to:
@@ -1897,6 +1891,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'add a special character (@ , & or _ ) to strengthen'**
   String get addSpecialChar;
+
+  /// No description provided for @somethingWentWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get somethingWentWrong;
+
+  /// No description provided for @couldntReachOurServers.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t reach our servers. Check your connection and try again.'**
+  String get couldntReachOurServers;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get tryAgain;
+
+  /// No description provided for @dismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get dismiss;
+
+  /// No description provided for @numberAlreadyRegistered.
+  ///
+  /// In en, this message translates to:
+  /// **'This number is already registered'**
+  String get numberAlreadyRegistered;
+
+  /// No description provided for @youAlreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'It looks like you already have an ArenaX account. Sign in to continue.'**
+  String get youAlreadyHaveAccount;
+
+  /// No description provided for @loginInstead.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in instead'**
+  String get loginInstead;
+
+  /// No description provided for @useDiffMobileNum.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a different number'**
+  String get useDiffMobileNum;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @seach.
+  ///
+  /// In en, this message translates to:
+  /// **'Seach'**
+  String get seach;
+
+  /// No description provided for @booking.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking'**
+  String get booking;
+
+  /// No description provided for @crew.
+  ///
+  /// In en, this message translates to:
+  /// **'Crew'**
+  String get crew;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
 }
 
 class _AppLocalizationsDelegate

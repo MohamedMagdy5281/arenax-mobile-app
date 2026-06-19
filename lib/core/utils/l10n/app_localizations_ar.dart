@@ -33,9 +33,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get progress => 'التقدم';
 
   @override
-  String get profile => 'الملف';
-
-  @override
   String get language => 'اللغة';
 
   @override
@@ -938,4 +935,45 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addSpecialChar => 'أضف رمزًا خاصًا (@ أو & أو _) لتقوية';
+
+  @override
+  String get somethingWentWrong => 'حدث خطأ ما';
+
+  @override
+  String get couldntReachOurServers =>
+      'لم نتمكن من الوصول إلى خوادمنا. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get tryAgain => 'حاول مجددا';
+
+  @override
+  String get dismiss => 'إلغاء';
+
+  @override
+  String get numberAlreadyRegistered => 'هذا الرقم مسجل بالفعل';
+
+  @override
+  String get youAlreadyHaveAccount =>
+      'يبدو أن لديك حسابًا بالفعل على ArenaX. سجّل الدخول للمتابعة.';
+
+  @override
+  String get loginInstead => 'تسجيل الدخول بدلا من ذلك';
+
+  @override
+  String get useDiffMobileNum => 'استخدم رقمًا مختلفًا';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get seach => 'بحث';
+
+  @override
+  String get booking => 'الحجوزات';
+
+  @override
+  String get crew => 'الفريق';
+
+  @override
+  String get profile => 'الملف الشخصي';
 }

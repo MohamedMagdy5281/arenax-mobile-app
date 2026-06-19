@@ -15,10 +15,12 @@ import 'package:arenax_mobile_app/features/Authentication/presentation/views/ena
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/location_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/mobile_number_already_exists_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/onboarding_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/reset_password_otp_verification_view.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -333,6 +335,9 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
             EnableFaceIdView.id: (context) => const EnableFaceIdView(),
             ResetPasswordOtpVerificationView.id: (context) =>
                 const ResetPasswordOtpVerificationView(),
+            MobileNumberAlreadyExistsView.id: (context) =>
+                const MobileNumberAlreadyExistsView(),
+            ProfileView.id: (context) => const ProfileView(),
           },
         );
       },

@@ -7,6 +7,7 @@ import 'package:arenax_mobile_app/core/widgets/custom_phone_text_field_with_no_c
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/loginRiverpod/login_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -195,7 +196,7 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                           ),
                                         ),
                                         validator: (String? pass) {
-                                          final value = pass ?? "";
+                                          final value = pass?.trim() ?? "";
 
                                           if (value.isEmpty) {
                                             return AppLocalizations.of(context)!
@@ -207,9 +208,11 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                                                 .thisFieldCantContainSpaces;
                                           }
 
+                                          final validation =
+                                              validatePassword(value);
+
                                           if (!validation.isValid) {
-                                            return AppLocalizations.of(context)!
-                                                .fieldIsNotValid;
+                                            return getPasswordHint(validation);
                                           }
 
                                           return null;
@@ -236,7 +239,10 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                             : CustomButton(
                                 text: AppLocalizations.of(context)!.login,
                                 itemCallBack: () {
-                                  if (loginFormKey.currentState!.validate()) {}
+                                  if (loginFormKey.currentState!.validate()) {
+                                    globals.navigatorKey.currentState!
+                                        .pushNamed(ProfileView.id);
+                                  }
                                 },
                               ),
                       ),

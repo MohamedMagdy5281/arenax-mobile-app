@@ -273,8 +273,8 @@ class CustomButtonWithNoBG extends StatelessWidget {
               border: Border.all(
                   width: 1,
                   color: isDisabled != null && isDisabled == true
-                      ? disabledBorderColor ?? colors.kHintColor
-                      : borderColor ?? colors.kHintColor),
+                      ? disabledBorderColor ?? colors.kDisabledButtonColor
+                      : borderColor ?? colors.kDisabledButtonColor),
               borderRadius: BorderRadius.circular(32.0),
             ),
             child: isLoading == true

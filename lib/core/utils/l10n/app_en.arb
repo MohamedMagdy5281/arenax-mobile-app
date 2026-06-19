@@ -33,10 +33,6 @@
   "@progress":{
     "progress":""
   },
-  "profile":"Profile",
-  "@profile":{
-    "profile":""
-  },
   "language":"Language",
   "@language":{
     "language":""
@@ -1233,6 +1229,58 @@
   "addSpecialChar":"add a special character (@ , & or _ ) to strengthen",
   "@addSpecialChar":{
     "addSpecialChar":""
+  },
+  "somethingWentWrong":"Something went wrong",
+  "@somethingWentWrong":{
+    "somethingWentWrong":""
+  },
+  "couldntReachOurServers":"We couldn't reach our servers. Check your connection and try again.",
+  "@couldntReachOurServers":{
+    "couldntReachOurServers":""
+  },
+  "tryAgain":"Try again",
+  "@tryAgain":{
+    "tryAgain":""
+  },
+  "dismiss":"Dismiss",
+  "@dismiss":{
+    "dismiss":""
+  },
+  "numberAlreadyRegistered":"This number is already registered",
+  "@numberAlreadyRegistered":{
+    "numberAlreadyRegistered":""
+  },
+  "youAlreadyHaveAccount":"It looks like you already have an ArenaX account. Sign in to continue.",
+  "@youAlreadyHaveAccount":{
+    "youAlreadyHaveAccount":""
+  },
+  "loginInstead":"Log in instead",
+  "@loginInstead":{
+    "loginInstead":""
+  },
+  "useDiffMobileNum":"Use a different number",
+  "@useDiffMobileNum":{
+    "useDiffMobileNum":""
+  },
+  "home":"Home",
+  "@home":{
+    "home":""
+  },
+  "seach":"Seach",
+  "@seach":{
+    "seach":""
+  },
+  "booking":"Booking",
+  "@booking":{
+    "booking":""
+  },
+  "crew":"Crew",
+  "@crew":{
+    "crew":""
+  },
+  "profile":"Profile",
+  "@profile":{
+    "profile":""
   }
   
 }
