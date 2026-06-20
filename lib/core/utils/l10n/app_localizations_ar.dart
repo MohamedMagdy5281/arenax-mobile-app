@@ -33,9 +33,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get progress => 'التقدم';
 
   @override
-  String get language => 'اللغة';
-
-  @override
   String get level => 'المستوى';
 
   @override
@@ -976,4 +973,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profile => 'الملف الشخصي';
+
+  @override
+  String get addYourName => 'أضف اسمك';
+
+  @override
+  String get requiredBeforeBooking => 'مطلوب قبل الحجز';
+
+  @override
+  String get completeProfile => 'أكمل الملف الشخصي';
+
+  @override
+  String get language => 'اللغة';
+
+  @override
+  String get theme => 'النمط';
+
+  @override
+  String get notifications => 'إشعارات';
+
+  @override
+  String get enabledNotifications => 'تم تفعيل 3 من 4';
+
+  @override
+  String get allSettings => 'جميع الإعدادات';
 }

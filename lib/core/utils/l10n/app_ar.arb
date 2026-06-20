@@ -6,7 +6,6 @@
   "letsGetStarted":"لنبدأ بملء النموذج أدناه",
   "signUpHere":"قم بالتسجيل هنا",
   "progress":"التقدم",
-  "language":"اللغة",
   "level":"المستوى",
   "goal":"الهدف",
   "skill":"المهارات",
@@ -316,7 +315,17 @@
     "seach":"بحث",
     "booking":"الحجوزات",
     "crew":"الفريق",
-    "profile":"الملف الشخصي"
+    "profile":"الملف الشخصي",
+    "addYourName":"أضف اسمك",
+    "requiredBeforeBooking":"مطلوب قبل الحجز",
+    "completeProfile":"أكمل الملف الشخصي",
+    "language":"اللغة",
+    "theme":"النمط",
+    "notifications":"إشعارات",
+    "enabledNotifications":"تم تفعيل 3 من 4",
+    "allSettings":"جميع الإعدادات"
+
+
 
 
 

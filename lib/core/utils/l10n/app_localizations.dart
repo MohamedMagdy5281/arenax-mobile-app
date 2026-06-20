@@ -146,12 +146,6 @@ abstract class AppLocalizations {
   /// **'Progress'**
   String get progress;
 
-  /// No description provided for @language.
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get language;
-
   /// No description provided for @level.
   ///
   /// In en, this message translates to:
@@ -1969,6 +1963,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @addYourName.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your name'**
+  String get addYourName;
+
+  /// No description provided for @requiredBeforeBooking.
+  ///
+  /// In en, this message translates to:
+  /// **'Required before booking'**
+  String get requiredBeforeBooking;
+
+  /// No description provided for @completeProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete profile'**
+  String get completeProfile;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @enabledNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'3 of 4 enabled'**
+  String get enabledNotifications;
+
+  /// No description provided for @allSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'All settings'**
+  String get allSettings;
 }
 
 class _AppLocalizationsDelegate

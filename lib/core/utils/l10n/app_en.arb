@@ -33,10 +33,6 @@
   "@progress":{
     "progress":""
   },
-  "language":"Language",
-  "@language":{
-    "language":""
-  },
   "level":"Level",
   "@level":{
     "level":""
@@ -1281,7 +1277,41 @@
   "profile":"Profile",
   "@profile":{
     "profile":""
+  },
+  "addYourName":"Add your name",
+  "@addYourName":{
+    "addYourName":""
+  },
+  "requiredBeforeBooking":"Required before booking",
+  "@requiredBeforeBooking":{
+    "requiredBeforeBooking":""
+  },
+  "completeProfile":"Complete profile",
+  "@completeProfile":{
+    "completeProfile":""
+  },
+  "language":"Language",
+  "@language":{
+    "language":""
+  },
+  "theme":"Theme",
+  "@theme":{
+    "theme":""
+  },
+  "notifications":"Notifications",
+  "@notifications":{
+    "notifications":""
+  },
+  "enabledNotifications":"3 of 4 enabled",
+  "@enabledNotifications":{
+    "enabledNotifications":""
+  },
+  "allSettings":"All settings",
+  "@allSettings":{
+    "allSettings":""
   }
+  
+
   
 }
 

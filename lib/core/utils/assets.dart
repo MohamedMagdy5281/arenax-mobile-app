@@ -7,4 +7,5 @@ class AssetsData {
   static const faceIdIcon = 'assets/images/faceIdIcon.png';
   static const errorIcon = 'assets/images/error_icon.png';
   static const warnningIcon = 'assets/images/warnning_icon.png';
+  static const editPen = 'assets/images/edit_pen.png';
 }

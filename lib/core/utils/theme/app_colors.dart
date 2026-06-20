@@ -105,7 +105,7 @@ class AppColors extends ThemeExtension<AppColors> {
       kWhiteColor: Colors.white,
       kBlackColor: Colors.black,
       kPrimaryColor: Color(0xFF7B2FF7),
-      kPrimaryDarkColor: Color(0xFF5A20B5),
+      kPrimaryDarkColor: Color(0xFFF2ECFF),
       kPrimaryLightColor: Color(0xFFE8D8FF),
       kBackGroundColor: Color(0xFFF4F1FA),
       kSurfaceColor: Color(0XFFFFFFFF),

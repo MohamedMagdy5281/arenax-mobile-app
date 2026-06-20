@@ -1,11 +1,15 @@
+import 'package:arenax_mobile_app/core/utils/assets.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
+import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/manager/profileRiverpod/profile_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/profile_page_tiles.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/user_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 
 class ProfileViewBody extends ConsumerStatefulWidget {
   const ProfileViewBody({super.key});
@@ -24,9 +28,9 @@ class _ProfileViewBodyState extends ConsumerState<ProfileViewBody> {
 
     final state = ref.watch(profileNotifierProvider);
     final notifier = ref.read(profileNotifierProvider.notifier);
+
     return Stack(
       children: [
-        // Image.asset(AssetsData.pageBg),
         state.isPageLoading
             ? Container(
                 color: colors.kBackGroundColor,
@@ -87,12 +91,71 @@ class _ProfileViewBodyState extends ConsumerState<ProfileViewBody> {
                               ),
                               const SizedBox(height: 16),
                               UserDetailsContainer(),
+                              globals.userDetails.firstName == null ||
+                                      globals.userDetails.lastName == null ||
+                                      globals.userDetails.email == null
+                                  ? Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 16,
+                                        ),
+                                        CustomButton(
+                                            text: AppLocalizations.of(context)!
+                                                .completeProfile,
+                                            itemCallBack: () {})
+                                      ],
+                                    )
+                                  : SizedBox(),
+                              SizedBox(
+                                height: 16,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: colors.kSurfaceColor,
+                                    border: Border.all(
+                                        width: 1,
+                                        color: colors.kDisabledButtonColor),
+                                    borderRadius: BorderRadius.circular(12)),
+                                child: Column(
+                                  children: [
+                                    ProfilePageTiles(
+                                      icon: Icons.language,
+                                      title: AppLocalizations.of(context)!
+                                          .language,
+                                      subtitle: notifier.getLangSubtitle(state),
+                                      onTap: () => notifier.toggleLang(),
+                                    ),
+                                    ProfilePageTiles(
+                                      icon: state.themeMode == ThemeMode.dark
+                                          ? Icons.dark_mode_rounded
+                                          : Icons.light_mode_rounded,
+                                      title:
+                                          AppLocalizations.of(context)!.theme,
+                                      subtitle: notifier.getThemeSubtitle(
+                                          state, context),
+                                      onTap: () => notifier.toggleTheme(),
+                                    ),
+                                    ProfilePageTiles(
+                                      icon: Icons.notifications,
+                                      title: AppLocalizations.of(context)!
+                                          .notifications,
+                                      subtitle: AppLocalizations.of(context)!
+                                          .enabledNotifications,
+                                      onTap: () => () {},
+                                    ),
+                                    ProfilePageTiles(
+                                      icon: Icons.settings,
+                                      title: AppLocalizations.of(context)!
+                                          .allSettings,
+                                      onTap: () => () {},
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
-
-                      // 🔥 THIS PUSHES BUTTON TO BOTTOM
                     ],
                   ),
                 ),
