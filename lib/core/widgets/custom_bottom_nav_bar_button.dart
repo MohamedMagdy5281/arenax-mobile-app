@@ -15,6 +15,7 @@ class CustomBottomNavBarButton extends StatefulWidget {
     this.isMic,
     required this.label,
     this.labelColor,
+    this.warningAlert,
   });
 
   final VoidCallback? onPressed;
@@ -27,6 +28,7 @@ class CustomBottomNavBarButton extends StatefulWidget {
   final bool? isMic;
   final String label;
   final Color? labelColor;
+  final bool? warningAlert;
 
   @override
   State<CustomBottomNavBarButton> createState() =>
@@ -41,26 +43,45 @@ class _CustomBottomNavBarButtonState extends State<CustomBottomNavBarButton>
         (Theme.of(context).brightness == Brightness.dark
             ? AppColors.dark
             : AppColors.light);
+
     return InkWell(
       onTap: widget.onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              widget.icon,
-              color: widget.iconColor,
-              size: widget.size ?? 28,
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Icon(
+                  widget.icon,
+                  color: widget.iconColor,
+                  size: widget.size ?? 28,
+                ),
+                if (widget.warningAlert == true)
+                  Positioned(
+                    top: 0,
+                    right: -2,
+                    child: Container(
+                      width: 7,
+                      height: 7,
+                      decoration: BoxDecoration(
+                        color: colors.kWarningColor,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ),
+              ],
             ),
-            SizedBox(
-              height: 4,
-            ),
+            const SizedBox(height: 2),
             Text(
               widget.label,
-              style: Styles.textStyle12(context)
-                  .copyWith(color: widget.labelColor ?? colors.kHintColor),
-            )
+              style: Styles.textStyle12(context).copyWith(
+                color: widget.labelColor ?? colors.kHintColor,
+              ),
+            ),
           ],
         ),
       ),

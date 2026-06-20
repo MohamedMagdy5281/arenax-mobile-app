@@ -170,6 +170,11 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                   labelColor: chosenIndex == 4
                       ? colors.kPrimaryColor
                       : colors.kHintColor,
+                  warningAlert: globals.userDetails.firstName == null ||
+                          globals.userDetails.lastName == null ||
+                          globals.userDetails.email == null
+                      ? true
+                      : false,
                 ),
                 // CustomBottomNavBarButton(
                 //     onPressed: _profileClicked,

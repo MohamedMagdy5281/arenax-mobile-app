@@ -7,7 +7,7 @@ part of 'reset_password_otp_verification_notifier_provider.dart';
 // **************************************************************************
 
 String _$resetPasswordOtpVerificationNotifierHash() =>
-    r'63de1774c48230a18cd7dcebb360fabe8f53aa00';
+    r'840123fa62fd9306af726a2c22b322b1624f191e';
 
 /// See also [ResetPasswordOtpVerificationNotifier].
 @ProviderFor(ResetPasswordOtpVerificationNotifier)

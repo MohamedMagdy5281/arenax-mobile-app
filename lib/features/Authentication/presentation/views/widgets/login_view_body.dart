@@ -70,7 +70,7 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
                     children: [
                       Expanded(
@@ -261,7 +261,7 @@ class _LoginViewBodyState extends ConsumerState<LoginViewBody> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 12),
+                                  const EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
                                 AppLocalizations.of(context)!.or,
                                 style: Styles.textStyle12(context).copyWith(

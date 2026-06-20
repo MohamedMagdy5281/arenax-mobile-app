@@ -1,6 +1,7 @@
 library;
 
 // import 'package:arenax_mobile_app/client/api.dart';
+import 'package:arenax_mobile_app/core/classes/temporary_user_details_class.dart';
 import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/functions/custom_dialog.dart';
 import 'package:arenax_mobile_app/core/utils/functions/onboarding_check.dart';
@@ -31,6 +32,8 @@ String? freeRemainingDays;
 String? version;
 String? os;
 String? freeChatPrompt;
+
+TemporaryUserDetailsClass userDetails = TemporaryUserDetailsClass();
 
 // List<ValidatedSubscriptionItem> validatedSubscriptionItems = [];
 List<String> activeProductIds = [];
