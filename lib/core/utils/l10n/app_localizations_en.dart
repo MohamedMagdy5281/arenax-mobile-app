@@ -34,12 +34,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get progress => 'Progress';
 
   @override
-  String get profile => 'Profile';
-
-  @override
-  String get language => 'Language';
-
-  @override
   String get level => 'Level';
 
   @override
@@ -950,4 +944,69 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get addSpecialChar =>
       'add a special character (@ , & or _ ) to strengthen';
+
+  @override
+  String get somethingWentWrong => 'Something went wrong';
+
+  @override
+  String get couldntReachOurServers =>
+      'We couldn\'t reach our servers. Check your connection and try again.';
+
+  @override
+  String get tryAgain => 'Try again';
+
+  @override
+  String get dismiss => 'Dismiss';
+
+  @override
+  String get numberAlreadyRegistered => 'This number is already registered';
+
+  @override
+  String get youAlreadyHaveAccount =>
+      'It looks like you already have an ArenaX account. Sign in to continue.';
+
+  @override
+  String get loginInstead => 'Log in instead';
+
+  @override
+  String get useDiffMobileNum => 'Use a different number';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get seach => 'Seach';
+
+  @override
+  String get booking => 'Booking';
+
+  @override
+  String get crew => 'Crew';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get addYourName => 'Add your name';
+
+  @override
+  String get requiredBeforeBooking => 'Required before booking';
+
+  @override
+  String get completeProfile => 'Complete profile';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get enabledNotifications => '3 of 4 enabled';
+
+  @override
+  String get allSettings => 'All settings';
 }

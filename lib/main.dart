@@ -15,10 +15,13 @@ import 'package:arenax_mobile_app/features/Authentication/presentation/views/ena
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/forget_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/location_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/login_view.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/mobile_number_already_exists_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/onboarding_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/reset_password_otp_verification_view.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/manager/profileRiverpod/profile_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -239,9 +242,9 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
     // Use CasheHelper's already initialized SharedPreferences
     sharedPrefs = CasheHelper.sharedPreferences;
     WidgetsBinding.instance.addObserver(this);
-    Future.microtask(() {
-      ref.read(themeProvider.notifier).init(widget.initialThemeMode);
-    });
+    // Future.microtask(() {
+    //   ref.read(themeProvider.notifier).init(widget.initialThemeMode);
+    // });
   }
 
   @override
@@ -281,21 +284,10 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
       ),
     );
 
-    final themeMode = ref.watch(themeProvider);
+    // final themeMode = ref.watch(themeProvider);
+    final profileState = ref.watch(profileNotifierProvider);
+    final themeMode = profileState.themeMode;
 
-    try {
-      // ✅ Safe null-check for SharedPreferences
-      if (sharedPrefs != null) {
-        if (sharedPrefs!.getString('locale') == null) {
-          sharedPrefs!.setString('locale', globals.appLang);
-        }
-        globals.appLang = sharedPrefs!.getString('locale') ?? globals.appLang;
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print(e.toString());
-      }
-    }
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
@@ -314,7 +306,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
             Locale('en'), // English
             Locale('ar'), // Arabic
           ],
-          locale: Locale(globals.appLang),
+          locale: profileState.locale,
           theme: lightTheme,
           darkTheme: darkTheme,
           themeMode: themeMode,
@@ -333,6 +325,9 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
             EnableFaceIdView.id: (context) => const EnableFaceIdView(),
             ResetPasswordOtpVerificationView.id: (context) =>
                 const ResetPasswordOtpVerificationView(),
+            MobileNumberAlreadyExistsView.id: (context) =>
+                const MobileNumberAlreadyExistsView(),
+            ProfileView.id: (context) => const ProfileView(),
           },
         );
       },

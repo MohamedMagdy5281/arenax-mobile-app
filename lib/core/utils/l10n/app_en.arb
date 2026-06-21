@@ -33,14 +33,6 @@
   "@progress":{
     "progress":""
   },
-  "profile":"Profile",
-  "@profile":{
-    "profile":""
-  },
-  "language":"Language",
-  "@language":{
-    "language":""
-  },
   "level":"Level",
   "@level":{
     "level":""
@@ -1233,7 +1225,93 @@
   "addSpecialChar":"add a special character (@ , & or _ ) to strengthen",
   "@addSpecialChar":{
     "addSpecialChar":""
+  },
+  "somethingWentWrong":"Something went wrong",
+  "@somethingWentWrong":{
+    "somethingWentWrong":""
+  },
+  "couldntReachOurServers":"We couldn't reach our servers. Check your connection and try again.",
+  "@couldntReachOurServers":{
+    "couldntReachOurServers":""
+  },
+  "tryAgain":"Try again",
+  "@tryAgain":{
+    "tryAgain":""
+  },
+  "dismiss":"Dismiss",
+  "@dismiss":{
+    "dismiss":""
+  },
+  "numberAlreadyRegistered":"This number is already registered",
+  "@numberAlreadyRegistered":{
+    "numberAlreadyRegistered":""
+  },
+  "youAlreadyHaveAccount":"It looks like you already have an ArenaX account. Sign in to continue.",
+  "@youAlreadyHaveAccount":{
+    "youAlreadyHaveAccount":""
+  },
+  "loginInstead":"Log in instead",
+  "@loginInstead":{
+    "loginInstead":""
+  },
+  "useDiffMobileNum":"Use a different number",
+  "@useDiffMobileNum":{
+    "useDiffMobileNum":""
+  },
+  "home":"Home",
+  "@home":{
+    "home":""
+  },
+  "seach":"Seach",
+  "@seach":{
+    "seach":""
+  },
+  "booking":"Booking",
+  "@booking":{
+    "booking":""
+  },
+  "crew":"Crew",
+  "@crew":{
+    "crew":""
+  },
+  "profile":"Profile",
+  "@profile":{
+    "profile":""
+  },
+  "addYourName":"Add your name",
+  "@addYourName":{
+    "addYourName":""
+  },
+  "requiredBeforeBooking":"Required before booking",
+  "@requiredBeforeBooking":{
+    "requiredBeforeBooking":""
+  },
+  "completeProfile":"Complete profile",
+  "@completeProfile":{
+    "completeProfile":""
+  },
+  "language":"Language",
+  "@language":{
+    "language":""
+  },
+  "theme":"Theme",
+  "@theme":{
+    "theme":""
+  },
+  "notifications":"Notifications",
+  "@notifications":{
+    "notifications":""
+  },
+  "enabledNotifications":"3 of 4 enabled",
+  "@enabledNotifications":{
+    "enabledNotifications":""
+  },
+  "allSettings":"All settings",
+  "@allSettings":{
+    "allSettings":""
   }
+  
+
   
 }
 

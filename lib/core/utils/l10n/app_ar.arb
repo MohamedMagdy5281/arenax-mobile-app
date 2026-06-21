@@ -6,8 +6,6 @@
   "letsGetStarted":"لنبدأ بملء النموذج أدناه",
   "signUpHere":"قم بالتسجيل هنا",
   "progress":"التقدم",
-  "profile":"الملف",
-  "language":"اللغة",
   "level":"المستوى",
   "goal":"الهدف",
   "skill":"المهارات",
@@ -304,7 +302,31 @@
     "addCapitalLetter":"أضف حرفًا كبيرًا لتقوية",
     "addLowercaseLetter":"أضف حرفًا صغيرًا لتقوية",
     "addNumber":"أضف رقمًا لتقوية",
-    "addSpecialChar":"أضف رمزًا خاصًا (@ أو & أو _) لتقوية"
+    "addSpecialChar":"أضف رمزًا خاصًا (@ أو & أو _) لتقوية",
+    "somethingWentWrong":"حدث خطأ ما",
+    "couldntReachOurServers":"لم نتمكن من الوصول إلى خوادمنا. تحقق من اتصالك وحاول مرة أخرى.",
+    "tryAgain":"حاول مجددا",
+    "dismiss":"إلغاء",
+    "numberAlreadyRegistered":"هذا الرقم مسجل بالفعل",
+    "youAlreadyHaveAccount":"يبدو أن لديك حسابًا بالفعل على ArenaX. سجّل الدخول للمتابعة.",
+    "loginInstead":"تسجيل الدخول بدلا من ذلك",
+    "useDiffMobileNum":"استخدم رقمًا مختلفًا",
+    "home":"الرئيسية",
+    "seach":"بحث",
+    "booking":"الحجوزات",
+    "crew":"الفريق",
+    "profile":"الملف الشخصي",
+    "addYourName":"أضف اسمك",
+    "requiredBeforeBooking":"مطلوب قبل الحجز",
+    "completeProfile":"أكمل الملف الشخصي",
+    "language":"اللغة",
+    "theme":"النمط",
+    "notifications":"إشعارات",
+    "enabledNotifications":"تم تفعيل 3 من 4",
+    "allSettings":"جميع الإعدادات"
+
+
+
 
 
 

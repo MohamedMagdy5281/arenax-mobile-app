@@ -1,6 +1,7 @@
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_phone_text_field_with_no_country_change.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/registerRiverpod/register_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Authentication/presentation/views/mobile_number_already_exists_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/otp_verification_view.dart';
 
 import 'package:flutter/material.dart';
@@ -170,7 +171,6 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                                           registerNotifierProvider
                                                               .notifier)
                                                       .toggleTermsAndPrivacyChecked();
-                                                  
                                                 },
                                               ),
                                               state.checkBoxError
@@ -251,6 +251,10 @@ class _RegisterViewBodyState extends ConsumerState<RegisterViewBody> {
                                 itemCallBack: () {
                                   if (loginFormKey.currentState!.validate() &&
                                       state.termsAndPrivacyChecked == true) {
+                                    // globals.navigatorKey.currentState!
+                                    //     .pushNamed(
+                                    //   MobileNumberAlreadyExistsView.id,
+                                    // );
                                     globals.navigatorKey.currentState!
                                         .pushNamed(OtpVerificationView.id,
                                             arguments: {
