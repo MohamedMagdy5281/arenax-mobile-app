@@ -1,26 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'profile_notifier_provider.dart';
+part of 'edit_profile_notifier_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$profileNotifierHash() => r'1135a6c21fd7b9705b9fd8e013864dbbe889d80b';
+String _$editProfileNotifierHash() =>
+    r'2bd63f6056c9706876b78c2dfd6a9cd78163692d';
 
-/// See also [ProfileNotifier].
-@ProviderFor(ProfileNotifier)
-final profileNotifierProvider =
-    AutoDisposeNotifierProvider<ProfileNotifier, ProfileState>.internal(
-  ProfileNotifier.new,
-  name: r'profileNotifierProvider',
+/// See also [EditProfileNotifier].
+@ProviderFor(EditProfileNotifier)
+final editProfileNotifierProvider =
+    AutoDisposeNotifierProvider<EditProfileNotifier, EditProfileState>.internal(
+  EditProfileNotifier.new,
+  name: r'editProfileNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$profileNotifierHash,
+      : _$editProfileNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ProfileNotifier = AutoDisposeNotifier<ProfileState>;
+typedef _$EditProfileNotifier = AutoDisposeNotifier<EditProfileState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

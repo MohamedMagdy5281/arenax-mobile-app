@@ -115,7 +115,7 @@ class CustomButton extends StatelessWidget {
                                                 isDisabled == true
                                             ? disabledTextColor ??
                                                 colors.kHintColor
-                                            : textColor ?? colors.kTextColor,
+                                            : textColor ?? colors.kWhiteColor,
                                       ),
                                   textAlign: TextAlign.center,
                                   overflow: TextOverflow.visible,
@@ -173,7 +173,7 @@ class CustomButton extends StatelessWidget {
                                                     ? disabledTextColor ??
                                                         colors.kHintColor
                                                     : textColor ??
-                                                        colors.kTextColor,
+                                                        colors.kWhiteColor,
                                               ),
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.visible,
@@ -191,7 +191,7 @@ class CustomButton extends StatelessWidget {
                                                   ? disabledTextColor ??
                                                       colors.kHintColor
                                                   : textColor ??
-                                                      colors.kTextColor,
+                                                      colors.kWhiteColor,
                                             ),
                                         textAlign: TextAlign.center,
                                         overflow: TextOverflow.visible,
