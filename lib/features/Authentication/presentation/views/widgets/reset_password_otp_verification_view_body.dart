@@ -432,7 +432,7 @@ class _ResetPasswordOtpVerificationViewBodyState
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(
-          Iconsax.arrow_right_2,
+          Iconsax.arrow_right_3,
           color: colors.kTextColor,
           size: 12,
         ),

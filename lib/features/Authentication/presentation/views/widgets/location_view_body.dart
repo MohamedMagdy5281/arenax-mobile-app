@@ -115,7 +115,7 @@ class _LocationViewBodyState extends ConsumerState<LocationViewBody> {
                                   ),
                                   child: globals.appLang == "en"
                                       ? Icon(Iconsax.arrow_left_2)
-                                      : Icon(Iconsax.arrow_right_2),
+                                      : Icon(Iconsax.arrow_right_3),
                                 ),
                               ),
                             ),

@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import 'package:arenax_mobile_app/core/utils/assets.dart';
+import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations_ar.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/edit_profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 
@@ -29,41 +31,57 @@ class UserDetailsContainer extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(children: [
-                globals.userDetails.firstName == null ||
-                        globals.userDetails.lastName == null
-                    ? GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 64,
-                          height: 64,
-                          decoration: BoxDecoration(
-                            color: colors.kPrimaryDarkColor,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "+",
-                              style: Styles.textStyle18(context)
-                                  .copyWith(color: colors.kPrimaryColor),
-                            ),
-                          ),
-                        ),
-                      )
-                    : Container(
+                CasheHelper.selectedImage != null
+                    ? Container(
                         width: 64,
                         height: 64,
                         decoration: BoxDecoration(
                           color: colors.kUserNameShortcutBGColor,
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        child: Center(
-                          child: Text(
-                            "${globals.userDetails.firstName![0]}${globals.userDetails.lastName![0]}",
-                            style: Styles.textStyle18(context).copyWith(
-                                color: colors.kUserNameShortcutTextColor),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.file(
+                            CasheHelper.selectedImage!,
+                            fit: BoxFit.fill,
                           ),
                         ),
-                      ),
+                      )
+                    : globals.userDetails.firstName == null ||
+                            globals.userDetails.lastName == null
+                        ? GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              width: 64,
+                              height: 64,
+                              decoration: BoxDecoration(
+                                color: colors.kPrimaryDarkColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "+",
+                                  style: Styles.textStyle18(context)
+                                      .copyWith(color: colors.kPrimaryColor),
+                                ),
+                              ),
+                            ),
+                          )
+                        : Container(
+                            width: 64,
+                            height: 64,
+                            decoration: BoxDecoration(
+                              color: colors.kUserNameShortcutBGColor,
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "${globals.userDetails.firstName![0]}${globals.userDetails.lastName![0]}",
+                                style: Styles.textStyle18(context).copyWith(
+                                    color: colors.kUserNameShortcutTextColor),
+                              ),
+                            ),
+                          ),
                 SizedBox(
                   width: 16,
                 ),
@@ -137,21 +155,37 @@ class UserDetailsContainer extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
-                  Container(
-                    width: 64,
-                    height: 64,
-                    decoration: BoxDecoration(
-                      color: colors.kUserNameShortcutBGColor,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "${globals.userDetails.firstName![0]}${globals.userDetails.lastName![0]}",
-                        style: Styles.textStyle18(context)
-                            .copyWith(color: colors.kUserNameShortcutTextColor),
-                      ),
-                    ),
-                  ),
+                  CasheHelper.selectedImage != null
+                      ? Container(
+                          width: 64,
+                          height: 64,
+                          decoration: BoxDecoration(
+                            color: colors.kUserNameShortcutBGColor,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Image.file(
+                              CasheHelper.selectedImage!,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        )
+                      : Container(
+                          width: 64,
+                          height: 64,
+                          decoration: BoxDecoration(
+                            color: colors.kUserNameShortcutBGColor,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "${globals.userDetails.firstName![0]}${globals.userDetails.lastName![0]}",
+                              style: Styles.textStyle18(context).copyWith(
+                                  color: colors.kUserNameShortcutTextColor),
+                            ),
+                          ),
+                        ),
                   SizedBox(
                     width: 16,
                   ),
@@ -203,7 +237,10 @@ class UserDetailsContainer extends StatelessWidget {
                     width: 8,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      globals.navigatorKey.currentState!
+                          .pushNamed(EditProfileView.id);
+                    },
                     child: Container(
                       width: 34,
                       height: 34,

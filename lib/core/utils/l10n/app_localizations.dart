@@ -110,12 +110,6 @@ abstract class AppLocalizations {
   /// **'Please authenticate to access the app'**
   String get authenticateMsg;
 
-  /// No description provided for @email.
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get email;
-
   /// No description provided for @signIn.
   ///
   /// In en, this message translates to:
@@ -260,12 +254,6 @@ abstract class AppLocalizations {
   /// **'Manage Subscription'**
   String get manageSubscription;
 
-  /// No description provided for @enterEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your email '**
-  String get enterEmail;
-
   /// No description provided for @currentChat.
   ///
   /// In en, this message translates to:
@@ -307,12 +295,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You have paused the conversation'**
   String get conversationPaused;
-
-  /// No description provided for @editProfile.
-  ///
-  /// In en, this message translates to:
-  /// **'Edit profile'**
-  String get editProfile;
 
   /// No description provided for @changePassword.
   ///
@@ -566,30 +548,6 @@ abstract class AppLocalizations {
   /// **'Forgot password ?'**
   String get forgotPassword;
 
-  /// No description provided for @firstName.
-  ///
-  /// In en, this message translates to:
-  /// **'First name'**
-  String get firstName;
-
-  /// No description provided for @lastName.
-  ///
-  /// In en, this message translates to:
-  /// **'Last name'**
-  String get lastName;
-
-  /// No description provided for @enterFirstName.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your first name'**
-  String get enterFirstName;
-
-  /// No description provided for @enterLastName.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your last name'**
-  String get enterLastName;
-
   /// No description provided for @confirm.
   ///
   /// In en, this message translates to:
@@ -841,12 +799,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'There is nothing to display'**
   String get noThingToDisplay;
-
-  /// No description provided for @save.
-  ///
-  /// In en, this message translates to:
-  /// **'Save'**
-  String get save;
 
   /// No description provided for @userDataUpdatedSuccessfuly.
   ///
@@ -2011,6 +1963,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All settings'**
   String get allSettings;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile'**
+  String get editProfile;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @tapToChangePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to change photo'**
+  String get tapToChangePhoto;
+
+  /// No description provided for @firstName.
+  ///
+  /// In en, this message translates to:
+  /// **'First name'**
+  String get firstName;
+
+  /// No description provided for @lastName.
+  ///
+  /// In en, this message translates to:
+  /// **'Last name'**
+  String get lastName;
+
+  /// No description provided for @enterFirstName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your first name'**
+  String get enterFirstName;
+
+  /// No description provided for @enterLastName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your last name'**
+  String get enterLastName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @enterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get enterEmail;
+
+  /// No description provided for @verified.
+  ///
+  /// In en, this message translates to:
+  /// **'verified'**
+  String get verified;
+
+  /// No description provided for @contactSupp.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact support to change your phone number'**
+  String get contactSupp;
+
+  /// No description provided for @changeProfileImg.
+  ///
+  /// In en, this message translates to:
+  /// **'Change profile photo'**
+  String get changeProfileImg;
+
+  /// No description provided for @takePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo'**
+  String get takePhoto;
+
+  /// No description provided for @choosePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from library'**
+  String get choosePhoto;
+
+  /// No description provided for @removePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove current photo'**
+  String get removePhoto;
 }
 
 class _AppLocalizationsDelegate

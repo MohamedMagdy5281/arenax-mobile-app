@@ -15,9 +15,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authenticateMsg => 'يرجى المصادقة للوصول إلى التطبيق';
 
   @override
-  String get email => 'البريد الإلكتروني';
-
-  @override
   String get signIn => 'Sign In';
 
   @override
@@ -90,9 +87,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get manageSubscription => 'إدارة الاشتراك';
 
   @override
-  String get enterEmail => 'ادخل البريد الإلكتروني';
-
-  @override
   String get currentChat => 'المحادثة الحالية';
 
   @override
@@ -112,9 +106,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get conversationPaused => 'لقد أوقفت المحادثة مؤقتًا';
-
-  @override
-  String get editProfile => 'تعديل الملف الشخصي';
 
   @override
   String get changePassword => 'تغيير كلمة المرور';
@@ -245,18 +236,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get forgotPassword => 'هل نسيت كلمة السر ؟';
 
   @override
-  String get firstName => 'الاسم الأول';
-
-  @override
-  String get lastName => 'الاسم الأخير';
-
-  @override
-  String get enterFirstName => 'أدخل اسمك الأول';
-
-  @override
-  String get enterLastName => 'أدخل اسمك الاخير';
-
-  @override
   String get confirm => 'تأكيد';
 
   @override
@@ -385,9 +364,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noThingToDisplay => 'لا يوجد شئ لعرضه';
-
-  @override
-  String get save => 'حفظ';
 
   @override
   String get userDataUpdatedSuccessfuly => 'تحديث بياناتك بنجاح';
@@ -997,4 +973,49 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get allSettings => 'جميع الإعدادات';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get tapToChangePhoto => 'اضغط لتغيير الصورة';
+
+  @override
+  String get firstName => 'First name';
+
+  @override
+  String get lastName => 'الاسم الأخير';
+
+  @override
+  String get enterFirstName => 'أدخل اسمك الأول';
+
+  @override
+  String get enterLastName => 'أدخل اسمك الاخير';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get enterEmail => 'ادخل البريد الإلكتروني';
+
+  @override
+  String get verified => 'مُتحقَّق منه';
+
+  @override
+  String get contactSupp => 'تواصل مع الدعم لتغيير رقم هاتفك.';
+
+  @override
+  String get changeProfileImg => 'تغيير صورة الملف الشخصي';
+
+  @override
+  String get takePhoto => 'التقط صورة';
+
+  @override
+  String get choosePhoto => 'اختر من المعرض';
+
+  @override
+  String get removePhoto => 'إزالة الصورة الحالية';
 }

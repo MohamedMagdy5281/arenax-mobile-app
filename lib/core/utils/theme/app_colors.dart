@@ -24,6 +24,8 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color kWarningBGColor;
 
   final Color kErrorColor;
+  final Color kErrorTextColor;
+  final Color kErrorBGColor;
 
   final Color kInfoColor;
   final Color kInfoTextColor;
@@ -70,7 +72,9 @@ class AppColors extends ThemeExtension<AppColors> {
       required this.kCountryCodeBGColor,
       required this.kBorderRoundColor,
       required this.kUserNameShortcutBGColor,
-      required this.kUserNameShortcutTextColor});
+      required this.kUserNameShortcutTextColor,
+      required this.kErrorTextColor,
+      required this.kErrorBGColor});
 
   static const dark = AppColors(
       kWhiteColor: Colors.white,
@@ -89,6 +93,8 @@ class AppColors extends ThemeExtension<AppColors> {
       kWarningTextColor: Color(0xFFF5C16B),
       kWarningBGColor: Color(0xFF33260D),
       kErrorColor: Color(0xFFFF4D5E),
+      kErrorTextColor: Color(0XFFFF98A2),
+      kErrorBGColor: Color(0XFF331217),
       kInfoColor: Color(0xFF3B9DFF),
       kInfoTextColor: Color(0xFF8FC4FF),
       kInfoBGColor: Color(0xFF0C2440),
@@ -118,6 +124,8 @@ class AppColors extends ThemeExtension<AppColors> {
       kWarningTextColor: Color(0xFF8A5A00),
       kWarningBGColor: Color(0xFFFFF4D6),
       kErrorColor: Color(0xFFE53935),
+      kErrorTextColor: Color(0XFFFF98A2),
+      kErrorBGColor: Color(0XFF331217),
       kInfoColor: Color(0xFF3B9DFF),
       kInfoTextColor: Color(0xFF0A58CA),
       kInfoBGColor: Color(0xFFD6ECFF),
@@ -148,6 +156,8 @@ class AppColors extends ThemeExtension<AppColors> {
       Color? kWarningTextColor,
       Color? kWarningBGColor,
       Color? kErrorColor,
+      Color? kErrorTextColor,
+      Color? kErrorBGColor,
       Color? kInfoColor,
       Color? kInfoTextColor,
       Color? kInfoBGColor,
@@ -176,6 +186,8 @@ class AppColors extends ThemeExtension<AppColors> {
         kWarningTextColor: kWarningTextColor ?? this.kWarningTextColor,
         kWarningBGColor: kWarningBGColor ?? this.kWarningBGColor,
         kErrorColor: kErrorColor ?? this.kErrorColor,
+        kErrorTextColor: kErrorTextColor ?? this.kErrorTextColor,
+        kErrorBGColor: kErrorBGColor ?? this.kErrorBGColor,
         kInfoColor: kInfoColor ?? this.kInfoColor,
         kInfoTextColor: kInfoTextColor ?? this.kInfoTextColor,
         kInfoBGColor: kInfoBGColor ?? this.kInfoBGColor,
@@ -218,6 +230,8 @@ class AppColors extends ThemeExtension<AppColors> {
           Color.lerp(kWarningTextColor, other.kWarningTextColor, t)!,
       kWarningBGColor: Color.lerp(kWarningBGColor, other.kWarningBGColor, t)!,
       kErrorColor: Color.lerp(kErrorColor, other.kErrorColor, t)!,
+      kErrorTextColor: Color.lerp(kErrorTextColor, other.kErrorTextColor, t)!,
+      kErrorBGColor: Color.lerp(kErrorBGColor, other.kErrorBGColor, t)!,
       kInfoColor: Color.lerp(kInfoColor, other.kInfoColor, t)!,
       kInfoTextColor: Color.lerp(kInfoTextColor, other.kInfoTextColor, t)!,
       kInfoBGColor: Color.lerp(kInfoBGColor, other.kInfoBGColor, t)!,

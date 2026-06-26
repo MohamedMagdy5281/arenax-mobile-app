@@ -33,14 +33,10 @@ String? version;
 String? os;
 String? freeChatPrompt;
 
-
-bool? userEmailVerified;
+bool? userEmailVerified = true;
 TemporaryUserDetailsClass userDetails = TemporaryUserDetailsClass();
 
 // List<ValidatedSubscriptionItem> validatedSubscriptionItems = [];
-List<String> activeProductIds = [];
-bool isFreeTrialActive = false;
-bool isSubscriptionActive = false;
 LatLng? userPosition;
 
 const String apiKey = "AIzaSyDQeI_JZSPH1uoVO2ycJ7da1rUe5BFmxNg";
