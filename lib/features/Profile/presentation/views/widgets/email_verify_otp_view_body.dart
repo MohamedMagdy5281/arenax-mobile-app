@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:arenax_mobile_app/core/utils/cashe_helper.dart';
 import 'package:arenax_mobile_app/core/utils/l10n/app_localizations.dart';
 import 'package:arenax_mobile_app/core/utils/styles.dart';
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
@@ -7,24 +10,36 @@ import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/manager/otpVerificationRiverpod/otp_verification_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/create_password_view.dart';
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/register_view.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/manager/emailVerifyOtpRiverpod/email_verify_otp_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:arenax_mobile_app/core/utils/globals.dart' as globals;
 import 'package:iconsax/iconsax.dart';
 import 'package:pinput/pinput.dart';
 
-class OtpVerificationViewBody extends ConsumerStatefulWidget {
-  const OtpVerificationViewBody({super.key, required this.phoneNumber});
+class EmailVerifyOtpViewBody extends ConsumerStatefulWidget {
+  const EmailVerifyOtpViewBody(
+      {super.key,
+      required this.phoneNumber,
+      required this.firstName,
+      required this.lastName,
+      required this.email,
+      this.profilePic});
 
+  final String firstName;
+  final String lastName;
+  final String email;
   final String phoneNumber;
+  final File? profilePic;
 
   @override
-  ConsumerState<OtpVerificationViewBody> createState() =>
-      _OtpVerificationViewBodyState();
+  ConsumerState<EmailVerifyOtpViewBody> createState() =>
+      _EmailVerifyOtpViewBodyState();
 }
 
-class _OtpVerificationViewBodyState
-    extends ConsumerState<OtpVerificationViewBody> {
+class _EmailVerifyOtpViewBodyState
+    extends ConsumerState<EmailVerifyOtpViewBody> {
   final GlobalKey<FormState> otpFormKey = GlobalKey();
 
   @override
@@ -32,7 +47,7 @@ class _OtpVerificationViewBodyState
     super.initState();
 
     Future.microtask(() {
-      ref.read(otpVerificationNotifierProvider.notifier).startTimer();
+      ref.read(emailVerifyOtpNotifierProvider.notifier).startTimer();
     });
   }
 
@@ -43,8 +58,8 @@ class _OtpVerificationViewBodyState
             ? AppColors.dark
             : AppColors.light);
 
-    final state = ref.watch(otpVerificationNotifierProvider);
-    final notifier = ref.read(otpVerificationNotifierProvider.notifier);
+    final state = ref.watch(emailVerifyOtpNotifierProvider);
+    final notifier = ref.read(emailVerifyOtpNotifierProvider.notifier);
 
     final isFinished = state.otpRemainingTime == 0;
 
@@ -61,20 +76,54 @@ class _OtpVerificationViewBodyState
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: CustomHeader(
-                          title: "",
-                          optionalPrefixIcon: globals.appLang == "en"
-                              ? _arrowLeft(colors)
-                              : _arrowRight(colors),
+                            title:
+                                AppLocalizations.of(context)!.verifyYourEmail,
+                            onPrefixIconTap: () {
+                              globals.navigatorKey.currentState!.pop();
+                            },
+                            optionalPrefixIcon: Container(
+                              decoration: BoxDecoration(
+                                color: colors.kSurfaceColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 38,
+                              height: 38,
+                              child: Icon(
+                                globals.appLang == "en"
+                                    ? Iconsax.arrow_left_2
+                                    : Iconsax.arrow_right_3,
+                                color: colors.kTextColor,
+                                size: 12,
+                              ),
+                            )),
+                      ),
+                      const SizedBox(height: 28),
+                      Center(
+                        child: Container(
+                          width: 84,
+                          height: 84,
+                          decoration: BoxDecoration(
+                              color: colors.kPrimaryDarkColor,
+                              borderRadius: BorderRadius.circular(24)),
+                          child: Icon(
+                            Icons.mail_outline,
+                            color: colors.kPrimaryColor,
+                            size: 32,
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text(
-                          AppLocalizations.of(context)!.sendCode,
-                          style: Styles.textStyle22(context).copyWith(
-                            fontWeight: FontWeight.w900,
-                            color: colors.kTextColor,
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Text(
+                            AppLocalizations.of(context)!.enterCode,
+                            style: Styles.textStyle22(context).copyWith(
+                              fontWeight: FontWeight.w900,
+                              color: colors.kTextColor,
+                            ),
                           ),
                         ),
                       ),
@@ -82,31 +131,21 @@ class _OtpVerificationViewBodyState
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              AppLocalizations.of(context)!.weSentItToYou,
+                              AppLocalizations.of(context)!.sentTo,
                               style: Styles.textStyle14(context).copyWith(
                                 color: colors.kTextMutedColor,
                               ),
                             ),
+                            SizedBox(
+                              width: 4,
+                            ),
                             Text(
-                              "${widget.phoneNumber}.",
+                              "${widget.email}.",
                               style: Styles.textStyle16(context).copyWith(
                                 color: colors.kTextColor,
-                              ),
-                            ),
-                            const SizedBox(width: 4),
-                            GestureDetector(
-                              onTap: () {
-                                globals.navigatorKey.currentState!.pop();
-                                globals.navigatorKey.currentState!
-                                    .pushReplacementNamed(RegisterView.id);
-                              },
-                              child: Text(
-                                AppLocalizations.of(context)!.changeNumber,
-                                style: Styles.textStyle16(context).copyWith(
-                                  color: colors.kPrimaryColor,
-                                ),
                               ),
                             ),
                           ],
@@ -186,10 +225,29 @@ class _OtpVerificationViewBodyState
                               onSubmitted: (value) {
                                 if (value.length == 6) {
                                   notifier.setOtpCode(value);
+                                  CasheHelper.selectedImage = widget.profilePic;
+                                  globals.userDetails.firstName =
+                                      widget.firstName;
+                                  globals.userDetails.lastName =
+                                      widget.lastName;
+                                  globals.userDetails.email = widget.email;
+                                  globals.userEmailVerified = true;
+                                  globals.navigatorKey.currentState!
+                                      .pushNamed(ProfileView.id);
                                 }
                               },
                               onCompleted: (value) {
                                 notifier.setOtpCode(value);
+
+                                CasheHelper.selectedImage = widget.profilePic;
+                                globals.userDetails.firstName =
+                                    widget.firstName;
+                                globals.userDetails.lastName = widget.lastName;
+                                globals.userDetails.email = widget.email;
+                                globals.userEmailVerified = true;
+
+                                globals.navigatorKey.currentState!
+                                    .pushNamed(ProfileView.id);
                               },
                             ),
                           ),
@@ -252,11 +310,16 @@ class _OtpVerificationViewBodyState
             child: state.isVerifyButtonLoading
                 ? const CustomLoadingIndicator()
                 : CustomButton(
-                    text: AppLocalizations.of(context)!.continueText,
+                    text: AppLocalizations.of(context)!.verifyEmail,
                     itemCallBack: () {
                       if (otpFormKey.currentState!.validate()) {
+                        CasheHelper.selectedImage = widget.profilePic;
+                        globals.userDetails.firstName = widget.firstName;
+                        globals.userDetails.lastName = widget.lastName;
+                        globals.userDetails.email = widget.email;
+                        globals.userEmailVerified = true;
                         globals.navigatorKey.currentState!
-                            .pushNamed(CreatePasswordView.id);
+                            .pushNamed(ProfileView.id);
                       }
                     },
                   ),

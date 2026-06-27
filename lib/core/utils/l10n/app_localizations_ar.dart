@@ -1018,4 +1018,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get removePhoto => 'إزالة الصورة الحالية';
+
+  @override
+  String get verifyYourEmail => 'تحقق من بريدك الإلكتروني';
+
+  @override
+  String get enterCode => 'أدخل الرمز';
+
+  @override
+  String get sentTo => 'أُرسِل إلى';
+
+  @override
+  String get verifyEmail => 'تحقق من البريد الإلكتروني';
 }

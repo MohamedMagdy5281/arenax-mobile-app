@@ -1337,6 +1337,22 @@
   "removePhoto":"Remove current photo",
   "@removePhoto":{
     "removePhoto":""
+  },
+  "verifyYourEmail":"Verify your email",
+  "@verifyYourEmail":{
+    "verifyYourEmail":""
+  },
+  "enterCode":"Enter the code",
+  "@enterCode":{
+    "enterCode":""
+  },
+  "sentTo":"Sent to",
+  "@sentTo":{
+    "sentTo":""
+  },
+  "verifyEmail":"Verify email",
+  "@verifyEmail":{
+    "verifyEmail":""
   }
 
   

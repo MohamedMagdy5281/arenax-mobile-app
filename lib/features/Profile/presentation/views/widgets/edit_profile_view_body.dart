@@ -6,7 +6,9 @@ import 'package:arenax_mobile_app/core/widgets/custom_header.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/core/widgets/text_form_field_with_title.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/manager/editProfileRiverpod/edit_profile_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/email_verify_otp_view.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/email_verify_otp_view_body.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/image_picker_option_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -112,15 +114,30 @@ class _EditProfileViewBodyState extends ConsumerState<EditProfileViewBody> {
                           ),
                           onSuffixIconTap: () {
                             if (editProfileFormKey.currentState!.validate()) {
-                              CasheHelper.selectedImage = state.selectedImage;
-                              globals.userDetails.firstName =
-                                  firstNameController.text.trim();
-                              globals.userDetails.lastName =
-                                  lastNameController.text.trim();
-                              globals.userDetails.email =
-                                  emailController.text.trim();
-                              globals.navigatorKey.currentState!
-                                  .pushNamed(ProfileView.id);
+                              if (globals.userEmailVerified == true) {
+                                CasheHelper.selectedImage = state.selectedImage;
+                                globals.userDetails.firstName =
+                                    firstNameController.text.trim();
+                                globals.userDetails.lastName =
+                                    lastNameController.text.trim();
+                                globals.userDetails.email =
+                                    emailController.text.trim();
+                                globals.navigatorKey.currentState!
+                                    .pushNamed(ProfileView.id);
+                              } else {
+                                globals.navigatorKey.currentState!.pushNamed(
+                                    EmailVerifyOtpView.id,
+                                    arguments: {
+                                      "firstName":
+                                          firstNameController.text.trim(),
+                                      "lastName":
+                                          lastNameController.text.trim(),
+                                      "email": emailController.text.trim(),
+                                      "phoneNumber":
+                                          phoneController.text.trim(),
+                                      "profilePic": state.selectedImage
+                                    });
+                              }
                             }
                           },
                         ),

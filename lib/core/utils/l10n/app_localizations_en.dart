@@ -1030,4 +1030,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get removePhoto => 'Remove current photo';
+
+  @override
+  String get verifyYourEmail => 'Verify your email';
+
+  @override
+  String get enterCode => 'Enter the code';
+
+  @override
+  String get sentTo => 'Sent to';
+
+  @override
+  String get verifyEmail => 'Verify email';
 }

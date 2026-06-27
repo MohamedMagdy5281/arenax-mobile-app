@@ -50,7 +50,10 @@ class UserDetailsContainer extends StatelessWidget {
                     : globals.userDetails.firstName == null ||
                             globals.userDetails.lastName == null
                         ? GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              globals.navigatorKey.currentState!
+                                  .pushNamed(EditProfileView.id);
+                            },
                             child: Container(
                               width: 64,
                               height: 64,

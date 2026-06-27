@@ -329,7 +329,12 @@
     "changeProfileImg":"تغيير صورة الملف الشخصي",
     "takePhoto":"التقط صورة",
     "choosePhoto":"اختر من المعرض",
-    "removePhoto":"إزالة الصورة الحالية"
+    "removePhoto":"إزالة الصورة الحالية",
+    "verifyYourEmail":"تحقق من بريدك الإلكتروني",
+    "enterCode":"أدخل الرمز",
+    "sentTo":"أُرسِل إلى",
+    "verifyEmail":"تحقق من البريد الإلكتروني"
+
 
 
 

@@ -33,7 +33,7 @@ String? version;
 String? os;
 String? freeChatPrompt;
 
-bool? userEmailVerified = true;
+bool? userEmailVerified = false;
 TemporaryUserDetailsClass userDetails = TemporaryUserDetailsClass();
 
 // List<ValidatedSubscriptionItem> validatedSubscriptionItems = [];

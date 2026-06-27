@@ -22,6 +22,7 @@ import 'package:arenax_mobile_app/features/Authentication/presentation/views/reg
 import 'package:arenax_mobile_app/features/Authentication/presentation/views/reset_password_otp_verification_view.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/manager/profileRiverpod/profile_notifier_provider.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/edit_profile_view.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/email_verify_otp_view.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/profile_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
@@ -330,6 +331,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
                 const MobileNumberAlreadyExistsView(),
             ProfileView.id: (context) => const ProfileView(),
             EditProfileView.id: (context) => const EditProfileView(),
+            EmailVerifyOtpView.id: (context) => const EmailVerifyOtpView(),
           },
         );
       },
