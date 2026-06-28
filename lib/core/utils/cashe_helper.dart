@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:ui';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 // import 'package:arenax_mobile_app/client/api.dart';
@@ -22,11 +23,12 @@ class CasheHelper {
   static String? mainGoalId;
   static String? userId;
   static int? freeTrialPeriod;
+  static File? selectedImage;
 
-  static String openAttachmentUrl =
-      "https://befluent.trust2s.com/api/Attachment/open-attachment/";
-  String openLessonAttachmentByName =
-      "https://befluent.trust2s.com/open-lesson-attachment/";
+  // static String openAttachmentUrl =
+  //     "https://befluent.trust2s.com/api/Attachment/open-attachment/";
+  // String openLessonAttachmentByName =
+  //     "https://befluent.trust2s.com/open-lesson-attachment/";
 
   static String? deviceType;
 

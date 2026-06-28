@@ -147,7 +147,7 @@ class _CreatePasswordViewBodyState
                                   child: Icon(
                                     globals.appLang == "en"
                                         ? Iconsax.arrow_left_2
-                                        : Iconsax.arrow_right_2,
+                                        : Iconsax.arrow_right_3,
                                     color: colors.kTextColor,
                                     size: 12,
                                   ),

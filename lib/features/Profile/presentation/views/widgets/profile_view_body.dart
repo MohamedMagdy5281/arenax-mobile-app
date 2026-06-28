@@ -5,6 +5,7 @@ import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_button.dart';
 import 'package:arenax_mobile_app/core/widgets/custom_loading_indicator.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/manager/profileRiverpod/profile_notifier_provider.dart';
+import 'package:arenax_mobile_app/features/Profile/presentation/views/edit_profile_view.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/profile_page_tiles.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/user_details_container.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,13 @@ class ProfileViewBody extends ConsumerStatefulWidget {
 }
 
 class _ProfileViewBodyState extends ConsumerState<ProfileViewBody> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    setState(() {});
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<AppColors>() ??
@@ -102,7 +110,11 @@ class _ProfileViewBodyState extends ConsumerState<ProfileViewBody> {
                                         CustomButton(
                                             text: AppLocalizations.of(context)!
                                                 .completeProfile,
-                                            itemCallBack: () {})
+                                            itemCallBack: () {
+                                              globals.navigatorKey.currentState!
+                                                  .pushNamed(
+                                                      EditProfileView.id);
+                                            })
                                       ],
                                     )
                                   : SizedBox(),

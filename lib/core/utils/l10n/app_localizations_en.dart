@@ -15,9 +15,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authenticateMsg => 'Please authenticate to access the app';
 
   @override
-  String get email => 'Email';
-
-  @override
   String get signIn => 'Sign In';
 
   @override
@@ -91,9 +88,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get manageSubscription => 'Manage Subscription';
 
   @override
-  String get enterEmail => 'Enter your email ';
-
-  @override
   String get currentChat => 'Current chat';
 
   @override
@@ -113,9 +107,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get conversationPaused => 'You have paused the conversation';
-
-  @override
-  String get editProfile => 'Edit profile';
 
   @override
   String get changePassword => 'Change password';
@@ -244,18 +235,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get forgotPassword => 'Forgot password ?';
-
-  @override
-  String get firstName => 'First name';
-
-  @override
-  String get lastName => 'Last name';
-
-  @override
-  String get enterFirstName => 'Enter your first name';
-
-  @override
-  String get enterLastName => 'Enter your last name';
 
   @override
   String get confirm => 'Confirm';
@@ -388,9 +367,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noThingToDisplay => 'There is nothing to display';
-
-  @override
-  String get save => 'Save';
 
   @override
   String get userDataUpdatedSuccessfuly =>
@@ -1009,4 +985,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get allSettings => 'All settings';
+
+  @override
+  String get editProfile => 'Edit profile';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get tapToChangePhoto => 'Tap to change photo';
+
+  @override
+  String get firstName => 'First name';
+
+  @override
+  String get lastName => 'Last name';
+
+  @override
+  String get enterFirstName => 'Enter your first name';
+
+  @override
+  String get enterLastName => 'Enter your last name';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get enterEmail => 'Enter your email';
+
+  @override
+  String get verified => 'verified';
+
+  @override
+  String get contactSupp => 'Contact support to change your phone number';
+
+  @override
+  String get changeProfileImg => 'Change profile photo';
+
+  @override
+  String get takePhoto => 'Take a photo';
+
+  @override
+  String get choosePhoto => 'Choose from library';
+
+  @override
+  String get removePhoto => 'Remove current photo';
+
+  @override
+  String get verifyYourEmail => 'Verify your email';
+
+  @override
+  String get enterCode => 'Enter the code';
+
+  @override
+  String get sentTo => 'Sent to';
+
+  @override
+  String get verifyEmail => 'Verify email';
 }

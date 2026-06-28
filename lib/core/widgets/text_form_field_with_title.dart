@@ -31,6 +31,7 @@ class TextFormFieldWithTitle extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final Widget? optionalLabelButton;
   final VoidCallback? optionalLabelButtonOnTap;
+  final Widget? titleAdditionalInfo;
 
   const TextFormFieldWithTitle({
     super.key,
@@ -60,6 +61,7 @@ class TextFormFieldWithTitle extends StatefulWidget {
     this.inputFormatters,
     this.optionalLabelButton,
     this.optionalLabelButtonOnTap,
+    this.titleAdditionalInfo,
   });
 
   @override
@@ -109,10 +111,61 @@ class TextFormFieldWithTitleState extends State<TextFormFieldWithTitle> {
       children: [
         // TITLE
         widget.optionalLabelButton != null
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
+            ? widget.titleAdditionalInfo != null
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            widget.title,
+                            style: (widget.titleStyle ??
+                                    Styles.textStyle18(context).copyWith(
+                                      fontWeight: FontWeight.w500,
+                                    ))
+                                .copyWith(color: colors.kTextColor),
+                          ),
+                          widget.titleAdditionalInfo!
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: widget.optionalLabelButtonOnTap,
+                        child: widget.optionalLabelButton,
+                      )
+                    ],
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.title,
+                        style: (widget.titleStyle ??
+                                Styles.textStyle18(context).copyWith(
+                                  fontWeight: FontWeight.w500,
+                                ))
+                            .copyWith(color: colors.kTextColor),
+                      ),
+                      GestureDetector(
+                        onTap: widget.optionalLabelButtonOnTap,
+                        child: widget.optionalLabelButton,
+                      )
+                    ],
+                  )
+            : widget.titleAdditionalInfo != null
+                ? Row(
+                    children: [
+                      Text(
+                        widget.title,
+                        style: (widget.titleStyle ??
+                                Styles.textStyle18(context).copyWith(
+                                  fontWeight: FontWeight.w500,
+                                ))
+                            .copyWith(color: colors.kTextColor),
+                      ),
+                      widget.titleAdditionalInfo!
+                    ],
+                  )
+                : Text(
                     widget.title,
                     style: (widget.titleStyle ??
                             Styles.textStyle18(context).copyWith(
@@ -120,20 +173,6 @@ class TextFormFieldWithTitleState extends State<TextFormFieldWithTitle> {
                             ))
                         .copyWith(color: colors.kTextColor),
                   ),
-                  GestureDetector(
-                    onTap: widget.optionalLabelButtonOnTap,
-                    child: widget.optionalLabelButton,
-                  )
-                ],
-              )
-            : Text(
-                widget.title,
-                style: (widget.titleStyle ??
-                        Styles.textStyle18(context).copyWith(
-                          fontWeight: FontWeight.w500,
-                        ))
-                    .copyWith(color: colors.kTextColor),
-              ),
 
         const SizedBox(height: 8),
 
@@ -143,9 +182,11 @@ class TextFormFieldWithTitleState extends State<TextFormFieldWithTitle> {
           builder: (state) {
             final borderColor = state.hasError
                 ? colors.kErrorColor
-                : isFocused
-                    ? colors.kPrimaryColor
-                    : colors.kDisabledButtonColor;
+                : widget.disabled == true
+                    ? colors.kDisabledButtonColor
+                    : isFocused
+                        ? colors.kPrimaryColor
+                        : colors.kDisabledButtonColor;
 
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,70 +199,77 @@ class TextFormFieldWithTitleState extends State<TextFormFieldWithTitle> {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: borderColor),
                   ),
-                  child: TextFormField(
-                    controller: _controller,
-                    focusNode: _focusNode,
-                    keyboardType: widget.inputType,
-                    autofocus: widget.autoFocus ?? false,
-                    enabled: widget.enabled ?? true,
-                    readOnly: widget.readOnly ?? false,
-                    maxLength: widget.maxLength,
-                    obscureText: widget.obscureText ?? false,
-                    inputFormatters: widget.inputFormatters,
-                    onTap: () {
-                      if (widget.disabled == true) {
-                        _focusNode.unfocus();
-                        return;
-                      }
-                      widget.onTap?.call();
-                    },
-                    onChanged: (value) {
-                      state.didChange(value);
-
-                      if (widget.onChanged != null) {
-                        widget.onChanged!(value);
-                      } else {
-                        final converted =
-                            globals.convertArabicNumbersToEnglish(value);
-
-                        if (value != converted) {
-                          final cursor = _controller.selection;
-
-                          _controller.value = TextEditingValue(
-                            text: converted,
-                            selection: cursor,
-                          );
+                  child: IgnorePointer(
+                    ignoring: widget.disabled == true,
+                    child: TextFormField(
+                      controller: _controller,
+                      focusNode: widget.disabled == true
+                          ? FocusNode(canRequestFocus: false)
+                          : _focusNode,
+                      keyboardType: widget.inputType,
+                      autofocus: widget.autoFocus ?? false,
+                      enabled: widget.enabled ?? true,
+                      readOnly: widget.readOnly ?? false,
+                      maxLength: widget.maxLength,
+                      obscureText: widget.obscureText ?? false,
+                      inputFormatters: widget.inputFormatters,
+                      onTap: () {
+                        if (widget.disabled == true) {
+                          _focusNode.unfocus();
+                          return;
                         }
-                      }
-                    },
-                    style: Styles.textStyle16(context).copyWith(
-                      color: colors.kTextColor,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: widget.placeholder,
-                      hintStyle: Styles.textStyle14(context)
-                          .copyWith(color: colors.kHintColor),
-                      border: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      focusedErrorBorder: InputBorder.none,
+                        widget.onTap?.call();
+                      },
+                      onChanged: (value) {
+                        state.didChange(value);
 
-                      prefixIcon: widget.prefix,
-                      prefix: widget.prefixWidget,
+                        if (widget.onChanged != null) {
+                          widget.onChanged!(value);
+                        } else {
+                          final converted =
+                              globals.convertArabicNumbersToEnglish(value);
 
-                      // ✅ FIXED SHOW/HIDE SUPPORT
-                      suffixIcon: widget.suffix != null
-                          ? SizedBox(
-                              width: 70,
-                              child: Center(child: widget.suffix),
-                            )
-                          : null,
+                          if (value != converted) {
+                            final cursor = _controller.selection;
 
-                      counterText: '',
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 16,
+                            _controller.value = TextEditingValue(
+                              text: converted,
+                              selection: cursor,
+                            );
+                          }
+                        }
+                      },
+                      style: Styles.textStyle16(context).copyWith(
+                        color: widget.disabled == true
+                            ? colors.kTextMutedColor
+                            : colors.kTextColor,
+                      ),
+                      decoration: InputDecoration(
+                        hintText: widget.placeholder,
+                        hintStyle: Styles.textStyle14(context)
+                            .copyWith(color: colors.kHintColor),
+                        border: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        focusedErrorBorder: InputBorder.none,
+
+                        prefixIcon: widget.prefix,
+                        prefix: widget.prefixWidget,
+
+                        // ✅ FIXED SHOW/HIDE SUPPORT
+                        suffixIcon: widget.suffix != null
+                            ? SizedBox(
+                                width: 70,
+                                child: Center(child: widget.suffix),
+                              )
+                            : null,
+
+                        counterText: '',
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 16,
+                        ),
                       ),
                     ),
                   ),

@@ -1,12 +1,12 @@
 class TemporaryUserDetailsClass {
-  final String? firstName;
-  final String? lastName;
-  final String? email;
-  final String phoneNumber;
+  String? firstName;
+  String? lastName;
+  String? email;
+  String phoneNumber;
 
   TemporaryUserDetailsClass(
-      {this.firstName,
-      this.lastName,
-      this.email,
+      {this.firstName = "Mohahmed",
+      this.lastName = "Magdy",
+      this.email = "M.asiasd",
       this.phoneNumber = "+201003996542"});
 }

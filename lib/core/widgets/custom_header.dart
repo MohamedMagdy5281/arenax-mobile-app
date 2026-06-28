@@ -40,16 +40,21 @@ class CustomHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          optionalPrefixIcon != null
-              ? GestureDetector(
-                  onTap: onPrefixIconTap ??
-                      () => globals.navigatorKey.currentState!.pop(),
-                  child: optionalPrefixIcon)
-              : SizedBox(),
-          Text(
-            title,
-            style: Styles.textStyle22(context).copyWith(
-                fontWeight: FontWeight.w900, color: colors.kBlackColor),
+          Row(
+            children: [
+              optionalPrefixIcon != null
+                  ? GestureDetector(
+                      onTap: onPrefixIconTap ??
+                          () => globals.navigatorKey.currentState!.pop(),
+                      child: optionalPrefixIcon)
+                  : SizedBox(),
+              optionalPrefixIcon != null ? SizedBox(width: 12) : SizedBox(),
+              Text(
+                title,
+                style: Styles.textStyle18(context).copyWith(
+                    fontWeight: FontWeight.w900, color: colors.kTextColor),
+              ),
+            ],
           ),
           optionalSecondSuffixIcon != null
               ? Row(

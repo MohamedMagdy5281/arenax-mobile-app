@@ -1,6 +1,4 @@
-import 'package:arenax_mobile_app/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/edit_profile_view_body.dart';
-import 'package:arenax_mobile_app/features/Profile/presentation/views/widgets/profile_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:arenax_mobile_app/core/utils/theme/app_colors.dart';
 

@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'edit_profile_notifier_provider.dart';
+part of 'email_verify_otp_notifier_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$editProfileNotifierHash() =>
-    r'e0e39b5aac8790b7b6d53e1450a5e3170ada8571';
+String _$emailVerifyOtpNotifierHash() =>
+    r'83f3972875bb662abfe979ae75a619ec838e6bac';
 
-/// See also [EditProfileNotifier].
-@ProviderFor(EditProfileNotifier)
-final editProfileNotifierProvider =
-    AutoDisposeNotifierProvider<EditProfileNotifier, EditProfileState>.internal(
-  EditProfileNotifier.new,
-  name: r'editProfileNotifierProvider',
+/// See also [EmailVerifyOtpNotifier].
+@ProviderFor(EmailVerifyOtpNotifier)
+final emailVerifyOtpNotifierProvider = AutoDisposeNotifierProvider<
+    EmailVerifyOtpNotifier, EmailVerifyOtpState>.internal(
+  EmailVerifyOtpNotifier.new,
+  name: r'emailVerifyOtpNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$editProfileNotifierHash,
+      : _$emailVerifyOtpNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$EditProfileNotifier = AutoDisposeNotifier<EditProfileState>;
+typedef _$EmailVerifyOtpNotifier = AutoDisposeNotifier<EmailVerifyOtpState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -9,10 +9,6 @@
   "@authenticateMsg":{
     "authenticateMsg":""
   },
-  "email":"Email",
-  "@email":{
-    "email":""
-  },
   "signIn":"Sign In",
   "@signIn":{
     "signIn":""
@@ -109,10 +105,6 @@
   "@manageSubscription":{
     "manageSubscription":""
   },
-  "enterEmail":"Enter your email ",
-  "@enterEmail":{
-    "enterEmail":""
-  },
   "currentChat":"Current chat",
   "@currentChat":{
     "currentChat":""
@@ -144,10 +136,6 @@
   "conversationPaused":"You have paused the conversation",
   "@conversationPaused":{
     "conversationPaused":""
-  },
-  "editProfile":"Edit profile",
-  "@editProfile":{
-    "editProfile":""
   },
   "changePassword":"Change password",
   "@changePassword":{
@@ -317,22 +305,6 @@
   "@forgotPassword":{
     "rememberMe":""
   },
-  "firstName":"First name",
-  "@firstName":{
-    "firstName":""
-  },
-  "lastName":"Last name",
-  "@lastName":{
-    "lastName":""
-  },
-  "enterFirstName":"Enter your first name",
-  "@enterFirstName":{
-    "enterFirstName":""
-  },
-  "enterLastName":"Enter your last name",
-  "@enterLastName":{
-    "enterLastName":""
-  },
   
   "confirm":"Confirm",
   "@confirm":{
@@ -501,10 +473,6 @@
   "noThingToDisplay":"There is nothing to display",
   "@noThingToDisplay":{
     "noThingToDisplay":""
-  },
-  "save":"Save",
-  "@save":{
-    "save":""
   },
   "userDataUpdatedSuccessfuly":"Your data has been updated successfully",
   "@userDataUpdatedSuccessfuly":{
@@ -1309,8 +1277,83 @@
   "allSettings":"All settings",
   "@allSettings":{
     "allSettings":""
+  },
+  "editProfile":"Edit profile",
+  "@editProfile":{
+    "editProfile":""
+  },
+  "save":"Save",
+  "@save":{
+    "save":""
+  },
+  "tapToChangePhoto":"Tap to change photo",
+  "@tapToChangePhoto":{
+    "tapToChangePhoto":""
+  },
+  "firstName":"First name",
+  "@firstName":{
+    "firstName":""
+  },
+  "lastName":"Last name",
+  "@lastName":{
+    "lastName":""
+  },
+  "enterFirstName":"Enter your first name",
+  "@enterFirstName":{
+    "enterFirstName":""
+  },
+  "enterLastName":"Enter your last name",
+  "@enterLastName":{
+    "enterLastName":""
+  },
+  "email":"Email",
+  "@email":{
+    "email":""
+  },
+  "enterEmail":"Enter your email",
+  "@enterEmail":{
+    "enterEmail":""
+  },
+  "verified":"verified",
+  "@verified":{
+    "verified":""
+  },
+  "contactSupp":"Contact support to change your phone number",
+  "@contactSupp":{
+    "contactSupp":""
+  },
+  "changeProfileImg":"Change profile photo",
+  "@changeProfileImg":{
+    "changeProfileImg":""
+  },
+  "takePhoto":"Take a photo",
+  "@takePhoto":{
+    "takePhoto":""
+  },
+  "choosePhoto":"Choose from library",
+  "@choosePhoto":{
+    "choosePhoto":""
+  },
+  "removePhoto":"Remove current photo",
+  "@removePhoto":{
+    "removePhoto":""
+  },
+  "verifyYourEmail":"Verify your email",
+  "@verifyYourEmail":{
+    "verifyYourEmail":""
+  },
+  "enterCode":"Enter the code",
+  "@enterCode":{
+    "enterCode":""
+  },
+  "sentTo":"Sent to",
+  "@sentTo":{
+    "sentTo":""
+  },
+  "verifyEmail":"Verify email",
+  "@verifyEmail":{
+    "verifyEmail":""
   }
-  
 
   
 }
